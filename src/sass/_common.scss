@@ -1,11 +1,13 @@
 $text: #4E4E4E;
 $toparea: #4C565A;
 $border: #AAA9A9;
+$blue: #4990E1;
 
 
 @include font("PTSerifRegular", PTF55F-webfont);
 @include font("PTSerifBold", PTF75F-webfont);
 @include font("PTSansRegular", PTS55F-webfont);
+@include font("PTSansItalic", PTS56F-webfont);
 @mixin serif {
   font-family: "PTSerifRegular", Helvetica, Arial, sans-serif;
   font-weight: normal;
@@ -17,6 +19,11 @@ $border: #AAA9A9;
 @mixin sans {
   font-family: "PTSansRegular", Helvetica, Arial, sans-serif;
   font-weight: normal;
+}
+@mixin sans-i {
+  font-family: "PTSansItalic", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  font-style: normal;
 }
 
 html {
