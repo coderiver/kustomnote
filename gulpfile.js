@@ -124,7 +124,35 @@ gulp.task('svgsprite', function() {
         .pipe(gulp.dest(dest.img));
 });
 
+//svg sprite for icons with two colors inside
+gulp.task('svgsprite-tc', function() {
+    return gulp.src(src.svg + '/icons-two-color/*.svg')
+        .pipe(svgmin({
+            plugins: [{
+                removeDesc: true
+            }, {
+                removeTitle: true
+            }
+        ]}))
+        .pipe(cheerio({
+            run: function ($, file) {
+                $('[fill]:not([fill="currentColor"])').removeAttr('fill');
+                $('#second-color').attr('fill', 'currentColor');
+            },
+            parserOptions: { xmlMode: true }
+        }))
+        .pipe(svgSprite({
+            mode: "symbols",
+            selector: "icon-tc-%f",
+            preview: false,
+            svg: {
+                symbols: 'icons-tc.svg'
+            }
+        }))
+        .pipe(gulp.dest(dest.img));
+});
 
+// sprite
 gulp.task('sprite', function() {
     var spriteData = gulp.src(src.img + '/icons/*.png')
     .pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
@@ -149,6 +177,7 @@ gulp.task('watch', function() {
     gulp.watch(src.jade + '/**/*.jade', ['jade']);
     gulp.watch([src.jade + '/_*.jade', src.jade + '/includes/*.jade'], ['jade-all']);
     gulp.watch(src.svg + '/icons/*.svg', ['svgsprite']);
+    gulp.watch(src.svg + '/icons-two-color/*.svg', ['svgsprite-tc']);
     gulp.watch(src.img + '/icons/*.png', ['sprite']);
 });
 

@@ -1,10 +1,4 @@
-extends _layout
-
-block title
-  title Index
-
-block content
-  ul
-    each page in ['main']
-      li
-        a(href=page+'.html')=page
+ol(style="font-size:30px;margin:50px")
+  each page in ['main', 'about']
+    li
+      a(href=page+'.html')=page
