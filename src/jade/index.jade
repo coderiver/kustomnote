@@ -1,0 +1,10 @@
+extends _layout
+
+block title
+  title Index
+
+block content
+  ul
+    each page in ['main']
+      li
+        a(href=page+'.html')=page
