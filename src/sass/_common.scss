@@ -41,6 +41,12 @@ $purple: #7746A1;
   }
 }
 
+@mixin mobile {
+  @include r(499) {
+    @content
+  }
+}
+
 
 html {
   font-size: 62.5%;
