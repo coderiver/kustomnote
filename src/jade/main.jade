@@ -18,10 +18,10 @@ block content
   <!-- end toparea -->
 
   <!-- begin feature -->
-  section.feature
+  section.feature.feature_test
     .l
-      .feature__inner
-        .feature__cell
+      .feature__outer
+        .feature__inner
 
           h3.title.title_blue
             | Capture information with ease.
@@ -37,8 +37,7 @@ block content
           button.btn.btn_blue(type="button")
             span Sign up for free
 
-          .feature__small__pic.capture
-
+          .feature__pic.capture
 
           <!-- begin user -->
           .user
@@ -53,19 +52,13 @@ block content
               a.user__link(href="#")
                 | See Julie’s Templates
           <!-- end user -->
-
-        .feature__cell
-          .feature__pic.capture
   <!-- end feature -->
 
   <!-- begin feature -->
   section.feature.feture_replace
     .l
-      .feature__inner
-        .feature__cell
-          .feature__pic.find
-
-        .feature__cell
+      .feature__outer
+        .feature__inner
 
           h3.title.title_orange
             | Find Everything.
@@ -80,6 +73,8 @@ block content
             | Curabitur blandit tempus porttitor.
           button.btn.btn_orange(type="button")
             span Sign up for free
+
+          .feature__pic.find
 
           <!-- begin user -->
           .user.user_replace
@@ -99,8 +94,8 @@ block content
   <!-- begin feature -->
   section.feature
     .l
-      .feature__inner
-        .feature__cell
+      .feature__outer
+        .feature__inner
 
           h3.title.title_purple
             | Powered by a community of people just like you.
@@ -116,21 +111,6 @@ block content
           button.btn.btn_purple(type="button")
             span Sign up for free
 
-          <!-- begin user -->
-          .user
-            .user__pic
-              img(src="img/users/user3.jpg", alt="user pic")
-            blockquote.user__feedback
-              p.user__feedback-text
-                | “Cras justo odio, dapibus ac facilisis in,
-                | egestas eget quam. Fusce KustomNote dapibus.”
-              cite.user__name
-                | Vladmir, in Ukraine
-              a.user__link(href="#")
-                | See Vladmir’s Templates
-          <!-- end user -->
-
-        .feature__cell
           .feature__slider
             <!-- begin slider -->
             .slider.js-slick
@@ -147,6 +127,21 @@ block content
                   span.slide__caption
                     | Templates for Business
             <!-- end slider -->
+
+          <!-- begin user -->
+          .user
+            .user__pic
+              img(src="img/users/user3.jpg", alt="user pic")
+            blockquote.user__feedback
+              p.user__feedback-text
+                | “Cras justo odio, dapibus ac facilisis in,
+                | egestas eget quam. Fusce KustomNote dapibus.”
+              cite.user__name
+                | Vladmir, in Ukraine
+              a.user__link(href="#")
+                | See Vladmir’s Templates
+          <!-- end user -->
+
   <!-- end feature -->
 
   <!-- begin feature-more -->

@@ -372,42 +372,65 @@ a.btn {
     }
 
     @include tablet {
+
+        .feature__outer {
+            padding-left: 0;
+            padding-right: 0;
+            &:before {
+                display: none;
+            }
+        }
+
         .feature__inner {
             display: block;
         }
 
-        .feature__cell {
-            display: block;
-
-            &:last-child {
-                width: auto;
+        .feature__pic {
+            position: static;
+            top: 0;
+            right: 0;
+            transform: none;
+            background-position: center center;
+            margin: auto;
+            &.capture {
+                background-image: img-url('capture-small.png');
+            }
+            &.find {
+                background-image: img-url('find-small.png');
             }
         }
+
+    }
+}
+
+.feature__outer {
+    position: relative;
+    padding-right: percentage(480/1124);
+    font-size: 0;
+
+    &:before {
+        content: "";
+        display: inline-block;
+        vertical-align: middle;
+        width: 0;
+        height: 100%;
+        min-height: 470px;
     }
 }
 
 .feature__inner {
-    display: table;
-    table-layout: fixed;
-    border-collapse: collapse;
-    width: 100%;
-}
-
-.feature__cell {
-    display: table-cell;
+    display: inline-block;
     vertical-align: middle;
-    position: relative;
+    @include fs(18);
     @include clr;
-
-    &:last-child {
-        width: percentage(480/1124);
-    }
 }
 
 .feature__pic {
-    position: relative;
+    position: absolute;
+    top: 50%;
     right: -50px;
-    width: 100%;
+    width: percentage(480/1124);
+    transform: translateY(-50%);
     background-repeat: no-repeat;
     background-position: right center;
     background-size: contain;
@@ -423,47 +446,45 @@ a.btn {
         background-image: img-url('capture.png');
     }
 
-     &.find {
+    &.find {
         background-image: img-url('find.png');
     }
 }
 
 .feature__slider {
-    position: relative;
-    float: right;
+    position: absolute;
+    top: 50%;
     right: -50px;
-    width: percentage(415/480);
+    width: percentage(415/1124);
+    height: 405px;
+    margin-top: -202px;
     overflow: hidden;
-
-    // &:before {
-    //     content: "";
-    //     display: block;
-    //     width: 100%;
-    //     padding-bottom: percentage(405/415);
-    // }
 }
 
 .feture_replace {
     background: $text;
     color: #FFF;
 
-    .feature__cell {
-        &:last-child {
-            width: auto;
-        }
-        &:first-child {
-            width: percentage(480/1124);
-        }
+    .feature__outer {
+        padding-left: percentage(480/1124);
+        padding-right: 0;
     }
 
     .feature__pic {
         right: auto;
-        left: em(-50);
+        left: -50px;
         background-position: left center;
     }
 
     .user {
         float: right;
+    }
+
+    @include tablet {
+
+        .feature__outer {
+            padding-left: 0;
+        }
     }
 }
 
