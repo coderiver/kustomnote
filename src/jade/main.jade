@@ -23,7 +23,7 @@ block content
       .feature__inner
         .feature__cell
 
-          h3.feature__title
+          h3.title.title_blue
             | Capture information with ease.
           p.feature__text
             | Donec sed odio dui. Cras mattis consectetur purus
@@ -40,7 +40,7 @@ block content
           <!-- begin user -->
           .user
             .user__pic
-              img(src="http://placehold.it/100x100", alt="user pic")
+              img(src="img/users/user1.jpg", alt="user pic")
             blockquote.user__feedback
               p.user__feedback-text
                 | “Cras justo odio, dapibus ac facilisis in,
@@ -64,8 +64,8 @@ block content
 
         .feature__cell
 
-          h3.feature__title
-            | Capture information with ease.
+          h3.title.title_orange
+            | Find Everything.
           p.feature__text
             | Donec sed odio dui. Cras mattis consectetur purus
             | sit amet fermentum. Cras justo odio, dapibus ac
@@ -81,7 +81,7 @@ block content
           <!-- begin user -->
           .user.user_replace
             .user__pic
-              img(src="http://placehold.it/100x100", alt="user pic")
+              img(src="img/users/user2.jpg", alt="user pic")
             blockquote.user__feedback
               p.user__feedback-text
                 | “Cras justo odio, dapibus ac facilisis in,
@@ -91,4 +91,59 @@ block content
               a.user__link(href="#")
                 | See Jonas’ Templates
           <!-- end user -->
+  <!-- end feature -->
+
+  <!-- begin feature -->
+  .feature
+    .l
+      .feature__inner
+        .feature__cell
+
+          h3.title.title_purple
+            | Powered by a community of people just like you.
+          p.feature__text
+            | Donec sed odio dui. Cras mattis consectetur purus
+            | sit amet fermentum. Cras justo odio, dapibus ac
+            | facilisis in, egestas eget quam. Vestibulum id
+            | ligula porta felis euismod semper.
+            | Etiam porta sem malesuada magna mollis euismod.
+            | Curabitur blandit tempus porttitor.
+            | Cras mattis consectetur purus sit amet fermentum.
+            | Curabitur blandit tempus porttitor.
+          button.btn.btn_purple(type="button")
+            span Sign up for free
+
+          <!-- begin user -->
+          .user
+            .user__pic
+              img(src="img/users/user3.jpg", alt="user pic")
+            blockquote.user__feedback
+              p.user__feedback-text
+                | “Cras justo odio, dapibus ac facilisis in,
+                | egestas eget quam. Fusce KustomNote dapibus.”
+              cite.user__name
+                | Vladmir, in Ukraine
+              a.user__link(href="#")
+                | See Vladmir’s Templates
+          <!-- end user -->
+
+        .feature__cell
+          .feature__slider
+            <!-- begin slider -->
+            .slider.js-slick
+              .slide(style="background-image:url('img/slides/slide.jpg')")
+                .slide__footer
+                  span.slide__caption
+                    | Templates for Business
+              .slide(style="background-image:url('img/slides/slide.jpg')")
+                .slide__footer
+                  span.slide__caption
+                    | Templates for Business
+              .slide(style="background-image:url('img/slides/slide.jpg')")
+                .slide__footer
+                  span.slide__caption
+                    | Templates for Business
+            <!-- end slider -->
+
+
   <!-- end feature -->

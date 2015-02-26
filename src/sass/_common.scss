@@ -3,19 +3,26 @@ $toparea: #4C565A;
 $border: #AAA9A9;
 $blue: #4990E1;
 $orange: #F8A823;
+$purple: #7746A1;
 
 
 @include font("PTSerifRegular", PTF55F-webfont);
 @include font("PTSerifBold", PTF75F-webfont);
+@include font("PTSerifItalic", PTF56F-webfont);
 @include font("PTSansRegular", PTS55F-webfont);
 @include font("PTSansItalic", PTS56F-webfont);
 @mixin serif {
   font-family: "PTSerifRegular", Helvetica, Arial, sans-serif;
   font-weight: normal;
 }
-@mixin serif-bold {
+@mixin serif-b {
   font-family: "PTSerifBold", Helvetica, Arial, sans-serif;
   font-weight: normal;
+}
+@mixin serif-i {
+  font-family: "PTSerifItalic", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  font-style: normal;
 }
 @mixin sans {
   font-family: "PTSansRegular", Helvetica, Arial, sans-serif;
