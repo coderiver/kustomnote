@@ -4,7 +4,7 @@
 
 $slick-font-path: "../fonts/" !default;
 $slick-font-family: "slick" !default;
-$slick-loader-path: "./" !default;
+$slick-loader-path: "../img/" !default;
 $slick-arrow-color: white !default;
 $slick-dot-color: black !default;
 $slick-dot-color-active: $slick-dot-color !default;
@@ -130,7 +130,7 @@ $slick-opacity-not-active: 0.25 !default;
 
 .slick-dots {
     position: absolute;
-    bottom: 0;
+    bottom: 22px;
     list-style: none;
     display: block;
     text-align: center;
@@ -142,33 +142,31 @@ $slick-opacity-not-active: 0.25 !default;
         cursor: pointer;
         button {
             display: block;
-            padding: 7px;
+            padding: 3px;
             background: none;
             outline: none;
             line-height: 0px;
             font-size: 0px;
-            color: $interactive;
+            color: red;
             cursor: pointer;
             &:before {
                 content: "";
                 display: block;
                 height: 10px;
                 width: 10px;
-                border: 2px solid;
                 box-sizing: border-box;
                 border-radius: 50%;
-                background: none;
+                background: #979795;
                 transition: all 0.1s ease;
             }
             &:hover {
                 &:before {
-                   background: $interactive;
+                   background: #4E4E4E;
                 }
             }
         }
         &.slick-active button:before {
-            background: $interactive;
-            box-shadow: 0 0 0 2px $interactive;
+            background: #4E4E4E;
         }
     }
 }

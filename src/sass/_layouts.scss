@@ -1,5 +1,29 @@
 .l {
-  max-width: 1124px;
-  padding: 0 50px;
-  margin: auto;
+    max-width: 1124px;
+    padding: 0 50px;
+    margin: auto;
 }
+
+.column {
+    box-sizing: border-box;
+    padding: 0 10px;
+}
+
+.l-columns {
+    margin-left: -10px;
+    margin-right: -10px;
+    @include clr;
+
+    .column {
+        float: left;
+        width: 50%;
+    }
+}
+
+.l-columns_four {
+    .column {
+        width: 25%;
+    }
+}
+
+

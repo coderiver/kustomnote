@@ -34,6 +34,14 @@ $purple: #7746A1;
   font-style: normal;
 }
 
+
+@mixin tablet {
+  @include r(799) {
+    @content
+  }
+}
+
+
 html {
   font-size: 62.5%;
 }
