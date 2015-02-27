@@ -3,10 +3,20 @@
     table-layout: fixed;
     border-collapse: collapse;
     width: 100%;
-    min-height: 100vh;
+    height: 100vh;
     color: #FFF;
     background: img-url('toparea.jpg') no-repeat center center;
     background-size: cover;
+
+    @include r(950) {
+        .toparea__inner {
+            padding-bottom: 105px;
+        }
+
+        .toparea__footer {
+            display: block;
+        }
+    }
 }
 
 .toparea__inner {
@@ -32,6 +42,16 @@
     }
 }
 
+.toparea__footer {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 65px;
+    text-align: center;
+}
+
 
 .header {
     padding: 35px 0;
@@ -39,6 +59,35 @@
     .btn {
         display: inline-block;
         vertical-align: middle;
+        margin-left: 15px;
+    }
+
+    @include r(950) {
+        .btn {
+            display: none;
+        }
+    }
+
+    @include r(700) {
+        padding: 25px 0;
+        .header__left {
+            float: none;
+            margin: auto;
+            text-align: center;
+        }
+
+        .header__right {
+            float: none;
+            margin: 15px auto 0;
+            text-align: center;
+        }
+
+    }
+
+    @include mobile {
+        .menu__link {
+            font-size: 14px;
+        }
     }
 }
 
@@ -62,6 +111,7 @@
 
 .logo {
     display: block;
+    margin: auto;
     text-decoration: none;
     @include hide-text;
     @include sprite(logo)
@@ -71,7 +121,12 @@
     font-size: 0;
     display: inline-block;
     vertical-align: middle;
-    margin-right: 15px;
+
+    @include r(1000) {
+        .menu__link {
+            margin-right: 0;
+        }
+    }
 }
 
 .menu__link {
@@ -80,8 +135,8 @@
     position: relative;
     @include serif;
     @include fs(18);
-    padding: 0 em(10,18);
-    margin-right: em(10,18);
+    padding: 0 10px;
+    margin-right: 10px;
     line-height: em(40,18);
     color: inherit;
     text-decoration: none;
@@ -124,12 +179,12 @@
     @include sans;
     font-size: 18px;
 
-    span {
+    > span {
         display: inline-block;
-        padding-right: 15px;
+        padding-right: em(15);
         position: relative;
 
-        &:after {
+        &:before {
             @extend %icon;
             content: "\f178";
             position: absolute;
@@ -143,8 +198,9 @@
 
     @include mobile {
         font-size: 12px;
+        min-width: 140px;
 
-        span:after {
+        span:before {
             font-size: 8px;
         }
     }
@@ -178,6 +234,47 @@ a.btn {
     background: $purple;
     color: #FFF;
     border: none;
+}
+
+.btn_dark {
+    background: $text;
+    color: #FFF;
+    border: none;
+}
+
+.btn_center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn_wide {
+    min-width: 270px;
+    @include mobile {
+        min-width: 140px;
+    }
+}
+
+.btn_more {
+    background: none;
+    border: 3px solid #D8D8D8;
+    border-radius: none;
+
+    > span {
+        padding: 0 0 0 em(15);
+        &:before {
+            content: "";
+            right: auto;
+            left: 0;
+            width: 0;
+            height: 0;
+            font-size: inherit;
+            border: solid transparent;
+            border-width: em(6) 0 em(6) em(6);
+            border-left-color: $text;
+            margin-top: em(-6);
+        }
+    }
 }
 
 
@@ -222,6 +319,21 @@ a.btn {
             margin-top: em(5,72);
         }
     }
+
+    @include r(600) {
+        @include fs(42);
+    }
+
+    @include mobile {
+        @include fs(36);
+    }
+}
+
+.heading_toparea {
+    @include tablet {
+        background: rgba(#FFF, 0.2);
+        border: none;
+    }
 }
 
 
@@ -256,6 +368,10 @@ a.btn {
     @include serif;
     @include fs(24);
     color: inherit;
+
+    @include mobile {
+        font-size: 14px;
+    }
 }
 
 
@@ -447,8 +563,14 @@ a.btn {
     }
 
     @include mobile {
+        padding: 30px 0;
+
         .feature__text {
             font-size: 14px;
+        }
+
+        .user {
+            margin-top: 25px;
         }
     }
 }
@@ -591,6 +713,15 @@ a.btn {
             border-width: 0 15px 60px 15px;
         }
     }
+
+    @include mobile {
+        .user {
+            margin: 0 -15px -30px;
+            background: #C5C5C5;
+            border: solid #C5C5C5;
+            border-width: 0 15px 30px 15px;
+        }
+    }
 }
 
 
@@ -600,12 +731,81 @@ a.btn {
     background: #E9E9E9;
 
     .title {
-        margin-bottom: 25px;
+        margin-bottom: 48px;
         text-align: center;
     }
 
     .figure {
         margin-bottom: 10px;
+    }
+
+    .btn {
+        margin-top: 40px;
+    }
+
+    @include tablet {
+        .feature-more__item {
+            width: 50%;
+        }
+    }
+
+    @include mobile {
+        padding: 25px 0;
+        @include fs(14);
+
+        .title {
+            margin-bottom: 24px;
+        }
+
+        .btn {
+            margin-top: 15px;
+        }
+
+        .feature-more__item {
+            font-size: 14px;
+        }
+
+        .feature-more__other {
+            // display: none;
+            text-align: center;
+            ul {
+                width: auto;
+                float: none;
+                padding: 0;
+            }
+        }
+    }
+}
+
+.feature-more__items {
+    font-size: 0;
+    margin: -25px -10px 0;
+}
+
+.feature-more__item {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 25px;
+    width: 25%;
+    box-sizing: border-box;
+    padding: 0 10px;
+    @include fs(18);
+    @include serif;
+}
+
+.feature-more__other {
+    margin: em(25) auto 0;
+    padding: em(20) em(20) 0;
+    max-width: 930px;
+    border-top: 3px solid rgba($text, 0.4);
+    @include clr;
+    line-height: 1.55;
+
+    ul {
+        float: left;
+        width: 33.333%;
+        box-sizing: border-box;
+        padding: 0 em(20);
     }
 }
 
@@ -666,7 +866,17 @@ a.btn {
         margin: auto;
         text-align: center;
         @include fs(100);
-        min-height: 100px;
+        margin-bottom: em(40,100);
+    }
+
+    @include mobile {
+        .icon {
+            font-size: 50px;
+        }
+
+        .figure__text {
+            font-size: 16px;
+        }
     }
 
 }
@@ -676,7 +886,6 @@ a.btn {
     @include fs(24);
     @include sans;
     text-align: center;
-    margin-top: 40px;
 }
 
 

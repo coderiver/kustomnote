@@ -9,4 +9,17 @@ head.ready(function() {
             mobileFirst: true
         });
     }
+
+    if ( $('[data-more-btn]').length ) {
+        $('[data-more-btn]').each(function(index, el) {
+            var btn     = $(this),
+                content = $('[data-more-content=' + btn.data('more-btn') + ']');
+
+            btn.on('click', function(event) {
+                event.preventDefault();
+                btn.toggleClass('is-active');
+                content.slideToggle();
+            });
+        });
+    }
 });

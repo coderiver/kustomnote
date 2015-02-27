@@ -10,11 +10,15 @@ block content
       include _header
 
       .l
-        h1.heading
+        h1.heading.heading_toparea
           | Don’t settle for <del>chaotic</del> notes.
         strong.subtitle
           | Cum sociis natoque penatibus et magnis dis
           | parturient montes, nascetur ridiculus mus.
+
+      .toparea__footer
+        button.btn.btn_sign(type="button")
+          span Sign up for free
   <!-- end toparea -->
 
   <!-- begin feature -->
@@ -150,40 +154,73 @@ block content
       h3.title
         | And so much more...
 
-      .l-columns.l-columns_four
-        .column
+      <!-- begin feature-more__items -->
+      .feature-more__items
+        .feature-more__item
           figure.figure
             .icon.icon-collect
             figcaption.figure__text
-              | Collect data from many sources
-          p.text
+              | Collect data from <br> many sources
+          p
             | Aenean lacinia bibendum nulla sed consectetur.
             | Maecenas sed diam eget risus varius blandit sit
             | amet non magna. Vivamus sagittis lacus vel augue laoreet rutrum faucibus.
-        .column
+        .feature-more__item
           figure.figure
             .icon.icon-collaboration
             figcaption.figure__text
               | Collaboration <br> for teams
-          p.text
+          p
             | Cras justo odio, dapibus ac facilisis in, egestas eget quam.
             | Sed posuere consectetur est at lobortis.
             | Maecenas sed diam eget risus varius blandit sit amet non magna. Aenean.
-        .column
+        .feature-more__item
           figure.figure
             .icon.icon-mobile
             figcaption.figure__text
-              | Full-featured mobile applications
-          p.text
+              | Full-featured <br> mobile applications
+          p
             | Purus sit amet fermentum. Maecenas sed diam eget risus varius blandit sit amet non magna.
             | Maecenas faucibus mollis interdum. Fusce dapibus, tellus ac cursus commodo, tortor mauris.
-        .column
+        .feature-more__item
           figure.figure
             .icon.icon-data
             figcaption.figure__text
               | Data portability <br> forever
-          p.text
+          p
             | Maecenas sed diam eget risus varius blandit sit amet non magna.
             | Nullam id dolor id nibh ultricies vehicula ut id elit.
             | Etiam porta sem malesuada magna mollis euismod.
+      <!-- end feature-more__items -->
+
+      button.btn.btn_more.btn_center(type="button", data-more-btn="features")
+        span See more features
+
+      <!-- begin feature-more__links -->
+      .feature-more__other(data-more-content="features")
+        ul
+          li Vestibulum Elit Vehicula
+          li Ipsum Tellus Mollis
+          li Sit Cras Elit
+          li Purus Cursus Vehicula
+          li Dolor Fringilla Elit
+          li Cras Quam Dolor
+        ul
+          li Consectetur Inceptos Parturient
+          li Purus Cursus Vehicula
+          li Dolor Fringilla Elit
+          li Cras Quam Dolor
+          li Condimentum Ridiculus Risus
+          li Tristique Purus Fusce
+        ul
+          li Tellus Ullamcorper Parturient
+          li Etiam Risus Magna
+          li Nibh Elit Commodo
+          li Tellus Bibendum Ornare
+          li Fusce Aenean Commodo
+          li Parturient Nibh Ridiculus
+      <!-- end feature-more__links -->
+
+      button.btn.btn_dark.btn_wide.btn_center(type="button")
+        span Sign up for free
   <!-- end feature-more -->
