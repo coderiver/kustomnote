@@ -572,6 +572,10 @@ a.btn {
         .user {
             margin-top: 25px;
         }
+
+        .user__name, .user__link {
+            font-size: 14px;
+        }
     }
 }
 
@@ -743,6 +747,10 @@ a.btn {
         margin-top: 40px;
     }
 
+    .btn_more {
+        display: none;
+    }
+
     @include tablet {
         .feature-more__item {
             width: 50%;
@@ -765,9 +773,15 @@ a.btn {
             font-size: 14px;
         }
 
+        .btn_more {
+            display: block;
+        }
+
         .feature-more__other {
-            // display: none;
+            display: none;
             text-align: center;
+            padding-bottom: em(20);
+            border-bottom: 3px solid rgba($text, 0.4);
             ul {
                 width: auto;
                 float: none;
@@ -892,4 +906,58 @@ a.btn {
 .text {
     @include fs(18);
     @include serif;
+}
+
+
+
+
+.brands {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    min-height: 200px;
+}
+
+.brands__item {
+    display: flex;
+    padding: 25px;
+    a {
+        display: inline-block;
+        font-size: 0;
+    }
+
+    img {
+        display: block;
+    }
+
+    @include r(1000) {
+        &:nth-child(1) {
+            order: 1;
+        }
+        &:nth-child(2) {
+            order: 2;
+        }
+        &:nth-child(3) {
+            order: 4;
+        }
+        &:nth-child(4) {
+            order: 5;
+        }
+        &:nth-child(5) {
+            order: 3;
+        }
+    }
+
+    @include mobile {
+        padding-left: 0;
+        padding-right: 0;
+
+        img {
+            width: 50%;
+            margin: auto;
+        }
+    }
 }
