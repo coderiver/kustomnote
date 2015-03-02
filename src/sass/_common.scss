@@ -11,6 +11,7 @@ $purple: #7746A1;
 @include font("PTSerifItalic", PTF56F-webfont);
 @include font("PTSansRegular", PTS55F-webfont);
 @include font("PTSansItalic", PTS56F-webfont);
+@include font("PTSansBold", PTS75F-webfont);
 @mixin serif {
   font-family: "PTSerifRegular", Helvetica, Arial, sans-serif;
   font-weight: normal;
@@ -32,6 +33,10 @@ $purple: #7746A1;
   font-family: "PTSansItalic", Helvetica, Arial, sans-serif;
   font-weight: normal;
   font-style: normal;
+}
+@mixin sans-b {
+  font-family: "PTSansBold", Helvetica, Arial, sans-serif;
+  font-weight: normal;
 }
 
 

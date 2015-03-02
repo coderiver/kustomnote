@@ -2,27 +2,106 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Main Page</title>
+    <title>About Us</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="format-detection" content="telephone=no">
     <link rel="stylesheet" media="all" href="css/screen.css"><!--[if IE]><script src="js/html5shiv.js"></script><![endif]-->
   </head>
   <body>
     <div class="out"><!-- begin header -->
-      <header class="header">
+      <header class="header header_solid">
         <div class="header__inner l">
-          <div class="header__left"><a href="/" class="logo">Kustomnote</a></div>
+          <div class="header__left"><a href="/" class="logo logo_color">Kustomnote</a></div>
           <div class="header__right">
-            <nav class="menu"><a href="#" class="menu__link">Features</a><a href="#" class="menu__link is-active">Pricing</a><a href="#" class="menu__link">About Us</a><a href="#" class="menu__link">Login</a></nav>
+            <nav class="menu"><a href="/features.html" class="menu__link">Features</a><a href="/pricing.html" class="menu__link is-active">Pricing</a><a href="/about.html" class="menu__link">About Us</a><a href="#" class="menu__link">Login</a></nav>
             <button type="button" class="btn btn_sign"><span>Sign up for free</span></button>
           </div>
         </div>
-      </header><!-- end header --><!-- begin toparea -->
-      <div class="toparea">
+      </header><!-- end header --><!-- begin toparea-small -->
+      <div class="toparea-small">
+        <h1 class="heading">Join us on our journey!</h1>
+        <button type="button" class="btn"><span>Sign up for free</span></button>
+      </div><!-- end toparea-small -->
+      <!-- begin comments -->
+      <div class="comments l"><!-- begin user -->
+        <div class="user user_big">
+          <div class="user__pic"><img src="img/users/user4.jpg" alt="Hussein Ahmed, CEO"></div>
+          <blockquote class="user__feedback">
+            <p>
+              Aenean lacinia bibendum nulla sed consectetur.
+              Duis mollis, est non commodo luctus, nisi erat porttitor ligula,
+              eget lacinia odio sem nec elit. Integer posuere erat a ante
+              venenatis dapibus posuere velit aliquet.
+            </p>
+            <cite class="user__name">- Hussein Ahmed, CEO</cite>
+          </blockquote>
+        </div><!-- end user -->
+        <hr class="separator"><!-- begin user -->
+        <div class="user user_big user_replace">
+          <div class="user__pic"><img src="img/users/user5.jpg" alt="Samah Gad, CTO"></div>
+          <blockquote class="user__feedback">
+            <p>
+              Aenean lacinia bibendum nulla sed consectetur.
+              Duis mollis, est non commodo luctus, nisi erat porttitor ligula,
+              eget lacinia odio sem nec elit. Integer posuere erat a ante
+              venenatis dapibus posuere velit aliquet.
+            </p>
+            <cite class="user__name">- Samah Gad, CTO</cite>
+          </blockquote>
+        </div><!-- end user -->
+        <hr class="separator"><!-- begin user -->
+        <div class="user user_big">
+          <div class="user__pic"><img src="img/users/user6.jpg" alt="Skyler Johnson-Wagner, CCO"></div>
+          <blockquote class="user__feedback">
+            <p>
+              Aenean lacinia bibendum nulla sed consectetur.
+              Duis mollis, est non commodo luctus, nisi erat porttitor ligula,
+              eget lacinia odio sem nec elit. Integer posuere erat a ante
+              venenatis dapibus posuere velit aliquet.
+            </p>
+            <cite class="user__name">- Skyler Johnson-Wagner, CCO</cite>
+          </blockquote>
+        </div><!-- end user -->
+      </div><!-- end comments -->
+      <!-- begin brands -->
+      <div class="l">
+        <section class="brands brands_mod">
+          <div class="brands__item"><a href="#"><img src="img/brands/9-mile-labs.jpg" alt="9-mile-labs"></a></div>
+          <div class="brands__item"><a href="#"><img src="img/brands/founders.jpg" alt="founders"></a></div>
+          <div class="brands__item"><a href="#"><img src="img/brands/perkinscoie.jpg" alt="perkinscoie"></a></div>
+          <div class="brands__item"><a href="#"><img src="img/brands/wsgr.jpg" alt="wsgr"></a></div>
+          <div class="brands__item"><a href="#"><img src="img/brands/alliance-of-angels.jpg" alt="alliance-of-angels"></a></div>
+          <div class="brands__item"><a href="#"><img src="img/brands/the-gramercy-fund.jpg" alt="the-gramercy-fund"></a></div>
+        </section>
+      </div><!-- end brands --><!-- begin footer -->
+      <footer class="footer">
         <div class="l">
-          <h1 class="heading">Join us on our journey!</h1>
+          <div class="footer__row">
+            <div class="footer__right">
+              <button type="button" class="btn btn_wide"><span>Sign up for free</span></button>
+            </div>
+            <div class="footer__left">
+              <ul class="footer__links">
+                <li><a href="#">Features</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Press</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Template</a></li>
+                <li><a href="#">Library</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer__row">
+            <div class="footer__right">
+              <div class="footer__copy"><a href="#">Terms of Service</a><a href="#">Privacy Policy</a><span>©2015 KustomNote, Inc.</span></div>
+            </div>
+            <div class="footer__left">
+              <div class="footer__logo"><a href="/" class="logo">Kustomnote</a></div>
+            </div>
+          </div>
         </div>
-      </div><!-- end toparea -->
+      </footer><!-- end footer -->
     </div><!-- load scripts -->
     <script src="js/lib/head.js" data-headjs-load="js/init.js"></script>
   </body>

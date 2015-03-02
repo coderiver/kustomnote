@@ -1,0 +1,75 @@
+extends _layout
+
+block title
+  title Pricing
+
+block content
+  include _header-white
+
+  <!-- begin toparea-small -->
+  .toparea-small
+    h1.heading
+      | Plans to fit your needs.
+    button.btn(type="button")
+      span Sign up for free
+  <!-- end toparea-small -->
+
+  <!-- begin pricing -->
+  .l
+    .pricing
+      .pricing__main
+
+        .pricing__cell
+          <!-- begin price -->
+          .price.price_free
+            .price__head
+              span.price__label
+                | Standard
+              strong.price__value
+                | FREE
+                small
+                  | (always)
+            .price__icon.icon.icon-cloud
+            ul.price__list
+              li
+                | Unlimited templates
+              li
+                | Unlimited notes
+              li
+                | Access a library of 177,000 pre-made templates.
+              li
+                | Publish forms and collect data with ease.
+              li
+                | Access notes on your mobile devices.
+              li
+                | Automatically sync your KustomNotes to Evernote
+          <!-- end price -->
+
+        .pricing__cell
+          <!-- begin price -->
+          .price
+            .price__head
+              span.price__label
+                | Standard
+              strong.price__value
+                | 9.99
+                small
+                  | /mo
+            .price__icon.icon.icon-diamond
+            ul.price__list
+              li
+                | Everything from <b>standard</b>.
+              li
+                | No ads!
+              li
+                | Advanced team collaboration features
+              li
+                | Use your own logo on your published forms.
+              li
+                | Business Integrations
+          <!-- end price -->
+
+      .pricing__footer
+  <!-- end pricing -->
+
+  include _footer

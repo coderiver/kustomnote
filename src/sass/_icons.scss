@@ -25,12 +25,20 @@
   @extend %icon
 }
 
-.icon-quote:before {
+.icon-cloud:before {
+  content: "\e606";
+}
+
+.icon-diamond:before {
+  content: "\e607";
+}
+
+.icon-quote-down:before {
   content: "\e600";
 }
 
-.icon-long-arrow-right:before {
-  content: "\f178";
+.icon-quote-up:before {
+  content: "\e605";
 }
 
 .icon-collaboration:before {
@@ -49,3 +57,6 @@
   content: "\e604";
 }
 
+.icon-long-arrow-right:before {
+  content: "\f178";
+}

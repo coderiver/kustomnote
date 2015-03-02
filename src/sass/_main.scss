@@ -103,7 +103,7 @@
     float: right;
 }
 
-.header_mod {
+.header_solid {
     border-bottom: 1px solid $border;
 }
 
@@ -123,6 +123,11 @@
     width: em(284,42);
     height: em(42,42);
 }
+
+.logo_color {
+    background-image: url('../img/logo-color.svg');
+}
+
 
 .menu {
     font-size: 0;
@@ -161,10 +166,10 @@
             position: absolute;
             bottom: 2px;
             left: 50%;
-            width: 4px;
-            height: 4px;
+            width: 0;
+            height: 0;
+            border: 2px solid;
             margin-left: -2px;
-            background: #FFF;
             border-radius: 50%;
         }
     }
@@ -290,12 +295,30 @@ a.btn {
     padding: 40px percentage(130/1224) 45px;
     background: $toparea;
     text-align: center;
+    color: #FFF;
     &:after {
         content: "";
         position: absolute;
         top: 100%;
         left: 50%;
         @include arr(30,18,$toparea,b);
+        margin-left: -15px;
+    }
+
+    .btn {
+        display: none;
+        margin-top: 20px;
+    }
+
+    @include tablet {
+        .btn {
+            display: inline-block;
+        }
+    }
+
+    @include mobile {
+        padding-top: 25px;
+        padding-bottom: 25px;
     }
 }
 
@@ -304,6 +327,7 @@ a.btn {
     display: block;
     padding: 24px;
     border: 3px solid #FFF;
+    line-height: 1.2;
     @include fs(72);
     @include sans;
     color: #FFF;
@@ -333,10 +357,14 @@ a.btn {
 
     @include mobile {
         @include fs(36);
+        line-height: 1;
+        padding: 0;
+        border: none;
     }
 }
 
 .heading_toparea {
+    padding: 24px;
     @include tablet {
         background: rgba(#FFF, 0.2);
         border: none;
@@ -484,6 +512,96 @@ a.btn {
         margin-left: em(15,18);
     }
 }
+
+.user_big {
+    color: $text;
+    @include fs(24);
+    min-height: em(174,24);
+    padding-left: em(204,24);
+
+    &:before {
+        min-height: em(174,24);
+    }
+
+    .user__pic {
+        width: em(174,24);
+        height: em(174,24);
+        border: em(7,24) solid #949494;
+    }
+
+    .user__feedback {
+        position: relative;
+        padding-left: em(45,24);
+        @include sans;
+        &:before {
+            @extend %icon;
+            position: absolute;
+            top: em(10,24);
+            left: 0;
+            content: "\e605";
+            font-size: em(17,24);
+        }
+    }
+
+    &.user_replace {
+        padding-left: 0;
+        padding-right: em(204,24);
+
+        .user__feedback {
+            padding-left: 0;
+            padding-right: em(45,24);
+            &:before {
+                left: auto;
+                right: 0;
+                content: "\e600";
+            }
+        }
+    }
+
+    @include tablet {
+        .user__feedback {
+            padding-left: 0;
+            &:before {
+                position: relative;
+                float: left;
+                margin: 0 5px 0 0;
+            }
+        }
+
+        &.user_replace {
+            .user__feedback {
+                text-align: left;
+                padding-right: 0;
+                &:before {
+                    content: "\e605";
+                }
+            }
+        }
+    }
+
+    @include mobile {
+        @include fs(12);
+        padding-left: em(150,12);
+        &:before {
+            min-height: em(138,12);
+        }
+
+        .user__pic {
+            width: em(138,12);
+            height: em(138,12);
+        }
+
+        .user__feedback {
+
+        }
+
+        &.user_replace {
+            padding-left: 0;
+            padding-right: em(150,12);
+        }
+    }
+}
+
 
 
 
@@ -973,6 +1091,15 @@ a.btn {
     }
 }
 
+.brands_mod {
+    max-width: 900px;
+    margin: 10px auto 0;
+
+    @include mobile {
+        margin-top: 40px;
+    }
+}
+
 
 
 
@@ -1125,5 +1252,161 @@ a.btn {
         display: inline-block;
         vertical-align: bottom;
         line-height: 1.2;
+    }
+}
+
+
+.separator {
+    margin: 15px auto;
+    border: none;
+    max-width: 175px;
+    height: 3px;
+    background: #D8D8D8;
+
+    @include mobile {
+        height: 2px;
+    }
+}
+
+.comments {
+    margin: 65px 0 10px;
+
+    @include mobile {
+        margin-top: 35px;
+    }
+}
+
+
+
+
+.pricing {
+    max-width: 615px;
+    margin: 30px auto;
+    box-sizing: border-box;
+}
+
+.pricing__main {
+    display: table;
+    table-layout: fixed;
+    border-collapse: separate;
+    border-spacing: 15px;
+    width: 100%;
+}
+
+.pricing__cell {
+    display: table-cell;
+    vertical-align: top;
+    background: #F0F0F0;
+}
+
+.price {
+    @include fs(18);
+    height: 100%;
+    color: #686868;
+    background: #F0F0F0;
+    text-align: center;
+
+    b, strong {
+        @include sans-b;
+    }
+}
+
+.price__head {
+    padding: 40px 10px 80px;
+    background: #252525;
+    color: #FFF;
+    line-height: 1;
+}
+
+.price__label {
+    display: block;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: em(2,18);
+}
+
+.price__value {
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    font-size: em(72,18);
+    line-height: 1;
+    @include sans-b;
+
+    > small {
+        position: absolute;
+        bottom: 20%;
+        left: 100%;
+        font-size: em(12,72);
+        text-transform: uppercase;
+    }
+}
+
+.price__icon {
+    width: 80px;
+    height: 80px;
+    margin: -47px auto;
+    line-height: 80px;
+    border-radius: 50%;
+    background: #FDDB42;
+    border: 7px solid #F0F0F0;
+
+    &.icon-cloud {
+        font-size: em(27,18);
+        color: #A7A9AC;
+    }
+
+    &.icon-diamond {
+        font-size: em(44,18);
+        color: #FFF;
+    }
+}
+
+.price__list {
+    padding: 90px 30px 50px;
+    li {
+        position: relative;
+        margin-top: 15px;
+        padding-top: 15px;
+
+        &:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 110px;
+            height: 1px;
+            background: #C3C3C3;
+            margin: auto;
+        }
+
+        &:first-child {
+            margin-top: 0;
+            padding-top: 0;
+            &:before {
+                display: none;
+            }
+        }
+    }
+}
+
+
+.price_free {
+    .price__head {
+        background: #424242;
+    }
+
+    .price__value {
+        > small {
+            top: 100%;
+            left: 0;
+            right: 0;
+            text-align: center;
+        }
+    }
+
+    .price__icon {
+        background: #D7D7D7;
     }
 }

@@ -1,14 +1,90 @@
 extends _layout
 
 block title
-  title Main Page
+  title About Us
 
 block content
-  include _header
+  include _header-white
 
-  <!-- begin toparea -->
-  .toparea
-    .l
-      h1.heading
-        | Join us on our journey!
-  <!-- end toparea -->
+  <!-- begin toparea-small -->
+  .toparea-small
+    h1.heading
+      | Join us on our journey!
+    button.btn(type="button")
+      span Sign up for free
+  <!-- end toparea-small -->
+
+  <!-- begin comments -->
+  .comments.l
+    <!-- begin user -->
+    .user.user_big
+      .user__pic
+        img(src="img/users/user4.jpg", alt="Hussein Ahmed, CEO")
+      blockquote.user__feedback
+        p
+          | Aenean lacinia bibendum nulla sed consectetur.
+          | Duis mollis, est non commodo luctus, nisi erat porttitor ligula,
+          | eget lacinia odio sem nec elit. Integer posuere erat a ante
+          | venenatis dapibus posuere velit aliquet.
+        cite.user__name
+          | - Hussein Ahmed, CEO
+    <!-- end user -->
+
+    hr.separator
+
+    <!-- begin user -->
+    .user.user_big.user_replace
+      .user__pic
+        img(src="img/users/user5.jpg", alt="Samah Gad, CTO")
+      blockquote.user__feedback
+        p
+          | Aenean lacinia bibendum nulla sed consectetur.
+          | Duis mollis, est non commodo luctus, nisi erat porttitor ligula,
+          | eget lacinia odio sem nec elit. Integer posuere erat a ante
+          | venenatis dapibus posuere velit aliquet.
+        cite.user__name
+          | - Samah Gad, CTO
+    <!-- end user -->
+
+    hr.separator
+
+    <!-- begin user -->
+    .user.user_big
+      .user__pic
+        img(src="img/users/user6.jpg", alt="Skyler Johnson-Wagner, CCO")
+      blockquote.user__feedback
+        p
+          | Aenean lacinia bibendum nulla sed consectetur.
+          | Duis mollis, est non commodo luctus, nisi erat porttitor ligula,
+          | eget lacinia odio sem nec elit. Integer posuere erat a ante
+          | venenatis dapibus posuere velit aliquet.
+        cite.user__name
+          | - Skyler Johnson-Wagner, CCO
+    <!-- end user -->
+  <!-- end comments -->
+
+
+  <!-- begin brands -->
+  .l
+    section.brands.brands_mod
+      .brands__item
+        a(href="#")
+          img(src="img/brands/9-mile-labs.jpg",  alt="9-mile-labs")
+      .brands__item
+        a(href="#")
+          img(src="img/brands/founders.jpg", alt="founders")
+      .brands__item
+        a(href="#")
+          img(src="img/brands/perkinscoie.jpg", alt="perkinscoie")
+      .brands__item
+        a(href="#")
+          img(src="img/brands/wsgr.jpg", alt="wsgr")
+      .brands__item
+        a(href="#")
+          img(src="img/brands/alliance-of-angels.jpg", alt="alliance-of-angels")
+      .brands__item
+        a(href="#")
+          img(src="img/brands/the-gramercy-fund.jpg", alt="the-gramercy-fund")
+  <!-- end brands -->
+
+  include _footer
