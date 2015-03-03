@@ -6,14 +6,14 @@ header.header.header_solid
         | Kustomnote
     .header__right
       nav.menu
-        a(href="/features.html").menu__link
+        a(href="/").menu__link
           | Features
-        a(href="/pricing.html").menu__link.is-active
+        a(href="/pricing.html").menu__link
           | Pricing
         a(href="/about.html").menu__link
           | About Us
-        a(href="#").menu__link
+        a(href="login", data-popup="login").menu__link
           | Login
-      button.btn.btn_sign(type="button")
+      button.btn.btn_sign(type="button", data-popup="sign-up")
         span Sign up for free
 <!-- end header -->

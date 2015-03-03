@@ -10,7 +10,7 @@ block content
   .toparea-small
     h1.heading
       | Plans to fit your needs.
-    button.btn(type="button")
+    button.btn(type="button", data-popup="sign-up")
       span Sign up for free
   <!-- end toparea-small -->
 
@@ -29,7 +29,7 @@ block content
                 | FREE
                 small
                   | (always)
-            .price__icon.icon.icon-cloud
+            .icon.icon_circle.icon-cloud
             ul.price__list
               li
                 | Unlimited templates
@@ -55,7 +55,7 @@ block content
                 | 9.99
                 small
                   | /mo
-            .price__icon.icon.icon-diamond
+            .icon.icon_circle.icon-diamond
             ul.price__list
               li
                 | Everything from <b>standard</b>.
@@ -71,7 +71,7 @@ block content
 
       .pricing__footer
         .pricing__btn
-          button.btn.btn_blue(type="button")
+          button.btn.btn_blue(type="button", data-popup="sign-up")
             span Sign up for free
 
         big Everyone gets a free 30 days of KustomNote Premium.

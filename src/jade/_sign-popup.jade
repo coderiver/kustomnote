@@ -1,0 +1,36 @@
+<!-- begin popup -->
+#sign-up.popup
+  form.popup__inner
+    header.popup__header
+      | Sign up for free
+    button.popup__close.icon.icon-close(type="button")
+    .popup__main
+
+      .badge.badge_form
+        .icon.icon-diamond.icon_circle
+        p.badge__text
+          big Everyone gets a free 30 days of KustomNote Premium.
+          | You can keep your upgrade by entering your card information at any time.
+          | Our standard plan will always be free, no credit card required.
+
+      .field
+        label.field__label(for="name")
+          | What’s your <b>name</b>?
+        input.field__input(type="text", neme="name", placeholder="Full Name")
+
+      .field
+        label.field__label(for="email")
+          | Where can we email <b>you</b>?
+        input.field__input(type="email", neme="email", placeholder="Email Address")
+
+      .field
+        label.field__label(for="password")
+          | Choose a <b>password</b>.
+        input.field__input(type="password", neme="password", placeholder="Password")
+
+      button.btn.btn_form.btn_dark(type="submit")
+        | Log In
+
+      a.popup__link(href="login", data-popup="login")
+        | Already have an account? Log in instead.
+<!-- end popup -->

@@ -10,10 +10,23 @@ html
     <!--[if IE]><script src="js/html5shiv.js"></script><![endif]-->
   body
 
+
     .out
       block content
 
     block popup
+      include _login-popup
+      include _sign-popup
+
+
 
     <!-- load scripts -->
     script(src="js/lib/head.js" data-headjs-load="js/init.js")
+
+    <!-- remove on production -->
+    script
+      |(function(){
+      |    var currentPathName = window.location.pathname;
+      |    var link = document.querySelector('.menu__link[href="' + currentPathName + '"]');
+      |    link.classList.add('is-active');
+      |})();

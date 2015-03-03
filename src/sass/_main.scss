@@ -326,7 +326,7 @@ a.btn {
         margin-top: 20px;
     }
 
-    @include tablet {
+    @include r(950) {
         .btn {
             display: inline-block;
         }
@@ -1400,6 +1400,11 @@ a.btn {
         @include sans-b;
     }
 
+    .icon_circle {
+        margin: -47px auto;
+        border: 7px solid #F0F0F0;
+    }
+
     @include mobile {
         font-size: 14px;
     }
@@ -1411,7 +1416,7 @@ a.btn {
             padding-bottom: 15px;
         }
 
-        .price__icon {
+        .icon_circle {
             display: none;
         }
 
@@ -1482,26 +1487,6 @@ a.btn {
     }
 }
 
-.price__icon {
-    width: 80px;
-    height: 80px;
-    margin: -47px auto;
-    line-height: 80px;
-    border-radius: 50%;
-    background: #FDDB42;
-    border: 7px solid #F0F0F0;
-
-    &.icon-cloud {
-        font-size: em(27,18);
-        color: #A7A9AC;
-    }
-
-    &.icon-diamond {
-        font-size: em(44,18);
-        color: #FFF;
-    }
-}
-
 .price__list {
     padding: 90px 30px 50px;
     li {
@@ -1544,10 +1529,6 @@ a.btn {
             right: 0;
             text-align: center;
         }
-    }
-
-    .price__icon {
-        background: #D7D7D7;
     }
 }
 
@@ -1619,6 +1600,7 @@ a.btn {
 
 
 .popup {
+    display: none;
     position: fixed;
     z-index: 1000;
     top: 0;
@@ -1631,6 +1613,8 @@ a.btn {
     @include vertical;
     white-space: nowrap;
     cursor: pointer;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
 
     .btn_form {
         margin: 45px 0  25px;
@@ -1688,6 +1672,7 @@ a.btn {
 
 .popup__close {
     position: absolute;
+    z-index: 2;
     top: 40px;
     right: 30px;
     background: none;
@@ -1697,6 +1682,7 @@ a.btn {
 
 .popup__header {
     position: relative;
+    z-index: 1;
     padding: 29px;
     background: $toparea;
     color: #FFF;
@@ -1728,4 +1714,94 @@ a.btn {
 
 .popup__link {
     color: inherit;
+}
+
+
+
+
+.badge {
+    position: relative;
+    z-index: 0;
+    padding: 13px 15px 13px 110px;
+    background: #EBEBEB;
+    font-size: 14px;
+    text-align: left;
+    font-size: 0;
+    white-space: nowrap;
+    &:before {
+        content: "";
+        display: inline-block;
+        vertical-align: middle;
+        min-height: 80px;
+        height: 100%;
+        width: 0;
+    }
+
+    big {
+        display: block;
+        margin-bottom: 10px;
+        font-size: 18px;
+    }
+
+    .icon {
+        position: absolute;
+        top: 50%;
+        left: 15px;
+        margin-top: -40px;
+    }
+
+    .icon-diamond {
+        font-size: 46px;
+    }
+
+    @include mobile {
+        .badge__text {
+            font-size: 12px;
+        }
+
+        big {
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .icon_circle {
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            font-size: 23px;
+        }
+    }
+}
+
+.badge__text {
+    display: inline-block;
+    vertical-align: middle;
+    @include fs(14);
+    white-space: normal;
+}
+
+.badge_form {
+    @include mobile {
+        margin: 0 -15px;
+        padding: 20px 30px 15px;
+        text-align: center;
+        &:before {
+            display: none;
+        }
+
+        .popup__main & {
+            margin-top: -25px;
+        }
+
+        .icon {
+            position: static;
+            margin: auto;
+            margin-bottom: 10px;
+        }
+
+        .badge__text {
+            display: block;
+        }
+    }
+
 }

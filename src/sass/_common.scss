@@ -60,7 +60,7 @@ html {
 
 body {
   min-width: 320px;
-  font-family: Helvetica, Arial, sans-serif;
+  @include sans;
   @include fs(18);
   line-height: 1.2;
   color: $text;

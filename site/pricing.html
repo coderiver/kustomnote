@@ -13,14 +13,14 @@
         <div class="header__inner l">
           <div class="header__left"><a href="/" class="logo logo_color">Kustomnote</a></div>
           <div class="header__right">
-            <nav class="menu"><a href="/features.html" class="menu__link">Features</a><a href="/pricing.html" class="menu__link is-active">Pricing</a><a href="/about.html" class="menu__link">About Us</a><a href="#" class="menu__link">Login</a></nav>
-            <button type="button" class="btn btn_sign"><span>Sign up for free</span></button>
+            <nav class="menu"><a href="/" class="menu__link">Features</a><a href="/pricing.html" class="menu__link">Pricing</a><a href="/about.html" class="menu__link">About Us</a><a href="login" data-popup="login" class="menu__link">Login</a></nav>
+            <button type="button" data-popup="sign-up" class="btn btn_sign"><span>Sign up for free</span></button>
           </div>
         </div>
       </header><!-- end header --><!-- begin toparea-small -->
       <div class="toparea-small">
         <h1 class="heading">Plans to fit your needs.</h1>
-        <button type="button" class="btn"><span>Sign up for free</span></button>
+        <button type="button" data-popup="sign-up" class="btn"><span>Sign up for free</span></button>
       </div><!-- end toparea-small -->
       <!-- begin pricing -->
       <div class="l">
@@ -29,7 +29,7 @@
             <div class="pricing__cell"><!-- begin price -->
               <div class="price price_free">
                 <div class="price__head"><span class="price__label">Standard</span><strong class="price__value">FREE<small>(always)</small></strong></div>
-                <div class="price__icon icon icon-cloud"></div>
+                <div class="icon icon_circle icon-cloud"></div>
                 <ul class="price__list">
                   <li>Unlimited templates</li>
                   <li>Unlimited notes</li>
@@ -43,7 +43,7 @@
             <div class="pricing__cell"><!-- begin price -->
               <div class="price">
                 <div class="price__head"><span class="price__label">Standard</span><strong class="price__value">9.99<small>/mo</small></strong></div>
-                <div class="price__icon icon icon-diamond"></div>
+                <div class="icon icon_circle icon-diamond"></div>
                 <ul class="price__list">
                   <li>Everything from <b>standard</b>.</li>
                   <li>No ads!</li>
@@ -56,7 +56,7 @@
           </div>
           <div class="pricing__footer">
             <div class="pricing__btn">
-              <button type="button" class="btn btn_blue"><span>Sign up for free</span></button>
+              <button type="button" data-popup="sign-up" class="btn btn_blue"><span>Sign up for free</span></button>
             </div>
             <big>Everyone gets a free 30 days of KustomNote Premium.</big>
             <p>
@@ -70,13 +70,13 @@
         <div class="l">
           <div class="footer__row">
             <div class="footer__right">
-              <button type="button" class="btn btn_wide"><span>Sign up for free</span></button>
+              <button type="button" data-popup="sign-up" class="btn btn_wide"><span>Sign up for free</span></button>
             </div>
             <div class="footer__left">
               <ul class="footer__links">
-                <li><a href="#">Features</a></li>
-                <li><a href="#">Pricing</a></li>
-                <li><a href="#">About Us</a></li>
+                <li><a href="/">Features</a></li>
+                <li><a href="/pricing.html">Pricing</a></li>
+                <li><a href="/about.html">About Us</a></li>
                 <li><a href="#">Press</a></li>
                 <li><a href="#">Blog</a></li>
                 <li><a href="#">Template</a></li>
@@ -94,7 +94,59 @@
           </div>
         </div>
       </footer><!-- end footer -->
-    </div><!-- load scripts -->
-    <script src="js/lib/head.js" data-headjs-load="js/init.js"></script>
+    </div><!-- begin popup -->
+    <div id="login" class="popup">
+      <form class="popup__inner">
+        <header class="popup__header">Log in to your account</header>
+        <button type="button" class="popup__close icon icon-close"></button>
+        <div class="popup__main">
+          <div class="field">
+            <label for="email" class="field__label">Log in with your <b>email address</b>.</label>
+            <input type="email" neme="email" placeholder="Email Address" class="field__input">
+          </div>
+          <div class="field"><a href="#" class="popup__link">I forgot my password!</a>
+            <label for="password" class="field__label">What’s your <b>password</b>?</label>
+            <input type="password" neme="password" placeholder="Password" class="field__input">
+          </div>
+          <button type="submit" class="btn btn_form btn_dark">Log In</button><a href="sign-up" data-popup="sign-up" class="popup__link">Need an account? Sign up for free instead!</a>
+        </div>
+      </form>
+    </div><!-- end popup --><!-- begin popup -->
+    <div id="sign-up" class="popup">
+      <form class="popup__inner">
+        <header class="popup__header">Sign up for free</header>
+        <button type="button" class="popup__close icon icon-close"></button>
+        <div class="popup__main">
+          <div class="badge badge_form">
+            <div class="icon icon-diamond icon_circle"></div>
+            <p class="badge__text">
+              <big>Everyone gets a free 30 days of KustomNote Premium.</big>You can keep your upgrade by entering your card information at any time.
+              Our standard plan will always be free, no credit card required.
+            </p>
+          </div>
+          <div class="field">
+            <label for="name" class="field__label">What’s your <b>name</b>?</label>
+            <input type="text" neme="name" placeholder="Full Name" class="field__input">
+          </div>
+          <div class="field">
+            <label for="email" class="field__label">Where can we email <b>you</b>?</label>
+            <input type="email" neme="email" placeholder="Email Address" class="field__input">
+          </div>
+          <div class="field">
+            <label for="password" class="field__label">Choose a <b>password</b>.</label>
+            <input type="password" neme="password" placeholder="Password" class="field__input">
+          </div>
+          <button type="submit" class="btn btn_form btn_dark">Log In</button><a href="login" data-popup="login" class="popup__link">Already have an account? Log in instead.</a>
+        </div>
+      </form>
+    </div><!-- end popup --><!-- load scripts -->
+    <script src="js/lib/head.js" data-headjs-load="js/init.js"></script><!-- remove on production -->
+    <script>
+      (function(){
+         var currentPathName = window.location.pathname;
+         var link = document.querySelector('.menu__link[href="' + currentPathName + '"]');
+         link.classList.add('is-active');
+      })();
+    </script>
   </body>
 </html>
