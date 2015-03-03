@@ -64,4 +64,10 @@ body {
   @include fs(18);
   line-height: 1.2;
   color: $text;
+
+  &.no-scroll {
+    left: 0;
+    right: 0;
+    overflow-y: scroll;
+  }
 }
