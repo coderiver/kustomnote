@@ -255,7 +255,24 @@
           </div>
         </div>
       </footer><!-- end footer -->
-    </div><!-- load scripts -->
+    </div><!-- begin popup -->
+    <div id="login" class="popup">
+      <form class="popup__inner">
+        <header class="popup__header">Log in to your account</header>
+        <button type="button" class="popup__close icon icon-close"></button>
+        <div class="popup__main">
+          <div class="field">
+            <label for="email" class="field__label">Log in with your <b>email address</b>.</label>
+            <input type="email" neme="email" placeholder="Email Address" class="field__input">
+          </div>
+          <div class="field"><a href="#" class="popup__link">I forgot my password!</a>
+            <label for="password" class="field__label">What’s your <b>password</b>?</label>
+            <input type="password" neme="password" placeholder="Password" class="field__input">
+          </div>
+          <button type="button" class="btn btn_form btn_dark">Log In</button><a href="#" class="popup__link">Need an account? Sign up for free instead!</a>
+        </div>
+      </form>
+    </div><!-- end popup --><!-- load scripts -->
     <script src="js/lib/head.js" data-headjs-load="js/init.js"></script>
   </body>
 </html>

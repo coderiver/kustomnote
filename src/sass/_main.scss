@@ -289,6 +289,22 @@ a.btn {
     }
 }
 
+.btn_form {
+    display: block;
+    width: 100%;
+    height: 68px;
+    font-size: 24px;
+    background: $toparea;
+    border-radius: 0;
+
+    @include mobile {
+        height: 40px;
+        font-size: 12px;
+    }
+}
+
+
+
 
 .toparea-small {
     position: relative;
@@ -319,6 +335,11 @@ a.btn {
     @include mobile {
         padding-top: 25px;
         padding-bottom: 25px;
+
+        &:after {
+            @include arr(16,9,$toparea,b);
+            margin-left: -8px;
+        }
     }
 }
 
@@ -946,6 +967,10 @@ a.btn {
         box-sizing: border-box;
         padding: 0 em(20);
     }
+
+    @include rmin(600) {
+        display: block !important;
+    }
 }
 
 
@@ -1281,8 +1306,49 @@ a.btn {
 
 .pricing {
     max-width: 615px;
-    margin: 30px auto;
+    margin: 30px auto 45px;
     box-sizing: border-box;
+
+    b, strong {
+        @include sans-b
+    }
+
+    @include mobile {
+        margin: 0 -15px 15px;
+        .pricing__footer {
+            font-size: 12px;
+
+            > big {
+                font-size: 14px;
+            }
+        }
+    }
+
+    @include r(449) {
+        margin: 15px 0;
+
+        .pricing__main {
+            display: block;
+            width: auto;
+        }
+
+        .pricing__cell {
+            display: block;
+            width: auto;
+            margin-bottom: 15px;
+        }
+
+        .pricing__footer {
+            margin: 0;
+            padding: 0 15px;
+            border: none;
+        }
+
+        .pricing__btn {
+            position: static;
+            margin-bottom: 15px;
+        }
+    }
 }
 
 .pricing__main {
@@ -1299,6 +1365,30 @@ a.btn {
     background: #F0F0F0;
 }
 
+.pricing__footer {
+    position: relative;
+    padding: 15px 15px 78px;
+    margin: 0 15px;
+    text-align: center;
+    border: 3px solid #D9D9D9;
+
+    > big {
+        @include fs(22);
+        display: block;
+        margin-bottom: 5px;
+    }
+}
+
+.pricing__btn {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+
+
 .price {
     @include fs(18);
     height: 100%;
@@ -1308,6 +1398,56 @@ a.btn {
 
     b, strong {
         @include sans-b;
+    }
+
+    @include mobile {
+        font-size: 14px;
+    }
+
+    @include r(449) {
+        background: #252525;
+
+        .price__head {
+            padding-bottom: 15px;
+        }
+
+        .price__icon {
+            display: none;
+        }
+
+        .price__list {
+            padding: 0 percentage(60/290) 36px;
+            color: #FFF;
+            text-align: left;
+
+            li {
+                margin-top: 5px;
+                padding-top: 0;
+                &:before {
+                    display: none;
+                }
+
+                &:first-child {
+                    padding-top: 17px;
+
+                    &:before {
+                        display: block;
+                        background: #7C7C7C;
+                    }
+                }
+            }
+        }
+
+        &.price_free {
+            background: #424242;
+
+            .price__value {
+                > small {
+                    display: block;
+                    position: static;
+                }
+            }
+        }
     }
 }
 
@@ -1329,7 +1469,7 @@ a.btn {
     display: inline-block;
     vertical-align: top;
     position: relative;
-    font-size: em(72,18);
+    font-size: 72px;
     line-height: 1;
     @include sans-b;
 
@@ -1409,4 +1549,183 @@ a.btn {
     .price__icon {
         background: #D7D7D7;
     }
+}
+
+
+
+.field {
+    margin-top: 25px;
+    text-align: left;
+
+    &:first-child {
+        margin-top: 0;
+    }
+
+    .popup__link {
+        float: right;
+    }
+
+    @include mobile {
+        margin-top: 15px;
+
+        &:first-child {
+            margin-top: 0;
+        }
+
+        .field__label {
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .field__input {
+            padding: 10px 8px;
+            font-size: 12px;
+        }
+    }
+}
+
+.field__label {
+    display: block;
+    margin-bottom: 15px;
+    @include serif;
+
+    b, strong {
+        @include serif-b;
+    }
+}
+
+.field__input {
+    display: block;
+    width: 100%;
+    padding: 17px 25px;
+    color: $text;
+    border: 2px solid;
+    box-sizing: border-box;
+    @include fs(24);
+    line-height: normal;
+    -webkit-appearance: none;
+    box-shadow: none;
+    border-radius: 0;
+
+    @include placeholder {
+        font-size: 1em;
+        font-family: Mono;
+        font-weight: normal;
+        color: rgba($text, 0.3);
+        line-height: 1.4;
+    }
+}
+
+
+
+.popup {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 15px;
+    background: black;
+    background: rgba(black, 0.5);
+    @include vertical;
+    white-space: nowrap;
+    cursor: pointer;
+
+    .btn_form {
+        margin: 45px 0  25px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    @include mobile {
+        .popup__header {
+            padding: 10px;
+            font-size: 18px;
+        }
+
+        .popup__close {
+            top: 14px;
+            right: 14px;
+            font-size: 14px;
+        }
+
+        .popup__main {
+            padding: 25px 15px 20px;
+        }
+
+        .popup__inner {
+            font-size: 12px;
+        }
+
+        .popup__link {
+            font-size: 10px;
+            line-height: 1.8;
+        }
+
+        .btn_form {
+            margin: 20px 0 10px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+.popup__inner {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 750px;
+    background: #FFF;
+    white-space: normal;
+    cursor: default;
+    @include fs(18)
+}
+
+.popup__close {
+    position: absolute;
+    top: 40px;
+    right: 30px;
+    background: none;
+    @include fs(22);
+    color: #FFF;
+}
+
+.popup__header {
+    position: relative;
+    padding: 29px;
+    background: $toparea;
+    color: #FFF;
+    @include fs(36);
+    line-height: 1.333;
+    text-align: center;
+
+    &:after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        @include arr(30,18,$toparea,b);
+        margin-left: -15px;
+    }
+
+    @include mobile {
+        &:after {
+            @include arr(16,9,$toparea,b);
+            margin-left: -8px;
+        }
+    }
+}
+
+.popup__main {
+    text-align: center;
+    padding: 45px percentage(95/750) 50px;
+}
+
+.popup__link {
+    color: inherit;
 }

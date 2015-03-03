@@ -1,0 +1,24 @@
+<!-- begin popup -->
+#login.popup
+  form.popup__inner
+    header.popup__header
+      | Log in to your account
+    button.popup__close.icon.icon-close(type="button")
+    .popup__main
+      .field
+        label.field__label(for="email")
+          | Log in with your <b>email address</b>.
+        input.field__input(type="email", neme="email", placeholder="Email Address")
+      .field
+        a.popup__link(href="#")
+          | I forgot my password!
+        label.field__label(for="password")
+          | What’s your <b>password</b>?
+        input.field__input(type="password", neme="password", placeholder="Password")
+
+      button.btn.btn_form.btn_dark(type="button")
+        | Log In
+
+      a.popup__link(href="#")
+        | Need an account? Sign up for free instead!
+<!-- end popup -->

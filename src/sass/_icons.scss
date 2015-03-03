@@ -25,6 +25,14 @@
   @extend %icon
 }
 
+.icon-close:before {
+  content: "\e608";
+}
+
+.icon-long-arrow-right:before {
+  content: "\f178";
+}
+
 .icon-cloud:before {
   content: "\e606";
 }
@@ -55,8 +63,4 @@
 
 .icon-mobile:before {
   content: "\e604";
-}
-
-.icon-long-arrow-right:before {
-  content: "\f178";
 }
