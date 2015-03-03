@@ -1,14 +1,22 @@
 <!-- begin popup -->
 #login.popup
-  form.popup__inner
+  form.popup__inner.form.is-error
     header.popup__header
       | Log in to your account
     button.popup__close.icon.icon-close(type="button")
+
     .popup__main
+      .badge.badge_form.badge_error
+        .icon.icon-alert.icon_circle
+        p.badge__text
+          big Oops! We couldn't log you in.
+          | There was a problem with your email or password. Please try again.
+
       .field
         label.field__label(for="email")
           | Log in with your <b>email address</b>.
         input.field__input(type="email", neme="email", placeholder="Email Address")
+
       .field
         a.popup__link(href="#")
           | I forgot my password!

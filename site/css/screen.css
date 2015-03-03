@@ -49,9 +49,13 @@ table { border-spacing: 0; border-collapse: collapse; width: 100%; }
 
 .icon-mobile:before { content: "\e604"; }
 
+.icon-alert:before { content: "\e609"; }
+
 .icon_circle { width: 80px; height: 80px; line-height: 80px; border-radius: 50%; background: #FDDB42; text-align: center; }
 .icon_circle.icon-cloud { font-size: 1.5em; color: #A7A9AC; background: #D7D7D7; }
 .icon_circle.icon-diamond { font-size: 2.44444em; color: #FFF; }
+.icon_circle.icon-alert { background: #D94549; font-size: 30px; color: #FFF; }
+.icon_circle.icon-alert:before { position: relative; top: -2px; }
 
 @font-face { font-family: "PTSerifRegular"; src: url("../fonts/PTF55F-webfont.eot"); src: url("../fonts/PTF55F-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/PTF55F-webfont.woff") format("woff"), url("../fonts/PTF55F-webfont.ttf") format("truetype"); font-weight: normal; font-style: normal; }
 @font-face { font-family: "PTSerifBold"; src: url("../fonts/PTF75F-webfont.eot"); src: url("../fonts/PTF75F-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/PTF75F-webfont.woff") format("woff"), url("../fonts/PTF75F-webfont.ttf") format("truetype"); font-weight: normal; font-style: normal; }
@@ -475,11 +479,11 @@ a.btn:hover { text-decoration: none; }
 .field__label { display: block; margin-bottom: 15px; font-family: "PTSerifRegular", Helvetica, Arial, sans-serif; font-weight: normal; }
 .field__label b, .field__label strong { font-family: "PTSerifBold", Helvetica, Arial, sans-serif; font-weight: normal; }
 
-.field__input { display: block; width: 100%; padding: 17px 25px; color: #4E4E4E; border: 2px solid; box-sizing: border-box; font-size: 24px; font-size: 2.4rem; line-height: normal; -webkit-appearance: none; box-shadow: none; border-radius: 0; }
-.field__input:-ms-input-placeholder { font-size: 1em; font-family: Mono; font-weight: normal; color: rgba(78, 78, 78, 0.3); line-height: 1.4; }
-.field__input::-moz-placeholder { font-size: 1em; font-family: Mono; font-weight: normal; color: rgba(78, 78, 78, 0.3); line-height: 1.4; }
-.field__input::-webkit-input-placeholder { font-size: 1em; font-family: Mono; font-weight: normal; color: rgba(78, 78, 78, 0.3); line-height: 1.4; }
-.field__input::placeholder { font-size: 1em; font-family: Mono; font-weight: normal; color: rgba(78, 78, 78, 0.3); line-height: 1.4; }
+.field__input { display: block; width: 100%; padding: 17px 25px; color: #4E4E4E; border: 2px solid; box-sizing: border-box; font-family: "PT Mono"; font-weight: normal; font-size: 24px; font-size: 2.4rem; line-height: normal; -webkit-appearance: none; box-shadow: none; border-radius: 0; }
+.field__input:-ms-input-placeholder { font-size: 1em; font-family: "PT Mono"; font-weight: normal; color: rgba(78, 78, 78, 0.3); }
+.field__input::-moz-placeholder { font-size: 1em; font-family: "PT Mono"; font-weight: normal; color: rgba(78, 78, 78, 0.3); }
+.field__input::-webkit-input-placeholder { font-size: 1em; font-family: "PT Mono"; font-weight: normal; color: rgba(78, 78, 78, 0.3); }
+.field__input::placeholder { font-size: 1em; font-family: "PT Mono"; font-weight: normal; color: rgba(78, 78, 78, 0.3); }
 
 .popup { display: none; position: fixed; z-index: 1000; top: 0; left: 0; right: 0; bottom: 0; padding: 15px; background: black; background: rgba(0, 0, 0, 0.5); text-align: center; font-size: 0; white-space: nowrap; cursor: pointer; overflow: auto; -webkit-overflow-scrolling: touch; }
 .popup:before { content: ""; display: inline-block; vertical-align: middle; width: 0; height: 100%; }
@@ -521,6 +525,10 @@ a.btn:hover { text-decoration: none; }
   .popup__main .badge_form { margin-top: -25px; }
   .badge_form .icon { position: static; margin: auto; margin-bottom: 10px; }
   .badge_form .badge__text { display: block; } }
+
+.form .badge_error { display: none; }
+.form.is-error .badge { display: none; }
+.form.is-error .badge_error { display: block; }
 
 
 

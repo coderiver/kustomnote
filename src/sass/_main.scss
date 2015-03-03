@@ -1582,6 +1582,8 @@ a.btn {
     color: $text;
     border: 2px solid;
     box-sizing: border-box;
+    font-family: "PT Mono";
+    font-weight: normal;
     @include fs(24);
     line-height: normal;
     -webkit-appearance: none;
@@ -1590,10 +1592,9 @@ a.btn {
 
     @include placeholder {
         font-size: 1em;
-        font-family: Mono;
+        font-family: "PT Mono";
         font-weight: normal;
         color: rgba($text, 0.3);
-        line-height: 1.4;
     }
 }
 
@@ -1804,4 +1805,19 @@ a.btn {
         }
     }
 
+}
+
+.form {
+    .badge_error {
+        display: none;
+    }
+
+    &.is-error {
+        .badge {
+            display: none;
+        }
+        .badge_error {
+            display: block;
+        }
+    }
 }
