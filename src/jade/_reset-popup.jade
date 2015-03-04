@@ -1,0 +1,23 @@
+<!-- begin popup -->
+#reset-password.popup
+  form.popup__inner.form
+    header.popup__header
+      | Forgot your password?
+    button.popup__close.icon.icon-close(type="button")
+
+    .popup__main
+      .badge.badge_form
+        .icon.icon-question.icon_circle
+        p.badge__text
+          big If you've forgotten your password, we can help.
+          | Enter the email you used to sign up for KustomNote,
+          | and we'll email you a link to reset your password.
+
+      .field
+        label.field__label(for="email")
+          | Reset your password with your <b>email address</b>
+        input.field__input(type="email", neme="email", placeholder="Email Address")
+
+      button.btn.btn_form.btn_dark(type="submit")
+        | Reset my password
+<!-- end popup -->

@@ -112,7 +112,7 @@
             <label for="email" class="field__label">Log in with your <b>email address</b>.</label>
             <input type="email" neme="email" placeholder="Email Address" class="field__input">
           </div>
-          <div class="field"><a href="#" class="popup__link">I forgot my password!</a>
+          <div class="field"><a href="reset-password" data-popup="reset-password" class="popup__link">I forgot my password!</a>
             <label for="password" class="field__label">What’s your <b>password</b>?</label>
             <input type="password" neme="password" placeholder="Password" class="field__input">
           </div>
@@ -151,6 +151,26 @@
             <input type="password" neme="password" placeholder="Password" class="field__input">
           </div>
           <button type="submit" class="btn btn_form btn_dark">Log In</button><a href="login" data-popup="login" class="popup__link">Already have an account? Log in instead.</a>
+        </div>
+      </form>
+    </div><!-- end popup --><!-- begin popup -->
+    <div id="reset-password" class="popup">
+      <form class="popup__inner form">
+        <header class="popup__header">Forgot your password?</header>
+        <button type="button" class="popup__close icon icon-close"></button>
+        <div class="popup__main">
+          <div class="badge badge_form">
+            <div class="icon icon-question icon_circle"></div>
+            <p class="badge__text">
+              <big>If you've forgotten your password, we can help.</big>Enter the email you used to sign up for KustomNote,
+              and we'll email you a link to reset your password.
+            </p>
+          </div>
+          <div class="field">
+            <label for="email" class="field__label">Reset your password with your <b>email address</b></label>
+            <input type="email" neme="email" placeholder="Email Address" class="field__input">
+          </div>
+          <button type="submit" class="btn btn_form btn_dark">Reset my password</button>
         </div>
       </form>
     </div><!-- end popup --><!-- load scripts -->

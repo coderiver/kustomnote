@@ -25,12 +25,18 @@
   @extend %icon
 }
 
-.icon-close:before {
-  content: "\e608";
+
+
+.icon-question:before {
+  content: "\e60a";
 }
 
-.icon-long-arrow-right:before {
-  content: "\f178";
+.icon-alert:before {
+  content: "\e609";
+}
+
+.icon-close:before {
+  content: "\e608";
 }
 
 .icon-cloud:before {
@@ -65,8 +71,8 @@
   content: "\e604";
 }
 
-.icon-alert:before {
-  content: "\e609";
+.icon-long-arrow-right:before {
+  content: "\f178";
 }
 
 
@@ -98,5 +104,11 @@
         position: relative;
         top: -2px;
       }
+    }
+
+    &.icon-question {
+      background: #4F94DD;
+      color: #FFF;
+      font-size: 38px;
     }
 }
