@@ -140,7 +140,7 @@ body.no-scroll { left: 0; right: 0; overflow-y: scroll; }
 @media only screen and (max-width: 599px) { .toparea { background-image: url("../img/toparea-mobile.jpg"); } }
 
 .toparea__inner { display: table-cell; position: relative; width: 100%; height: 100%; vertical-align: middle; padding: 115px 0 40px; }
-.toparea__inner .header { position: absolute; top: 0; left: 0; right: 0; }
+.toparea__inner .header { position: absolute; z-index: 1; top: 0; left: 0; right: 0; }
 .toparea__inner .subtitle { max-width: 960px; margin: auto; margin-top: 10px; text-align: center; }
 
 .toparea__footer { display: none; position: absolute; bottom: 0; left: 0; right: 0; height: 65px; text-align: center; }
@@ -152,6 +152,7 @@ body.no-scroll { left: 0; right: 0; overflow-y: scroll; }
   .header .header__left { float: none; margin: auto; text-align: center; }
   .header .header__right { float: none; margin: 15px auto 0; text-align: center; } }
 @media only screen and (max-width: 599px) { .header .menu__link { font-size: 14px; } }
+.header.is-fixed { position: fixed; z-index: 10; top: 0; left: 0; right: 0; background: #FFF; color: #4E4E4E; border-bottom: 1px solid #AAA9A9; }
 
 .header__inner { *zoom: 1; }
 .header__inner:after { content: " "; display: table; clear: both; }
@@ -162,9 +163,19 @@ body.no-scroll { left: 0; right: 0; overflow-y: scroll; }
 
 .header_solid { border-bottom: 1px solid #AAA9A9; }
 
+.header-wrap { min-height: 113px; }
+@media only screen and (max-width: 699px) { .header-wrap { min-height: auto; } }
+
 .logo { display: block; margin: auto; text-decoration: none; font: 0/0 a; text-shadow: none; color: transparent; background-image: url("../img/logo-white.svg"); background-repeat: no-repeat; background-position: center center; background-size: cover; font-size: 42px; font-size: 4.2rem; width: 6.7619em; height: 1em; }
 
 .logo_color { background-image: url("../img/logo-color.svg"); }
+
+.logo_double { background: none; }
+.logo_double:before, .logo_double:after { content: ""; display: block; width: 100%; height: 100%; background-repeat: no-repeat; background-position: center center; background-size: cover; }
+.logo_double:before { background-image: url("../img/logo-white.svg"); }
+.logo_double:after { background-image: url("../img/logo-color.svg"); display: none; }
+.header.is-fixed .logo_double:before { display: none; }
+.header.is-fixed .logo_double:after { display: block; }
 
 .menu { font-size: 0; display: inline-block; vertical-align: middle; }
 @media only screen and (max-width: 1000px) { .menu .menu__link { margin-right: 0; } }

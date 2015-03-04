@@ -33,6 +33,7 @@
 
     .header {
         position: absolute;
+        z-index: 1;
         top: 0;
         left: 0;
         right: 0;
@@ -93,6 +94,17 @@
             font-size: 14px;
         }
     }
+
+    &.is-fixed {
+        position: fixed;
+        z-index: 10;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: #FFF;
+        color: $text;
+        border-bottom: 1px solid $border;
+    }
 }
 
 .header__inner {
@@ -109,6 +121,15 @@
 
 .header_solid {
     border-bottom: 1px solid $border;
+}
+
+
+.header-wrap {
+    min-height: 113px;
+
+    @include r(699) {
+        min-height: auto;
+    }
 }
 
 
@@ -130,6 +151,38 @@
 
 .logo_color {
     background-image: img-url('logo-color.svg');
+}
+
+.logo_double {
+    background: none;
+
+    &:before, &:after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+    }
+
+    &:before {
+        background-image: img-url('logo-white.svg');
+    }
+
+    &:after {
+        background-image: img-url('logo-color.svg');
+        display: none;
+    }
+
+    .header.is-fixed & {
+        &:before {
+            display: none;
+        }
+        &:after {
+            display: block;
+        }
+    }
 }
 
 
