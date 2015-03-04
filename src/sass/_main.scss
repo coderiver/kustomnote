@@ -17,6 +17,10 @@
             display: block;
         }
     }
+
+    @include mobile {
+        background-image: img-url('toparea-mobile.jpg')
+    }
 }
 
 .toparea__inner {
@@ -115,7 +119,7 @@
     text-decoration: none;
     @include hide-text;
     // @include sprite(logo)
-    background-image: url('../img/logo-white.svg');
+    background-image: img-url('logo-white.svg');
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -125,7 +129,7 @@
 }
 
 .logo_color {
-    background-image: url('../img/logo-color.svg');
+    background-image: img-url('logo-color.svg');
 }
 
 

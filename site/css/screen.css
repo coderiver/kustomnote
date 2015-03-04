@@ -137,6 +137,7 @@ body.no-scroll { left: 0; right: 0; overflow-y: scroll; }
 .toparea { display: table; table-layout: fixed; border-collapse: collapse; width: 100%; height: 100vh; color: #FFF; background: url("../img/toparea.jpg") no-repeat center center; background-size: cover; }
 @media only screen and (max-width: 950px) { .toparea .toparea__inner { padding-bottom: 105px; }
   .toparea .toparea__footer { display: block; } }
+@media only screen and (max-width: 599px) { .toparea { background-image: url("../img/toparea-mobile.jpg"); } }
 
 .toparea__inner { display: table-cell; position: relative; width: 100%; height: 100%; vertical-align: middle; padding: 115px 0 40px; }
 .toparea__inner .header { position: absolute; top: 0; left: 0; right: 0; }
