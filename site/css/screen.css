@@ -145,7 +145,7 @@ body.no-scroll { left: 0; right: 0; overflow-y: scroll; }
 
 .toparea__footer { display: none; position: absolute; bottom: 0; left: 0; right: 0; height: 65px; text-align: center; }
 
-.header { padding: 35px 0; }
+.header { padding: 35px 0; -webkit-transition: background 0.1s linear; transition: background 0.1s linear; }
 .header .btn { display: inline-block; vertical-align: middle; margin-left: 15px; }
 @media only screen and (max-width: 950px) { .header .btn { display: none; } }
 @media only screen and (max-width: 700px) { .header { padding: 25px 0; }
