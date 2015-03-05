@@ -1126,8 +1126,14 @@ a.btn {
 .slide__caption {
     display: inline-block;
     vertical-align: middle;
+    color: inherit;
+    text-decoration: none;
     @include serif-i;
     @include fs(30);
+
+    &:hover {
+        text-decoration: underline;
+    }
 }
 
 

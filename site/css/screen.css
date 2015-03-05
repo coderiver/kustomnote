@@ -377,7 +377,8 @@ a.btn:hover { text-decoration: none; }
 .slide__footer { position: absolute; left: 0; right: 0; bottom: 0; box-sizing: border-box; height: 35%; padding-bottom: 35px; background: #FFF; background: rgba(255, 255, 255, 0.8); text-align: center; font-size: 0; }
 .slide__footer:before { content: ""; display: inline-block; vertical-align: middle; width: 0; height: 100%; }
 
-.slide__caption { display: inline-block; vertical-align: middle; font-family: "PTSerifItalic", Helvetica, Arial, sans-serif; font-weight: normal; font-style: normal; font-size: 30px; font-size: 3rem; }
+.slide__caption { display: inline-block; vertical-align: middle; color: inherit; text-decoration: none; font-family: "PTSerifItalic", Helvetica, Arial, sans-serif; font-weight: normal; font-style: normal; font-size: 30px; font-size: 3rem; }
+.slide__caption:hover { text-decoration: underline; }
 
 .figure .icon { display: block; margin: auto; text-align: center; font-size: 100px; font-size: 10rem; margin-bottom: 0.4em; }
 @media only screen and (max-width: 599px) { .figure .icon { font-size: 50px; }
