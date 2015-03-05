@@ -146,6 +146,7 @@
     background-position: center center;
     background-size: cover;
     @include fs(42);
+    @include sans-b;
     width: em(284,42);
     height: em(42,42);
 }
@@ -602,7 +603,7 @@ a.btn {
     margin-top: em(7,18);
     color: inherit;
     text-decoration: none;
-    // border-bottom: 1px solid;
+    border-bottom: 1px solid;
     @include sans;
 
     &:after {
@@ -617,8 +618,8 @@ a.btn {
     }
 
     &:hover {
-        // @include sans-b;
-        border-bottom: 1px solid;
+        @include sans-b;
+        // border-bottom: 1px solid;
     }
 
 }
