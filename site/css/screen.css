@@ -442,7 +442,7 @@ a.btn:hover { text-decoration: none; }
 .separator { margin: 15px auto; border: none; max-width: 175px; height: 3px; background: #D8D8D8; }
 @media only screen and (max-width: 599px) { .separator { height: 2px; } }
 
-.comments { margin: 65px 0 10px; }
+.comments { margin-top: 65px; margin-bottom: 10px; }
 @media only screen and (max-width: 599px) { .comments { margin-top: 35px; } }
 
 .pricing { max-width: 615px; margin: 30px auto 45px; box-sizing: border-box; }
