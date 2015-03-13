@@ -48,14 +48,15 @@
               </p>
               <button type="button" data-popup="sign-up" class="btn btn_blue"><span>Sign up for free</span></button>
               <div class="feature__pic capture"></div><!-- begin user -->
-              <div class="user">
+              <div class="user user_small">
                 <div class="user__pic"><img src="img/users/user1.jpg" alt="user pic"></div>
                 <blockquote class="user__feedback">
                   <p class="user__feedback-text">
                     “Cras justo odio, dapibus ac facilisis in,
                     egestas eget quam. Fusce KustomNote dapibus.”
                   </p>
-                  <cite class="user__name">Julie, in Nevada</cite><a href="#" class="user__link">See Julie’s Templates</a>
+                  <cite class="user__name">Julie, in Nevada</cite>
+                  <div class="user__link"><a href="">See Julie’s Templates</a></div>
                 </blockquote>
               </div><!-- end user -->
             </div>
@@ -63,7 +64,7 @@
         </div>
       </section><!-- end feature -->
       <!-- begin feature -->
-      <section class="feature feture_replace feature_bgmod">
+      <section class="feature feature_replace feature_bgmod">
         <div class="l">
           <div class="feature__outer">
             <div class="feature__inner">
@@ -80,14 +81,15 @@
               </p>
               <button type="button" data-popup="sign-up" class="btn btn_orange"><span>Sign up for free</span></button>
               <div class="feature__pic find"></div><!-- begin user -->
-              <div class="user user_replace">
+              <div class="user user_replace user_small">
                 <div class="user__pic"><img src="img/users/user2.jpg" alt="user pic"></div>
                 <blockquote class="user__feedback">
                   <p class="user__feedback-text">
                     “Cras justo odio, dapibus ac facilisis in,
                     egestas eget quam. Fusce KustomNote dapibus.”
                   </p>
-                  <cite class="user__name">Jonas, in Iceland</cite><a href="#" class="user__link">See Jonas’ Templates</a>
+                  <cite class="user__name">Jonas, in Iceland</cite>
+                  <div class="user__link"><a href="">See Jonas’ Templates</a></div>
                 </blockquote>
               </div><!-- end user -->
             </div>
@@ -95,7 +97,7 @@
         </div>
       </section><!-- end feature -->
       <!-- begin feature -->
-      <section class="feature">
+      <section class="feature feature_mod">
         <div class="l">
           <div class="feature__outer">
             <div class="feature__inner">
@@ -124,14 +126,15 @@
                   </div>
                 </div><!-- end slider -->
               </div><!-- begin user -->
-              <div class="user">
+              <div class="user user_small">
                 <div class="user__pic"><img src="img/users/user3.jpg" alt="user pic"></div>
                 <blockquote class="user__feedback">
                   <p class="user__feedback-text">
                     “Cras justo odio, dapibus ac facilisis in,
                     egestas eget quam. Fusce KustomNote dapibus.”
                   </p>
-                  <cite class="user__name">Vladmir, in Ukraine</cite><a href="#" class="user__link">See Vladmir’s Templates</a>
+                  <cite class="user__name">Vladmir, in Ukraine</cite>
+                  <div class="user__link"><a href="">See Vladmir’s Templates</a></div>
                 </blockquote>
               </div><!-- end user -->
             </div>
@@ -220,11 +223,11 @@
       <!-- begin brands -->
       <div class="l">
         <section class="brands">
-          <div class="brands__item"><a href="#"><img src="img/brands/autodesc.jpg" alt="autodesc"></a></div>
-          <div class="brands__item"><a href="#"><img src="img/brands/merck.jpg" alt="merck"></a></div>
-          <div class="brands__item"><a href="#"><img src="img/brands/bose.jpg" alt="bose"></a></div>
-          <div class="brands__item"><a href="#"><img src="img/brands/mit.jpg" alt="mit"></a></div>
-          <div class="brands__item"><a href="#"><img src="img/brands/s.jpg" alt=""></a></div>
+          <div class="brands__item"><a href="#" class="brand brand-autodesc">autodesc</a></div>
+          <div class="brands__item"><a href="#" class="barnd brand-merck">merck</a></div>
+          <div class="brands__item"><a href="#" class="barnd brand-bose">bose</a></div>
+          <div class="brands__item"><a href="#" class="barnd brand-mit">mit</a></div>
+          <div class="brands__item"><a href="#" class="barnd brand-stanford">stanford</a></div>
         </section>
       </div><!-- end brands --><!-- begin footer -->
       <footer class="footer">
@@ -257,7 +260,7 @@
       </footer><!-- end footer -->
     </div><!-- begin popup -->
     <div id="login" class="popup">
-      <form class="popup__inner form is-error">
+      <form method="POST" novalidate class="popup__inner form">
         <header class="popup__header">Log in to your account</header>
         <button type="button" class="popup__close icon icon-close"></button>
         <div class="popup__main">
@@ -271,7 +274,7 @@
             <label for="email" class="field__label">Log in with your <b>email address</b>.</label>
             <input type="email" neme="email" placeholder="Email Address" class="field__input">
           </div>
-          <div class="field"><a href="reset-password" data-popup="reset-password" class="popup__link">I forgot my password!</a>
+          <div class="field"><a href="reset-password" data-popup="reset-password" tabindex="0" class="popup__link">I forgot my password!</a>
             <label for="password" class="field__label">What’s your <b>password</b>?</label>
             <input type="password" neme="password" placeholder="Password" class="field__input">
           </div>
@@ -280,7 +283,7 @@
       </form>
     </div><!-- end popup --><!-- begin popup -->
     <div id="sign-up" class="popup">
-      <form class="popup__inner form">
+      <form method="POST" novalidate class="popup__inner form">
         <header class="popup__header">Sign up for free</header>
         <button type="button" class="popup__close icon icon-close"></button>
         <div class="popup__main">
@@ -314,7 +317,7 @@
       </form>
     </div><!-- end popup --><!-- begin popup -->
     <div id="reset-password" class="popup">
-      <form class="popup__inner form">
+      <form method="POST" novalidate class="popup__inner form">
         <header class="popup__header">Forgot your password?</header>
         <button type="button" class="popup__close icon icon-close"></button>
         <div class="popup__main">
@@ -325,11 +328,23 @@
               and we'll email you a link to reset your password.
             </p>
           </div>
+          <div class="badge badge_form badge_error">
+            <div class="icon icon-alert icon_circle"></div>
+            <p class="badge__text">
+              <big>Oops! We couldn't log you in.</big>There was a problem with your email or password. Please try again.
+            </p>
+          </div>
+          <div class="badge badge_form badge_success">
+            <div class="icon icon-mail icon_circle"></div>
+            <p class="badge__text">
+              <big>We've sent you an eamil.</big>Check for an email from KustomNote for instruction on how to reset your password.
+            </p>
+          </div>
           <div class="field">
             <label for="email" class="field__label">Reset your password with your <b>email address</b></label>
             <input type="email" neme="email" placeholder="Email Address" class="field__input">
           </div>
-          <button type="submit" class="btn btn_form btn_dark">Reset my password</button>
+          <button type="submit" class="btn btn_form btn_dark">Reset my password</button><a href="sign-up" data-popup="sign-up" class="popup__link">Need an account? Sign up for free instead!</a>
         </div>
       </form>
     </div><!-- end popup --><!-- load scripts -->

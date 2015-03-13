@@ -1,6 +1,6 @@
 <!-- begin popup -->
 #reset-password.popup
-  form.popup__inner.form
+  form.popup__inner.form(method="POST", novalidate)
     header.popup__header
       | Forgot your password?
     button.popup__close.icon.icon-close(type="button")
@@ -13,6 +13,18 @@
           | Enter the email you used to sign up for KustomNote,
           | and we'll email you a link to reset your password.
 
+      .badge.badge_form.badge_error
+        .icon.icon-alert.icon_circle
+        p.badge__text
+          big Oops! We couldn't log you in.
+          | There was a problem with your email or password. Please try again.
+
+      .badge.badge_form.badge_success
+        .icon.icon-mail.icon_circle
+        p.badge__text
+          big We've sent you an eamil.
+          | Check for an email from KustomNote for instruction on how to reset your password.
+
       .field
         label.field__label(for="email")
           | Reset your password with your <b>email address</b>
@@ -20,4 +32,7 @@
 
       button.btn.btn_form.btn_dark(type="submit")
         | Reset my password
+
+      a.popup__link(href="sign-up", data-popup="sign-up")
+        | Need an account? Sign up for free instead!
 <!-- end popup -->

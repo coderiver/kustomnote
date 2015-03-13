@@ -1,0 +1,173 @@
+$icons: (
+  9-mile-labs: (X: -447px, Y:-132px, W: 77px, H: 76px, TW: 749px, TH: 400px, IMG: '../img/brands.png'),
+  alliance-of-angels: (X: -267px, Y:0px, W: 170px, H: 108px, TW: 749px, TH: 400px, IMG: '../img/brands.png'),
+  autodesc: (X: -598px, Y:-48px, W: 77px, H: 74px, TW: 749px, TH: 400px, IMG: '../img/brands.png'),
+  bose: (X: -447px, Y:0px, W: 302px, H: 38px, TW: 749px, TH: 400px, IMG: '../img/brands.png'),
+  founders: (X: 0px, Y:-358px, W: 311px, H: 42px, TW: 749px, TH: 400px, IMG: '../img/brands.png'),
+  merck: (X: 0px, Y:0px, W: 257px, H: 76px, TW: 749px, TH: 400px, IMG: '../img/brands.png'),
+  mit: (X: -447px, Y:-48px, W: 141px, H: 74px, TW: 749px, TH: 400px, IMG: '../img/brands.png'),
+  perkinscoie: (X: 0px, Y:-195px, W: 283px, H: 62px, TW: 749px, TH: 400px, IMG: '../img/brands.png'),
+  stanford: (X: -534px, Y:-132px, W: 55px, H: 76px, TW: 749px, TH: 400px, IMG: '../img/brands.png'),
+  the-gramercy-fund: (X: 0px, Y:-86px, W: 198px, H: 99px, TW: 749px, TH: 400px, IMG: '../img/brands.png'),
+  wsgr: (X: 0px, Y:-267px, W: 176px, H: 81px, TW: 749px, TH: 400px, IMG: '../img/brands.png'),
+);
+
+
+// Gets an attribute from the sass map
+@function icon-attr($icon, $attr) {
+  $icon: map-get($icons, $icon);
+  @return map-get($icon, $attr);
+}
+
+@mixin sprite-brand($iconName) {
+  background-image: url(icon-attr($iconName, IMG));
+  width: icon-attr($iconName, W);
+  height: icon-attr($iconName, H);
+  background-position: icon-attr($iconName, X) icon-attr($iconName, Y);
+}
+
+
+
+.brand-9-mile-labs {
+  width: 77px;
+  height: 76px;
+  background-image: url('../img/brands.png');
+  background-position: -447px -132px;
+  @include tablet {
+    width: (77px / 2);
+    height: (76px / 2);
+    background-position: (-447px / 2) (-132px / 2);
+    background-size: (749px / 2) (400px / 2)
+  }
+}
+
+.brand-alliance-of-angels {
+  width: 170px;
+  height: 108px;
+  background-image: url('../img/brands.png');
+  background-position: -267px 0px;
+  @include tablet {
+    width: (170px / 2);
+    height: (108px / 2);
+    background-position: (-267px / 2) (0px / 2);
+    background-size: (749px / 2) (400px / 2)
+  }
+}
+
+.brand-autodesc {
+  width: 77px;
+  height: 74px;
+  background-image: url('../img/brands.png');
+  background-position: -598px -48px;
+  @include tablet {
+    width: (77px / 2);
+    height: (74px / 2);
+    background-position: (-598px / 2) (-48px / 2);
+    background-size: (749px / 2) (400px / 2)
+  }
+}
+
+.brand-bose {
+  width: 302px;
+  height: 38px;
+  background-image: url('../img/brands.png');
+  background-position: -447px 0px;
+  @include tablet {
+    width: (302px / 2);
+    height: (38px / 2);
+    background-position: (-447px / 2) (0px / 2);
+    background-size: (749px / 2) (400px / 2)
+  }
+}
+
+.brand-founders {
+  width: 311px;
+  height: 42px;
+  background-image: url('../img/brands.png');
+  background-position: 0px -358px;
+  @include tablet {
+    width: (311px / 2);
+    height: (42px / 2);
+    background-position: (0px / 2) (-358px / 2);
+    background-size: (749px / 2) (400px / 2)
+  }
+}
+
+.brand-merck {
+  width: 257px;
+  height: 76px;
+  background-image: url('../img/brands.png');
+  background-position: 0px 0px;
+  @include tablet {
+    width: (257px / 2);
+    height: (76px / 2);
+    background-position: (0px / 2) (0px / 2);
+    background-size: (749px / 2) (400px / 2)
+  }
+}
+
+.brand-mit {
+  width: 141px;
+  height: 74px;
+  background-image: url('../img/brands.png');
+  background-position: -447px -48px;
+  @include tablet {
+    width: (141px / 2);
+    height: (74px / 2);
+    background-position: (-447px / 2) (-48px / 2);
+    background-size: (749px / 2) (400px / 2)
+  }
+}
+
+.brand-perkinscoie {
+  width: 283px;
+  height: 62px;
+  background-image: url('../img/brands.png');
+  background-position: 0px -195px;
+  @include tablet {
+    width: (283px / 2);
+    height: (62px / 2);
+    background-position: (0px / 2) (-195px / 2);
+    background-size: (749px / 2) (400px / 2)
+  }
+}
+
+.brand-stanford {
+  width: 55px;
+  height: 76px;
+  background-image: url('../img/brands.png');
+  background-position: -534px -132px;
+  @include tablet {
+    width: (55px / 2);
+    height: (76px / 2);
+    background-position: (-534px / 2) (-132px / 2);
+    background-size: (749px / 2) (400px / 2)
+  }
+}
+
+.brand-the-gramercy-fund {
+  width: 198px;
+  height: 99px;
+  background-image: url('../img/brands.png');
+  background-position: 0px -86px;
+  @include tablet {
+    width: (198px / 2);
+    height: (99px / 2);
+    background-position: (0px / 2) (-86px / 2);
+    background-size: (749px / 2) (400px / 2)
+  }
+}
+
+.brand-wsgr {
+  width: 176px;
+  height: 81px;
+  background-image: url('../img/brands.png');
+  background-position: 0px -267px;
+  @include tablet {
+    width: (176px / 2);
+    height: (81px / 2);
+    background-position: (0px / 2) (-267px / 2);
+    background-size: (749px / 2) (400px / 2)
+  }
+}
+

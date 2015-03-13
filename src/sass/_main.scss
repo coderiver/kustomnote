@@ -3,7 +3,7 @@
     table-layout: fixed;
     border-collapse: collapse;
     width: 100%;
-    height: 100vh;
+    height: calc(100vh - 140px);
     color: #FFF;
     background: img-url('toparea.jpg') no-repeat center center;
     background-size: cover;
@@ -18,8 +18,18 @@
         }
     }
 
-    @include mobile {
-        background-image: img-url('toparea-mobile.jpg')
+    @include tablet {
+        background-image: img-url('toparea-mobile.jpg');
+        height: calc(100vh - 130px);
+        .toparea__inner {
+            padding-top: 145px;
+        }
+    }
+
+    .toparea__footer {
+        .btn_sign {
+            width: auto;
+        }
     }
 }
 
@@ -74,7 +84,7 @@
         }
     }
 
-    @include r(700) {
+    @include tablet {
         padding: 25px 0;
         .header__left {
             float: none;
@@ -88,12 +98,6 @@
             text-align: center;
         }
 
-    }
-
-    @include mobile {
-        .menu__link {
-            font-size: 14px;
-        }
     }
 
     &.is-fixed {
@@ -198,6 +202,16 @@
             margin-right: 0;
         }
     }
+
+    @include tablet {
+        margin-left: -10px;
+        margin-right: -10px;
+        white-space: nowrap;
+        .menu__link {
+            font-size: 14px;
+            padding: 0 13px;
+        }
+    }
 }
 
 .menu__link {
@@ -274,9 +288,9 @@
         }
     }
 
-    &:hover {
-        transform: scale(1.1) translateZ(0);
-    }
+    // &:hover {
+        // transform: scale(1.1) translateZ(0);
+    // }
 
     @include mobile {
         font-size: 12px;
@@ -387,6 +401,15 @@ a.btn {
             margin-top: em(-6);
         }
     }
+
+    &.is-active {
+        > span:before {
+            border-width: em(6) em(6) 0 em(6);
+            border-color: transparent;
+            border-top-color: $text;
+            margin: em(-3) 0 0 em(-4.5);
+        }
+    }
 }
 
 .btn_form {
@@ -402,9 +425,9 @@ a.btn {
         font-size: 12px;
     }
 
-    &:hover {
-        transform: scale(1.05)
-    }
+    // &:hover {
+    //     transform: scale(1.05)
+    // }
 }
 
 
@@ -490,6 +513,7 @@ a.btn {
 
 .heading_toparea {
     padding: 24px;
+    max-width: 915px;
     @include tablet {
         background: rgba(#FFF, 0.2);
         border: none;
@@ -566,8 +590,8 @@ a.btn {
     width: em(80,18);
     height: em(80,18);
     border: em(3,18) solid #949494;
+    background: #949494;
     border-radius: 50%;
-    // margin-top: em(-40,18);
     overflow: hidden;
 
     img {
@@ -599,23 +623,31 @@ a.btn {
 .user__link {
     display: inline-block;
     position: relative;
-    padding-right: em(15,18);
     margin-top: em(7,18);
     color: inherit;
     text-decoration: none;
-    border-bottom: 1px solid;
     @include sans;
 
-    &:after {
-        @extend %icon;
-        content: "\f178";
-        position: absolute;
-        top: 50%;
-        right: 0;
-        // @include sprite(arr);
-        @include fs(10);
-        margin-top: em(-3,10);
+    > a {
+        display: inline-block;
+        padding-right: em(15,18);
+        border-bottom: 1px solid;
+        position: relative;
+        text-decoration: none;
+        color: inherit;
+
+        &:after {
+            @extend %icon;
+            content: "\f178";
+            position: absolute;
+            top: 50%;
+            right: 0;
+            // @include sprite(arr);
+            @include fs(10);
+            margin-top: em(-3,10);
+        }
     }
+
 
     &:hover {
         @include sans-b;
@@ -732,23 +764,46 @@ a.btn {
     }
 }
 
+.user_small {
+    @include tablet {
+        padding-left: em(75,18);
+        margin-height: em(75,18);
+        .user__pic {
+            width: em(65,18);
+            height: em(65,18);
+        }
+
+        .user__name {
+            margin-top: 10px;
+        }
+
+        .user__link {
+            display: block;
+            margin-top: 7px;
+        }
+
+        &.user_replase {
+
+        }
+    }
+}
 
 
 
 .feature {
     padding: 60px 0;
     @include fs(18);
-    line-height: 1.2;
+    line-height: 1.25;
     @include serif;
     overflow: hidden;
 
     .title {
-        margin-bottom: em(10,36);
+        margin-bottom: em(13,36);
     }
 
     .btn {
         display: block;
-        margin-top: 22px;
+        margin-top: 20px;
     }
 
     .user {
@@ -773,7 +828,7 @@ a.btn {
         .feature__pic {
             position: relative;
             width: 100%;
-            padding: 25px 0;
+            padding: 18px 0;
             top: 0;
             right: 0;
             transform: none;
@@ -815,17 +870,23 @@ a.btn {
             max-width: none;
             color: $text;
         }
+
+        .user__link {
+            display: block;
+        }
+
     }
 
     @include mobile {
-        padding: 30px 0;
+        padding: 15px 0 30px;
 
         .feature__text {
             font-size: 14px;
+            // line-height: 1.13;
         }
 
         .user {
-            margin-top: 25px;
+            margin-top: 40px;
         }
 
         .user__name, .user__link {
@@ -893,9 +954,13 @@ a.btn {
     overflow: hidden;
 }
 
-.feture_replace {
+.feature_replace {
     background: $text;
     color: #FFF;
+
+    .btn {
+        margin-top: 30px;
+    }
 
     .feature__outer {
         padding-left: percentage(480/1124);
@@ -915,6 +980,7 @@ a.btn {
     }
 
     @include tablet {
+        padding-top: 38px;
 
         .feature__outer {
             padding-left: 0;
@@ -922,6 +988,7 @@ a.btn {
 
         .feature__pic {
             left: 0;
+            padding: 28px 0;
             &:before {
                 background-position: center center;
             }
@@ -929,7 +996,7 @@ a.btn {
 
         .user {
             float: none;
-            padding-left: em(95,18);
+            // padding-left: em(95,18);
             padding-right: 0;
             text-align: left;
         }
@@ -983,10 +1050,21 @@ a.btn {
     }
 }
 
+.feature_mod {
+    padding: 83px 0;
+    @include tablet {
+        padding-top: 35px;
+    }
+
+    .title {
+        margin-bottom: 17px;
+    }
+}
+
 
 
 .feature-more {
-    padding: 50px 0;
+    padding: 44px 0 50px;
     background: #E9E9E9;
 
     .title {
@@ -995,18 +1073,18 @@ a.btn {
     }
 
     .figure {
-        margin-bottom: 10px;
+        margin-bottom: 20px;
     }
 
     .btn {
-        margin-top: 40px;
+        margin-top: 47px;
     }
 
     .btn_more {
         display: none;
     }
 
-    @include tablet {
+    @include r(850) {
         .feature-more__item {
             width: 50%;
         }
@@ -1025,7 +1103,7 @@ a.btn {
         }
 
         .feature-more__item {
-            font-size: 14px;
+            font-size: 12px;
         }
 
         .btn_more {
@@ -1034,9 +1112,10 @@ a.btn {
 
         .feature-more__other {
             display: none;
+            margin-top: 0;
+            padding-bottom: 20px;
             text-align: center;
-            padding-bottom: em(20);
-            border-bottom: 3px solid rgba($text, 0.4);
+            // border-bottom: 3px solid rgba($text, 0.4);
             ul {
                 width: auto;
                 float: none;
@@ -1049,23 +1128,34 @@ a.btn {
 .feature-more__items {
     font-size: 0;
     margin: -25px -10px 0;
+    // @include clr;
 }
 
 .feature-more__item {
     display: inline-block;
     vertical-align: top;
+    // float: left;
     margin-top: 25px;
     width: 25%;
     box-sizing: border-box;
     padding: 0 10px;
     @include fs(18);
     @include serif;
+
+    // &:last-child {
+    //     float: right;
+    // }
+
+    // &:nth-child(3) {
+    //     float: right;
+    // }
 }
 
 .feature-more__other {
-    margin: em(25) auto 0;
-    padding: em(20) em(20) 0;
+    margin: 32px auto 0;
+    padding: 30px 20px 0;
     max-width: 930px;
+    box-sizing: border-box;
     border-top: 3px solid rgba($text, 0.4);
     @include clr;
     line-height: 1.55;
@@ -1077,7 +1167,12 @@ a.btn {
         padding: 0 em(20);
     }
 
-    @include rmin(600) {
+    @include tablet {
+        display: none;
+        border-top: none;
+    }
+
+    @include rmin(768) {
         display: block !important;
     }
 }
@@ -1154,7 +1249,7 @@ a.btn {
         }
 
         .figure__text {
-            font-size: 16px;
+            font-size: 14px;
         }
     }
 
@@ -1184,13 +1279,17 @@ a.btn {
     align-items: center;
     flex-wrap: wrap;
     min-height: 200px;
+    text-align: center;
 
-    @include mobile {
-        min-width: 0;
+    @include tablet {
+        min-height: 115px;
+        padding: 10px 0;
     }
 }
 
 .brands__item {
+    display: inline-block;
+    vertical-align: middle;
     display: flex;
     padding: 25px;
     a {
@@ -1203,7 +1302,7 @@ a.btn {
         max-width: 100%;
     }
 
-    @include r(1000) {
+    @include tablet {
         &:nth-child(1) {
             order: 1;
         }
@@ -1231,13 +1330,37 @@ a.btn {
     }
 }
 
-.brands_mod {
+.brands_about {
     max-width: 900px;
     margin: 10px auto 0;
 
-    @include mobile {
+    @include tablet {
+        justify-content: stretch;
         margin-top: 40px;
+
+        .brands__item {
+            &:first-child {
+                order: 2;
+            }
+            &:nth-child(2) {
+                order: 1;
+            }
+            &:nth-child(3) {
+                order: 4;
+            }
+            &:nth-child(4) {
+                order: 5;
+            }
+            &:nth-child(5) {
+                order: 3;
+            }
+            &:nth-child(6) {
+                order: 6;
+            }
+        }
     }
+
+
 }
 
 
@@ -1374,7 +1497,7 @@ a.btn {
         text-decoration: none;
         &:hover {
             text-decoration: underline;
-            @include serif-b;
+            // @include serif-b;
         }
     }
 }
@@ -1944,11 +2067,24 @@ a.btn {
         display: none;
     }
 
+    .badge_success {
+        display: none;
+    }
+
     &.is-error {
         .badge {
             display: none;
         }
         .badge_error {
+            display: block;
+        }
+    }
+
+    &.is-success {
+        .badge {
+            display: none;
+        }
+        .badge_succes {
             display: block;
         }
     }

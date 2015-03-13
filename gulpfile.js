@@ -171,14 +171,33 @@ gulp.task('sprite', function() {
         .pipe(gulp.dest(src.sass));
 });
 
+gulp.task('brands', function() {
+    var spriteData = gulp.src(src.img + '/brands/*.png')
+    .pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
+    .pipe(spritesmith({
+        imgName: 'brands.png',
+        cssName: '_sprite-brands.scss',
+        imgPath: '../img/brands.png',
+        cssFormat: 'sass',
+        padding: 10,
+        // algorithm: 'top-down',
+        cssTemplate: src.helpers + '/brands.template.mustache'
+    }));
+    spriteData.img
+        .pipe(gulp.dest(dest.img));
+    spriteData.css
+        .pipe(gulp.dest(src.sass));
+});
+
 // watch
 gulp.task('watch', function() {
     gulp.watch(src.sass + '/**/*', ['sass']);
     gulp.watch(src.jade + '/**/*.jade', ['jade']);
     gulp.watch([src.jade + '/_*.jade', src.jade + '/includes/*.jade'], ['jade-all']);
-    gulp.watch(src.svg + '/icons/*.svg', ['svgsprite']);
-    gulp.watch(src.svg + '/icons-two-color/*.svg', ['svgsprite-tc']);
+    // gulp.watch(src.svg + '/icons/*.svg', ['svgsprite']);
+    // gulp.watch(src.svg + '/icons-two-color/*.svg', ['svgsprite-tc']);
     gulp.watch(src.img + '/icons/*.png', ['sprite']);
+    gulp.watch(src.img + '/brands/*.png', ['brands']);
 });
 
 gulp.task('build', ['sass', 'svgsprite', 'sprite', 'jade-all'], function() {});

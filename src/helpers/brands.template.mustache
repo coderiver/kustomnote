@@ -17,7 +17,7 @@ $icons: (
   @return map-get($icon, $attr);
 }
 
-@mixin sprite($iconName) {
+@mixin sprite-brand($iconName) {
   background-image: url(icon-attr($iconName, IMG));
   width: icon-attr($iconName, W);
   height: icon-attr($iconName, H);
@@ -28,11 +28,17 @@ $icons: (
 
 
 {{#items}}
-.icon-{{name}} {
+.brand-{{name}} {
   width: {{px.width}};
   height: {{px.height}};
   background-image: url('{{{escaped_image}}}');
   background-position: {{px.offset_x}} {{px.offset_y}};
+  @include tablet {
+    width: ({{px.width}} / 2);
+    height: ({{px.height}} / 2);
+    background-position: ({{px.offset_x}} / 2) ({{px.offset_y}} / 2);
+    background-size: ({{px.total_width}} / 2) ({{px.total_height}} / 2)
+  }
 }
 
 {{/items}}

@@ -44,7 +44,7 @@ block content
           .feature__pic.capture
 
           <!-- begin user -->
-          .user
+          .user.user_small
             .user__pic
               img(src="img/users/user1.jpg", alt="user pic")
             blockquote.user__feedback
@@ -53,13 +53,14 @@ block content
                 | egestas eget quam. Fusce KustomNote dapibus.”
               cite.user__name
                 | Julie, in Nevada
-              a.user__link(href="#")
-                | See Julie’s Templates
+              .user__link
+                a(href="")
+                  | See Julie’s Templates
           <!-- end user -->
   <!-- end feature -->
 
   <!-- begin feature -->
-  section.feature.feture_replace.feature_bgmod
+  section.feature.feature_replace.feature_bgmod
     .l
       .feature__outer
         .feature__inner
@@ -81,7 +82,7 @@ block content
           .feature__pic.find
 
           <!-- begin user -->
-          .user.user_replace
+          .user.user_replace.user_small
             .user__pic
               img(src="img/users/user2.jpg", alt="user pic")
             blockquote.user__feedback
@@ -90,13 +91,14 @@ block content
                 | egestas eget quam. Fusce KustomNote dapibus.”
               cite.user__name
                 | Jonas, in Iceland
-              a.user__link(href="#")
-                | See Jonas’ Templates
+              .user__link
+                a(href="")
+                  | See Jonas’ Templates
           <!-- end user -->
   <!-- end feature -->
 
   <!-- begin feature -->
-  section.feature
+  section.feature.feature_mod
     .l
       .feature__outer
         .feature__inner
@@ -133,7 +135,7 @@ block content
             <!-- end slider -->
 
           <!-- begin user -->
-          .user
+          .user.user_small
             .user__pic
               img(src="img/users/user3.jpg", alt="user pic")
             blockquote.user__feedback
@@ -142,8 +144,9 @@ block content
                 | egestas eget quam. Fusce KustomNote dapibus.”
               cite.user__name
                 | Vladmir, in Ukraine
-              a.user__link(href="#")
-                | See Vladmir’s Templates
+              .user__link
+                a(href="")
+                  | See Vladmir’s Templates
           <!-- end user -->
 
   <!-- end feature -->
@@ -229,20 +232,25 @@ block content
   .l
     section.brands
       .brands__item
-        a(href="#")
-          img(src="img/brands/autodesc.jpg",  alt="autodesc")
+        a.brand.brand-autodesc(href="#")
+          | autodesc
+          //- img(src="img/brands/autodesc.jpg",  alt="autodesc")
       .brands__item
-        a(href="#")
-          img(src="img/brands/merck.jpg", alt="merck")
+        a.barnd.brand-merck(href="#")
+          | merck
+          //- img(src="img/brands/merck.jpg", alt="merck")
       .brands__item
-        a(href="#")
-          img(src="img/brands/bose.jpg", alt="bose")
+        a.barnd.brand-bose(href="#")
+          | bose
+          //- img(src="img/brands/bose.jpg", alt="bose")
       .brands__item
-        a(href="#")
-          img(src="img/brands/mit.jpg", alt="mit")
+        a.barnd.brand-mit(href="#")
+          | mit
+          //- img(src="img/brands/mit.jpg", alt="mit")
       .brands__item
-        a(href="#")
-          img(src="img/brands/s.jpg", alt="")
+        a.barnd.brand-stanford(href="#")
+          | stanford
+          //- img(src="img/brands/s.jpg", alt="")
   <!-- end brands -->
 
   include _footer

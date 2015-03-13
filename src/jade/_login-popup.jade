@@ -1,6 +1,6 @@
 <!-- begin popup -->
 #login.popup
-  form.popup__inner.form.is-error
+  form.popup__inner.form(method="POST", novalidate)
     header.popup__header
       | Log in to your account
     button.popup__close.icon.icon-close(type="button")
@@ -18,7 +18,7 @@
         input.field__input(type="email", neme="email", placeholder="Email Address")
 
       .field
-        a.popup__link(href="reset-password", data-popup="reset-password")
+        a.popup__link(href="reset-password", data-popup="reset-password", tabindex="0")
           | I forgot my password!
         label.field__label(for="password")
           | What’s your <b>password</b>?

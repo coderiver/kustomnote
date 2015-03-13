@@ -1,0 +1,4 @@
+.brand {
+  display: inline-block;
+  @include hide-text;
+}

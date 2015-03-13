@@ -41,13 +41,13 @@ $purple: #7746A1;
 
 
 @mixin tablet {
-  @include r(799) {
+  @include r(767) {
     @content
   }
 }
 
 @mixin mobile {
-  @include r(599) {
+  @include r(766) {
     @content
   }
 }
@@ -64,6 +64,7 @@ body {
   @include fs(18);
   line-height: 1.2;
   color: $text;
+  -webkit-font-smoothing: antialiased;
 
   &.no-scroll {
     left: 0;

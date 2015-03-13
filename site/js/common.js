@@ -31,7 +31,7 @@ head.ready(function() {
 
     var showPopup = function(popup) {
         if ( openedPopup ) {
-            openedPopup.fadeOut(200);
+            hidePopup(openedPopup);
         }
         // disableScroll();
         disableBodyScroll();
@@ -44,6 +44,11 @@ head.ready(function() {
         openedPopup = undefined;
         // enableScroll();
         enableBodyScroll();
+
+        var form = popup.find('.form.is-error');
+        if ( form.length ) {
+            clearForm(form);
+        }
     };
 
     $('[data-popup]').each(function() {
@@ -136,6 +141,7 @@ head.ready(function() {
         var scroll     = win.scrollTop(),
             winWidth   = win.width(),
             fixedClass = 'is-fixed';
+            minWinSize = 768;
 
         if ( scroll > 0 ) {
             header.addClass(fixedClass);
@@ -144,10 +150,10 @@ head.ready(function() {
         win.on('scroll', function() {
             scroll = win.scrollTop();
 
-            if ( scroll > 0 && winWidth >= 700 ) {
+            if ( scroll > 0 && winWidth >= minWinSize ) {
                 header.addClass(fixedClass);
             }
-            if ( scroll <= 0 && winWidth >= 700 ) {
+            if ( scroll <= 0 && winWidth >= minWinSize ) {
                 header.removeClass(fixedClass);
             }
 
@@ -156,16 +162,82 @@ head.ready(function() {
         win.on('resize', function() {
             winWidth   = win.width();
 
-            if ( winWidth < 700 && header.hasClass(fixedClass) ) {
+            if ( winWidth < minWinSize && header.hasClass(fixedClass) ) {
                 header.removeClass(fixedClass);
             }
 
-            if ( winWidth >= 700 && !header.hasClass(fixedClass) ) {
+            if ( winWidth >= minWinSize && !header.hasClass(fixedClass) ) {
                 header.addClass(fixedClass);
             }
         });
     };
 
     makeHeaderFixed();
+
+
+    var validateEmail = function(email) {
+        var re = /^\s*[\w\-\+_]+(\.[\w\-\+_]+)*\@[\w\-\+_]+\.[\w\-\+_]+(\.[\w\-\+_]+)*\s*$/;
+        if (re.test(email)) {
+            return true;
+        } else {
+            return false;
+        }
+    };
+
+    var checkFormInputs = function(form) {
+        var input = form.find('input'),
+            check = true,
+            i     = 0;
+
+        while ( check && i < input.length) {
+            if ( $(input[i]).val() === '' ) {
+                check = false;
+            }
+            i++;
+        }
+        return check;
+    };
+
+    var clearForm = function(form) {
+        setTimeout(function() {
+            form.find('input').val('');
+            if ( form.hasClass('is-error') ) {
+                form.removeClass('is-error');
+            }
+        }, 200);
+    };
+
+    var validateForm = function(form) {
+        var email = form.find('input[type="email"]');
+        var emailIsOk = true;
+        if ( email.length ) {
+            emailIsOk = validateEmail(email.val());
+        }
+
+        if ( checkFormInputs(form) && emailIsOk ) {
+
+            alert('Success. Need send request to server');
+            hidePopup(openedPopup);
+            clearForm(form);
+            return true;
+
+        } else {
+            if ( !form.hasClass('is-error') ) {
+                form.addClass('is-error');
+            }
+            return false;
+        }
+    };
+
+
+    $('#login .form').submit(function(event) {
+        event.preventDefault();
+        validateForm($(this));
+    });
+
+    $('#sign-up .form').submit(function(event) {
+        event.preventDefault();
+        validateForm($(this));
+    });
 
 });
