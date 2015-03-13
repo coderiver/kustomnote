@@ -29,7 +29,7 @@ head.ready(function() {
         });
     }
 
-    var showPopup = function(popup) {
+    var showPopup = function(popup, cb) {
         if ( openedPopup ) {
             hidePopup(openedPopup);
         }
@@ -37,9 +37,13 @@ head.ready(function() {
         disableBodyScroll();
         popup.fadeIn(200);
         openedPopup = popup;
+
+        if (typeof cb === 'function') {
+            cb();
+        }
     };
 
-    var hidePopup = function(popup) {
+    var hidePopup = function(popup, cb) {
         popup.fadeOut(200);
         openedPopup = undefined;
         // enableScroll();
@@ -48,6 +52,10 @@ head.ready(function() {
         var form = popup.find('.form.is-error');
         if ( form.length ) {
             clearForm(form);
+        }
+
+        if (typeof cb === 'function') {
+            cb();
         }
     };
 
@@ -176,6 +184,7 @@ head.ready(function() {
 
 
     var validateEmail = function(email) {
+        console.log(email);
         var re = /^\s*[\w\-\+_]+(\.[\w\-\+_]+)*\@[\w\-\+_]+\.[\w\-\+_]+(\.[\w\-\+_]+)*\s*$/;
         if (re.test(email)) {
             return true;
@@ -207,19 +216,44 @@ head.ready(function() {
         }, 200);
     };
 
-    var validateForm = function(form) {
-        var email = form.find('input[type="email"]');
-        var emailIsOk = true;
-        if ( email.length ) {
-            emailIsOk = validateEmail(email.val());
+    var formSuccess = function(form) {
+        if ( form.hasClass('is-error') ) {
+            form.removeClass('is-error');
         }
+        form.addClass('is-success');
+        // setTimeout(function() {
+        //     form.removeClass('is-success');
+        //     hidePopup(openedPopup);
+        // }, 2000);
+    };
 
-        if ( checkFormInputs(form) && emailIsOk ) {
+    var validateForm = function(form, success) {
 
-            alert('Success. Need send request to server');
-            hidePopup(openedPopup);
-            clearForm(form);
-            return true;
+        if ( checkFormInputs(form) ) {
+
+            var email      = form.find('input[type="email"]');
+            var emailValid = true;
+            if ( email.length ) {
+                emailValid = validateEmail(email.val());
+            }
+
+            if ( emailValid && !success ) {
+                alert('Success. Need send request to server');
+                hidePopup(openedPopup);
+                clearForm(form);
+                return true;
+
+            } else if ( emailValid && success ) {
+                alert('Success. Need send request to server');
+                formSuccess(form);
+                return true;
+
+            } else {
+                if ( !form.hasClass('is-error') ) {
+                    form.addClass('is-error');
+                }
+                return false;
+            }
 
         } else {
             if ( !form.hasClass('is-error') ) {
@@ -238,6 +272,47 @@ head.ready(function() {
     $('#sign-up .form').submit(function(event) {
         event.preventDefault();
         validateForm($(this));
+    });
+
+    $('#reset-password .form').submit(function(event) {
+        event.preventDefault();
+        var form = $(this);
+        if ( validateForm(form, true) ) {
+            var button   = form.find('button[type=submit]'),
+                popup    = form.parents('.popup');
+                closeBtn = popup.find('.popup__close');
+                oldText  = button.text();
+
+            button.text('Close');
+
+            button.bind('resetForm', function() {
+                setTimeout(function() {
+                    button.text(oldText);
+                    form.removeClass('is-success');
+                    clearForm(form);
+                    button.unbind('resetForm');
+                    button.off('click', buttonClick);
+                    popup.off('click', popupClick);
+                    closeBtn.off('click', popupClick);
+                }, 200);
+            });
+
+            var buttonClick = function(event) {
+                event.preventDefault();
+                hidePopup(openedPopup);
+                button.trigger('resetForm');
+            };
+
+            var popupClick = function() {
+                button.trigger('resetForm');
+            };
+
+            button.on('click', buttonClick);
+
+            popup.on('click', popupClick);
+
+            closeBtn.on('click', popupClick);
+        }
     });
 
 });

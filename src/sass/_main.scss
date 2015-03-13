@@ -110,6 +110,7 @@
         color: $text;
         border-bottom: 1px solid $border;
     }
+
 }
 
 .header__inner {
@@ -2006,9 +2007,9 @@ a.btn {
         margin-top: -40px;
     }
 
-    .icon-diamond {
-        font-size: 46px;
-    }
+    // .icon-diamond {
+    //     font-size: 46px;
+    // }
 
     @include mobile {
         .badge__text {
@@ -2024,8 +2025,8 @@ a.btn {
             width: 40px;
             height: 40px;
             line-height: 40px;
-            font-size: 23px;
         }
+
     }
 }
 
@@ -2084,8 +2085,11 @@ a.btn {
         .badge {
             display: none;
         }
-        .badge_succes {
+        .badge_success {
             display: block;
+        }
+        .field {
+            display: none;
         }
     }
 }

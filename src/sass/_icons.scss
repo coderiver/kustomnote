@@ -26,9 +26,12 @@
 }
 
 
+.icon-mail:before {
+  content: "\e60a";
+}
 
 .icon-question:before {
-  content: "\e60a";
+  content: "\e60b";
 }
 
 .icon-alert:before {
@@ -86,13 +89,13 @@
     text-align: center;
 
     &.icon-cloud {
-        font-size: em(27,18);
+        font-size: 27px;
         color: #A7A9AC;
         background: #D7D7D7;
     }
 
     &.icon-diamond {
-        font-size: em(44,18);
+        font-size: 44px;
         color: #FFF;
     }
 
@@ -110,5 +113,29 @@
       background: #4F94DD;
       color: #FFF;
       font-size: 38px;
+    }
+
+    &.icon-mail {
+      background: #4F94DD;
+      color: #FFF;
+      font-size: 29px;
+    }
+
+    @include tablet {
+      &.icon-diamond {
+        font-size: 23px;
+      }
+
+      &.icon-alert {
+        font-size: 20px;
+      }
+
+      &.icon-question {
+        font-size: 22px;
+      }
+
+      &.icon-mail {
+        font-size: 15px;
+      }
     }
 }
