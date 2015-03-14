@@ -1054,7 +1054,7 @@ a.btn {
 .feature_mod {
     padding: 83px 0;
     @include tablet {
-        padding-top: 35px;
+        padding: 35px 0;
     }
 
     .title {
@@ -1105,6 +1105,8 @@ a.btn {
 
         .feature-more__item {
             font-size: 12px;
+            padding-left: 5px;
+            padding-right: 5px;
         }
 
         .btn_more {

@@ -151,7 +151,7 @@ head.ready(function() {
             fixedClass = 'is-fixed';
             minWinSize = 768;
 
-        if ( scroll > 0 ) {
+        if ( scroll > 0 && winWidth >= minWinSize ) {
             header.addClass(fixedClass);
         }
 

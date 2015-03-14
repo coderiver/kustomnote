@@ -135,10 +135,12 @@ $slick-opacity-not-active: 0.25 !default;
     display: block;
     text-align: center;
     padding: 0;
+    font-size: 0;
     width: 100%;
     li {
         position: relative;
         display: inline-block;
+        vertical-align: bottom;
         cursor: pointer;
         button {
             display: block;
@@ -171,6 +173,15 @@ $slick-opacity-not-active: 0.25 !default;
     }
 
     @include mobile {
-        bottom: 11px;
+        bottom: 10px;
+        li {
+            button {
+                padding: 2px;
+                &:before {
+                    width: 6px;
+                    height: 6px;
+                }
+            }
+        }
     }
 }

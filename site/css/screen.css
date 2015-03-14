@@ -160,13 +160,15 @@ body.no-scroll { left: 0; right: 0; overflow-y: scroll; z-index: 0; }
 [dir="rtl"] .slick-next:before { content: "←"; }
 
 /* Dots */
-.slick-dots { position: absolute; bottom: 22px; list-style: none; display: block; text-align: center; padding: 0; width: 100%; }
-.slick-dots li { position: relative; display: inline-block; cursor: pointer; }
+.slick-dots { position: absolute; bottom: 22px; list-style: none; display: block; text-align: center; padding: 0; font-size: 0; width: 100%; }
+.slick-dots li { position: relative; display: inline-block; vertical-align: bottom; cursor: pointer; }
 .slick-dots li button { display: block; padding: 3px; background: none; outline: none; line-height: 0px; font-size: 0px; color: red; cursor: pointer; }
 .slick-dots li button:before { content: ""; display: block; height: 10px; width: 10px; box-sizing: border-box; border-radius: 50%; background: #979795; -webkit-transition: all 0.1s ease; transition: all 0.1s ease; }
 .slick-dots li button:hover:before { background: #4E4E4E; }
 .slick-dots li.slick-active button:before { background: #4E4E4E; }
-@media only screen and (max-width: 766px) { .slick-dots { bottom: 11px; } }
+@media only screen and (max-width: 766px) { .slick-dots { bottom: 10px; }
+  .slick-dots li button { padding: 2px; }
+  .slick-dots li button:before { width: 6px; height: 6px; } }
 
 .l { max-width: 1124px; padding: 0 50px; margin: auto; }
 @media only screen and (max-width: 767px) { .l { padding: 0 15px; } }
@@ -398,7 +400,7 @@ a.btn:hover { text-decoration: none; }
 @media only screen and (max-width: 766px) { .feature_bgmod .user { margin: 0 -15px -30px; background: #C5C5C5; border: solid #C5C5C5; border-width: 0 15px 30px 15px; } }
 
 .feature_mod { padding: 83px 0; }
-@media only screen and (max-width: 767px) { .feature_mod { padding-top: 35px; } }
+@media only screen and (max-width: 767px) { .feature_mod { padding: 35px 0; } }
 .feature_mod .title { margin-bottom: 17px; }
 
 .feature-more { padding: 44px 0 50px; background: #E9E9E9; }
@@ -410,7 +412,7 @@ a.btn:hover { text-decoration: none; }
 @media only screen and (max-width: 766px) { .feature-more { padding: 25px 0; font-size: 14px; font-size: 1.4rem; }
   .feature-more .title { margin-bottom: 24px; }
   .feature-more .btn { margin-top: 15px; }
-  .feature-more .feature-more__item { font-size: 12px; }
+  .feature-more .feature-more__item { font-size: 12px; padding-left: 5px; padding-right: 5px; }
   .feature-more .btn_more { display: block; }
   .feature-more .feature-more__other { display: none; margin-top: 0; padding-bottom: 20px; text-align: center; }
   .feature-more .feature-more__other ul { width: auto; float: none; padding: 0; } }
