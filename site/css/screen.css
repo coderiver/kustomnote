@@ -184,15 +184,16 @@ body.no-scroll { left: 0; right: 0; overflow-y: scroll; z-index: 0; }
 .toparea { display: table; table-layout: fixed; border-collapse: collapse; width: 100%; height: -webkit-calc(100vh - 140px); height: calc(100vh - 140px); color: #FFF; background: url("../img/toparea.jpg") no-repeat center center; background-size: cover; }
 @media only screen and (max-width: 950px) { .toparea .toparea__inner { padding-bottom: 105px; }
   .toparea .toparea__footer { display: block; } }
-@media only screen and (max-width: 767px) { .toparea { background-image: url("../img/toparea-mobile.jpg"); height: -webkit-calc(100vh - 130px); height: calc(100vh - 130px); }
-  .toparea .toparea__inner { padding-top: 145px; } }
+@media only screen and (max-width: 767px) { .toparea { background-image: url("../img/toparea-mobile.jpg"); height: auto; }
+  .ios .toparea { height: -webkit-calc(100vh - 130px); height: calc(100vh - 130px); }
+  .toparea .toparea__inner { padding-top: 145px; padding-bottom: 115px; } }
 .toparea .toparea__footer .btn_sign { width: auto; }
 
 .toparea__inner { display: table-cell; position: relative; width: 100%; height: 100%; vertical-align: middle; padding: 115px 0 40px; }
 .toparea__inner .header { position: absolute; z-index: 1; top: 0; left: 0; right: 0; }
 .toparea__inner .subtitle { max-width: 960px; margin: auto; margin-top: 10px; text-align: center; }
 
-.toparea__footer { display: none; position: absolute; bottom: 0; left: 0; right: 0; height: 65px; text-align: center; }
+.toparea__footer { display: none; position: absolute; bottom: 0; left: 0; right: 0; height: 85px; text-align: center; }
 
 .header { padding: 35px 0; -webkit-transition: background 0.1s linear; transition: background 0.1s linear; }
 .header .btn { display: inline-block; vertical-align: middle; margin-left: 15px; }
@@ -239,7 +240,7 @@ body.no-scroll { left: 0; right: 0; overflow-y: scroll; z-index: 0; }
 .btn { display: inline-block; position: relative; background: none; box-sizing: border-box; height: 40px; min-width: 175px; padding: 0 15px; border: 1px solid; border-radius: 3px; color: inherit; text-align: center; font-family: "PTSansRegular", Helvetica, Arial, sans-serif; font-weight: normal; font-size: 18px; -webkit-transition: all 0.15s linear; transition: all 0.15s linear; }
 .btn > span { display: inline-block; padding-right: 0.9375em; position: relative; }
 .btn > span:before { content: "\f178"; position: absolute; top: 50%; right: 0; font-size: 10px; font-size: 1rem; margin-top: -0.3em; }
-@media only screen and (max-width: 766px) { .btn { font-size: 12px; min-width: 140px; }
+@media only screen and (max-width: 766px) { .btn { font-size: 14px; min-width: 140px; }
   .btn span:before { font-size: 8px; } }
 
 a.btn { line-height: 40px; text-decoration: none; }
@@ -267,8 +268,8 @@ a.btn:hover { text-decoration: none; }
 .btn_wide { min-width: 270px; }
 @media only screen and (max-width: 766px) { .btn_wide { min-width: 140px; } }
 
-.btn_more { background: none; border: 3px solid #D8D8D8; border-radius: none; }
-.btn_more > span { padding: 0 0 0 0.9375em; }
+.btn_more { background: none; border: 3px solid #D8D8D8; border-radius: none; padding-left: 5px; padding-right: 5px; }
+.btn_more > span { padding: 0 0 0 0.75em; }
 .btn_more > span:before { content: ""; right: auto; left: 0; width: 0; height: 0; font-size: inherit; border: solid transparent; border-width: 0.375em 0 0.375em 0.375em; border-left-color: #4E4E4E; margin-top: -0.375em; }
 .btn_more.is-active > span:before { border-width: 0.375em 0.375em 0 0.375em; border-color: transparent; border-top-color: #4E4E4E; margin: -0.1875em 0 0 -0.28125em; }
 

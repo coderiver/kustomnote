@@ -20,9 +20,13 @@
 
     @include tablet {
         background-image: img-url('toparea-mobile.jpg');
-        height: calc(100vh - 130px);
+        height: auto;
+        .ios & {
+            height: calc(100vh - 130px);
+        }
         .toparea__inner {
             padding-top: 145px;
+            padding-bottom: 115px;
         }
     }
 
@@ -63,7 +67,7 @@
     bottom: 0;
     left: 0;
     right: 0;
-    height: 65px;
+    height: 85px;
     text-align: center;
 }
 
@@ -294,7 +298,7 @@
     // }
 
     @include mobile {
-        font-size: 12px;
+        font-size: 14px;
         min-width: 140px;
 
         span:before {
@@ -386,9 +390,11 @@ a.btn {
     background: none;
     border: 3px solid #D8D8D8;
     border-radius: none;
+    padding-left: 5px;
+    padding-right: 5px;
 
     > span {
-        padding: 0 0 0 em(15);
+        padding: 0 0 0 em(12);
         &:before {
             content: "";
             right: auto;
