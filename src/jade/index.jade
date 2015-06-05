@@ -111,17 +111,19 @@ block content
             | Organize your world—in a customizable way.
           p.
             A system as unique as your challenges: Transpose lets you create, 
-            organize, and search in your own way.<br>
-            Roll over a section to learn more about Transpose’s features.
+            organize, and search in your own way.
+          p Roll over a section to learn more about Transpose’s features.
 
       .feature-group__inner
         .l
-          ul.feature-group__cards
-            li.card
-              strong.card__title
+          .feature-group__cards
+            .card
+              span.card__title
                 | Create
               .card__flipper
                 .card__front
+                  span.card__title
+                    | Create
                   .card__icon
                     i.icon.icon-bulb
                   p.
@@ -142,11 +144,13 @@ block content
                     Transpose recognizes all kinds of files—even voice recordings 
                     and images—so you can search through them like text.
 
-            li.card
-              strong.card__title
+            .card
+              span.card__title
                 | Organize
               .card__flipper
                 .card__front
+                  span.card__title
+                    | Organize
                   .card__icon
                     i.icon.icon-cube
                   p.
@@ -166,11 +170,13 @@ block content
                     <b>Search different formats with ease.</b> 
                     Transpose recognizes all kinds of files—even voice recordings 
                     and images—so you can search through them like text.
-            li.card
-              strong.card__title
+            .card
+              span.card__title
                 | Search 
               .card__flipper
                 .card__front
+                  span.card__title
+                    | Search
                   .card__icon
                     i.icon.icon-search
                   p.
@@ -190,6 +196,13 @@ block content
                     <b>Search different formats with ease.</b> 
                     Transpose recognizes all kinds of files—even voice recordings 
                     and images—so you can search through them like text.
+          .cards-nav
+            button.cards-nav__prev.icon.icon-angle-left(type="button")
+            button.cards-nav__more(type="button") Tap to learn more
+            button.cards-nav__next.icon.icon-angle-right(type="button")
+
+          button.btn.btn_red.btn_wide(type="button", data-popup="sign-up")
+              span Sign up for free
 
       .feature-group__footer
         .l

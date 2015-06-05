@@ -83,45 +83,6 @@ head.ready(function() {
         event.stopPropagation();
     });
 
-    // disable scroll
-    // left: 37, up: 38, right: 39, down: 40,
-    // spacebar: 32, pageup: 33, pagedown: 34, end: 35, home: 36
-    // var keys = [37, 38, 39, 40];
-
-    // function preventDefault(e) {
-    //   e = e || window.event;
-    //   if ( e.preventDefault )
-    //       e.preventDefault();
-    //   e.returnValue = false;
-    // }
-
-    // function keydown(e) {
-    //     for (var i = keys.length; i--;) {
-    //         if (e.keyCode === keys[i]) {
-    //             preventDefault(e);
-    //             return;
-    //         }
-    //     }
-    // }
-
-    // function wheel(e) {
-    //   preventDefault(e);
-    // }
-
-    // function disableScroll() {
-    //   if (window.addEventListener) {
-    //       window.addEventListener('DOMMouseScroll', wheel, false);
-    //   }
-    //   window.onmousewheel = document.onmousewheel = window.ontouchmove = document.ontouchmove = wheel;
-    //   // document.onkeydown = keydown;
-    // }
-
-    // function enableScroll() {
-    //     if (window.removeEventListener) {
-    //         window.removeEventListener('DOMMouseScroll', wheel, false);
-    //     }
-    //     window.onmousewheel = document.onmousewheel = window.ontouchmove = document.ontouchmove = document.onkeydown = null;
-    // }
 
     var disableBodyScroll = function() {
         if ( !body.hasClass('no-scroll') ) {
@@ -332,5 +293,61 @@ head.ready(function() {
             return content;
         }
      });
+
+
+    function CardSlider() {
+        this.active   = false;
+        this.elements = {};
+        this.current = null;
+        this.slick = null;
+
+        return this;
+    }
+
+    CardSlider.prototype.init = function(selectors) {
+        var _ = this;
+
+        _.elements.slider  = $(selectors.slider);
+        _.elements.moreBtn = $(selectors.moreBtn);
+        _.elements.prevBtn = $(selectors.prevBtn);
+        _.elements.nextBtn = $(selectors.nextBtn);
+
+        _.elements.slider.slick({
+            slide: selectors.slide,
+            prevArrow: _.elements.prevBtn,
+            nextArrow: _.elements.nextBtn,
+            dots: true,
+            fade: true
+        });
+
+        _.slick = _.elements.slider.slick('getSlick');
+
+        _.elements.slider.on('beforeChange', function(e, slick, currentSlide, nextSlide) {
+            var currentCard = _.slick.$slides[ currentSlide ];
+            setTimeout(function() {
+                $(currentCard).removeClass('is-flipped');
+            }, 500);
+        });
+
+        _.elements.moreBtn.on('click', function(e) {
+            e.preventDefault();
+            var currentCard = _.slick.$slides[ _.slick.currentSlide ];
+            $(currentCard).toggleClass('is-flipped');
+        });
+
+        console.log(this);
+    };
+
+
+    if ( $(window).width() < 768 ) {
+        var cards = new CardSlider().init({
+            slider: '.feature-group__cards',
+            slide: '.feature-group__cards .card',
+            moreBtn: '.cards-nav__more',
+            prevBtn: '.cards-nav__prev',
+            nextBtn: '.cards-nav__next',
+        });
+    };
+
 
 });

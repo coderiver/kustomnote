@@ -25,6 +25,9 @@
   @extend %icon;
 }
 
+$icon-angle-left: "\f104";
+$icon-angle-right: "\f105";
+$icon-long-arrow-right: "\f178";
 $icon-bulb: "\e60c";
 $icon-cube: "\e60d";
 $icon-search: "\e60e";
@@ -40,9 +43,14 @@ $icon-collaboration: "\e601";
 $icon-collect: "\e602";
 $icon-data: "\e603";
 $icon-mobile: "\e604";
-$icon-long-arrow-right: "\f178";
 
 
+.icon-angle-left:before {
+  content: "\f104";
+}
+.icon-angle-right:before {
+  content: "\f105";
+}
 .icon-bulb:before {
   content: "\e60c";
 }
