@@ -4,46 +4,196 @@ block title
   title Don’t settle for chaotic notes | KustomNote
 
 block content
-  <!-- begin toparea -->
+  // BEGIN toparea 
   .toparea
     .toparea__inner
       include _header
 
       .l
         h1.heading.heading_toparea
-          | Don’t settle for <del>chaotic</del> notes.
+          //- | Don’t settle for <del>chaotic</del> notes.
+          | Your solutions. Your way.
         strong.subtitle
-          | Cum sociis natoque penatibus et magnis dis
-          | parturient montes, nascetur ridiculus mus.
+          //- | Cum sociis natoque penatibus et magnis dis
+          //- | parturient montes, nascetur ridiculus mus.
+          | Unique challenges deserve solutions built by you.
 
       .toparea__footer
         button.btn.btn_sign(type="button", data-popup="sign-up")
           span Sign up for free
-  <!-- end toparea -->
+  // END toparea 
 
-  <!-- begin feature -->
-  section.feature.feature_bgmod
+  // BEGIN feature 
+  section.feature.feature_replace.feature_bgmod
     .l
       .feature__outer
         .feature__inner
 
-          h3.title.title_blue
-            | Capture information with ease.
-          p.feature__text
-            | Donec sed odio dui. Cras mattis consectetur purus
-            | sit amet fermentum. Cras justo odio, dapibus ac
-            | facilisis in, egestas eget quam. Vestibulum id
-            | ligula porta felis euismod semper.
-            | Etiam porta sem malesuada magna mollis euismod.
-            | Curabitur blandit tempus porttitor.
-            | Cras mattis consectetur purus sit amet fermentum.
-            | Curabitur blandit tempus porttitor.
-          button.btn.btn_blue(type="button", data-popup="sign-up")
-            span Sign up for free
+          h3.title
+            | Transpose is for everyone with a vision.
+          .feature__text
+            p Transpose is for all industries and personal interests.
+            p.
+              It does whatever you need done. 
+              You can keep track of leads and meeting notes. 
+              Create forms for customers. Collaborate on projects. 
+              Some people use it to track fitness and 
+              even organize their kids' finger paintings.
+            p.
+              Whatever problem you need to solve, 
+              Transpose means building your solutions in one simple-to-use way.
 
-          .feature__pic.capture
+          button.btn.btn_dark.btn_wide(type="button", data-popup="sign-up")
+            span Start Creating Now
 
-          <!-- begin user -->
+          .feature__pic
+            .feature__pic-inner(style="background-image:url('img/feature1.jpg')")
+
+          // BEGIN user 
+          .user.user_small
+            .user__pic
+              img(src="img/users/user2.jpg", alt="user pic")
+            blockquote.user__feedback
+              p.user__feedback-text
+                | “Cras justo odio, dapibus ac facilisis in,
+                | egestas eget quam. Fusce KustomNote dapibus.”
+              cite.user__name
+                | Julie, in Nevada
+              .user__link
+                a(href="")
+                  | See Julie’s Templates
+          // END user 
+  // END feature 
+
+  //- // BEGIN feature 
+  //- section.feature.feature_replace.feature_bgmod
+  //-   .l
+  //-     .feature__outer
+  //-       .feature__inner
+
+  //-         h3.title.title_orange
+  //-           | Find Everything.
+  //-         p.feature__text
+  //-           | Donec sed odio dui. Cras mattis consectetur purus
+  //-           | sit amet fermentum. Cras justo odio, dapibus ac
+  //-           | facilisis in, egestas eget quam. Vestibulum id
+  //-           | ligula porta felis euismod semper.
+  //-           | Etiam porta sem malesuada magna mollis euismod.
+  //-           | Curabitur blandit tempus porttitor.
+  //-           | Cras mattis consectetur purus sit amet fermentum.
+  //-           | Curabitur blandit tempus porttitor.
+  //-         button.btn.btn_orange(type="button", data-popup="sign-up")
+  //-           span Sign up for free
+
+  //-         .feature__pic.find
+
+  //-         // BEGIN user 
+  //-         .user.user_replace.user_small
+  //-           .user__pic
+  //-             img(src="img/users/user2.jpg", alt="user pic")
+  //-           blockquote.user__feedback
+  //-             p.user__feedback-text
+  //-               | “Cras justo odio, dapibus ac facilisis in,
+  //-               | egestas eget quam. Fusce KustomNote dapibus.”
+  //-             cite.user__name
+  //-               | Jonas, in Iceland
+  //-             .user__link
+  //-               a(href="")
+  //-                 | See Jonas’ Templates
+  //-         // END user 
+  //- // END feature 
+
+  //BEGIN feature-group
+  section.feature-group
+      .feature-group__heading
+        .l
+          h3.title
+            | Organize your world—in a customizable way.
+          p.
+            A system as unique as your challenges: Transpose lets you create, 
+            organize, and search in your own way.<br>
+            Roll over a section to learn more about Transpose’s features.
+
+      .feature-group__inner
+        .l
+          ul.feature-group__cards
+            li.card
+              strong.card__title
+                | Create
+              .card__flipper
+                .card__front
+                  .card__icon
+                    i.icon.icon-bulb
+                  p.
+                    Transpose is the simplest way to capture and build what matters to you.
+                    And it's flexible enough for projects <br> big and small.
+                  footer.card__footer
+                    span Roll over to learn more
+                
+                .card__back
+                  .card__icon-small
+                    i.icon.icon-bulb
+                  p <b>Find what you need</b> with a text or category search.
+                  p.
+                    <b>Intelligent.</b> Our system works for you behind the scenes, 
+                    analyzing items to make them easy to find.
+                  p.
+                    <b>Search different formats with ease.</b> 
+                    Transpose recognizes all kinds of files—even voice recordings 
+                    and images—so you can search through them like text.
+
+            li.card
+              strong.card__title
+                | Organize
+              .card__flipper
+                .card__front
+                  .card__icon
+                    i.icon.icon-cube
+                  p.
+                    Keep everything in your world where it belongs.
+                    Transpose is the easiest way to <br> organize projects.
+                  footer.card__footer
+                    span Roll over to learn more
+                
+                .card__back
+                  .card__icon-small
+                    i.icon.icon-cube
+                  p <b>Find what you need</b> with a text or category search.
+                  p.
+                    <b>Intelligent.</b> Our system works for you behind the scenes, 
+                    analyzing items to make them easy to find.
+                  p.
+                    <b>Search different formats with ease.</b> 
+                    Transpose recognizes all kinds of files—even voice recordings 
+                    and images—so you can search through them like text.
+            li.card
+              strong.card__title
+                | Search 
+              .card__flipper
+                .card__front
+                  .card__icon
+                    i.icon.icon-search
+                  p.
+                    Everything you create is easily findable.
+                    Our intelligent system does the work <br> for you.
+                  footer.card__footer
+                    span Roll over to learn more
+                
+                .card__back
+                  .card__icon-small
+                    i.icon.icon-search
+                  p <b>Find what you need</b> with a text or category search.
+                  p.
+                    <b>Intelligent.</b> Our system works for you behind the scenes, 
+                    analyzing items to make them easy to find.
+                  p.
+                    <b>Search different formats with ease.</b> 
+                    Transpose recognizes all kinds of files—even voice recordings 
+                    and images—so you can search through them like text.
+
+      .feature-group__footer
+        .l
+          // BEGIN user 
           .user.user_small
             .user__pic
               img(src="img/users/user1.jpg", alt="user pic")
@@ -56,69 +206,32 @@ block content
               .user__link
                 a(href="")
                   | See Julie’s Templates
-          <!-- end user -->
-  <!-- end feature -->
+          // END user
 
-  <!-- begin feature -->
-  section.feature.feature_replace.feature_bgmod
+          button.btn.btn_red.btn_wide(type="button", data-popup="sign-up")
+              span Sign up for free
+  //END feature-group
+
+  // BEGIN feature 
+  section.feature
     .l
       .feature__outer
         .feature__inner
 
-          h3.title.title_orange
-            | Find Everything.
-          p.feature__text
-            | Donec sed odio dui. Cras mattis consectetur purus
-            | sit amet fermentum. Cras justo odio, dapibus ac
-            | facilisis in, egestas eget quam. Vestibulum id
-            | ligula porta felis euismod semper.
-            | Etiam porta sem malesuada magna mollis euismod.
-            | Curabitur blandit tempus porttitor.
-            | Cras mattis consectetur purus sit amet fermentum.
-            | Curabitur blandit tempus porttitor.
-          button.btn.btn_orange(type="button", data-popup="sign-up")
-            span Sign up for free
-
-          .feature__pic.find
-
-          <!-- begin user -->
-          .user.user_replace.user_small
-            .user__pic
-              img(src="img/users/user2.jpg", alt="user pic")
-            blockquote.user__feedback
-              p.user__feedback-text
-                | “Cras justo odio, dapibus ac facilisis in,
-                | egestas eget quam. Fusce KustomNote dapibus.”
-              cite.user__name
-                | Jonas, in Iceland
-              .user__link
-                a(href="")
-                  | See Jonas’ Templates
-          <!-- end user -->
-  <!-- end feature -->
-
-  <!-- begin feature -->
-  section.feature.feature_mod
-    .l
-      .feature__outer
-        .feature__inner
-
-          h3.title.title_purple
-            | Powered by a community of people just like you.
-          p.feature__text
-            | Donec sed odio dui. Cras mattis consectetur purus
-            | sit amet fermentum. Cras justo odio, dapibus ac
-            | facilisis in, egestas eget quam. Vestibulum id
-            | ligula porta felis euismod semper.
-            | Etiam porta sem malesuada magna mollis euismod.
-            | Curabitur blandit tempus porttitor.
-            | Cras mattis consectetur purus sit amet fermentum.
-            | Curabitur blandit tempus porttitor.
-          button.btn.btn_purple(type="button", data-popup="sign-up")
+          h3.title
+            | Be part of a community.
+          .feature__text
+            p Whatever your goals, you’re in good company with Transpose.
+            p.
+              <b>177,000 templates made by people like you.</b> 
+              Our open community makes it easy to find the perfect start for your project.
+            p <b>Interact with experts in your field.</b> See how they work, and use their tools.
+            p <b>Share what you love.</b> Create your profile, and show what you’re working on. 
+          button.btn.btn_dark.btn_wide(type="button", data-popup="sign-up")
             span Sign up for free
 
           .feature__slider
-            <!-- begin slider -->
+            // BEGIN slider 
             .slider.js-slick
               .slide(style="background-image:url('img/slides/slide.jpg')")
                 .slide__footer
@@ -132,9 +245,9 @@ block content
                 .slide__footer
                   a.slide__caption(href="#")
                     | Templates for Business
-            <!-- end slider -->
+            // END slider 
 
-          <!-- begin user -->
+          // BEGIN user 
           .user.user_small
             .user__pic
               img(src="img/users/user3.jpg", alt="user pic")
@@ -147,88 +260,139 @@ block content
               .user__link
                 a(href="")
                   | See Vladmir’s Templates
-          <!-- end user -->
+          // END user 
+  // END feature 
 
-  <!-- end feature -->
-
-  <!-- begin feature-more -->
+  // BEGIN feature-more 
   section.feature-more
     .l
       h3.title
         | And so much more...
 
-      <!-- begin feature-more__items -->
-      .feature-more__items
-        .feature-more__item
-          figure.figure
-            .icon.icon-collect
-            figcaption.figure__text
-              | Collect data from <br> many sources
-          p
-            | Aenean lacinia bibendum nulla sed consectetur.
-            | Maecenas sed diam eget risus varius blandit sit
-            | amet non magna. Vivamus sagittis lacus vel augue laoreet rutrum faucibus.
-        .feature-more__item
-          figure.figure
-            .icon.icon-collaboration
-            figcaption.figure__text
-              | Collaboration <br> for teams
-          p
-            | Cras justo odio, dapibus ac facilisis in, egestas eget quam.
-            | Sed posuere consectetur est at lobortis.
-            | Maecenas sed diam eget risus varius blandit sit amet non magna. Aenean.
-        .feature-more__item
-          figure.figure
-            .icon.icon-mobile
-            figcaption.figure__text
-              | Full-featured <br> mobile applications
-          p
-            | Purus sit amet fermentum. Maecenas sed diam eget risus varius blandit sit amet non magna.
-            | Maecenas faucibus mollis interdum. Fusce dapibus, tellus ac cursus commodo, tortor mauris.
-        .feature-more__item
-          figure.figure
-            .icon.icon-data
-            figcaption.figure__text
-              | Data portability <br> forever
-          p
-            | Maecenas sed diam eget risus varius blandit sit amet non magna.
-            | Nullam id dolor id nibh ultricies vehicula ut id elit.
-            | Etiam porta sem malesuada magna mollis euismod.
-      <!-- end feature-more__items -->
+      .feature-more__cols
+        ul.feature-more__list
+          li
+            a.js-tooltip(href="#") Windows & Mac
+            p.tooltip-content.
+              Transpose does not sell information about user behavior. 
+              Your information is always kept private.
+          li
+            a.js-tooltip(href="#") Android & iOS
+            p.tooltip-content.
+              Transpose does not sell information about user behavior. 
+              Your information is always kept private.
+          li
+            a.js-tooltip(href="#") Intuitive search
+            p.tooltip-content.
+              Tooltip content
+        
+        ul.feature-more__list
+          li
+            a.js-tooltip(href="#") Secure
+            p.tooltip-content.
+              Tooltip content
+          li
+            a.js-tooltip(href="#") Export data easily
+            p.tooltip-content.
+              Tooltip content
+          li
+            a.js-tooltip(href="#") Team collaboration
+            p.tooltip-content.
+              Transpose does not sell information about user behavior. 
+              Your information is always kept private.
+        
+        ul.feature-more__list
+          li
+            a.js-tooltip(href="#") Drag & Drop editing
+            p.tooltip-content.
+              Transpose does not sell information about user behavior. 
+              Your information is always kept private.
+          li
+            a.js-tooltip(href="#") Recognizes all kinds of files
+            p.tooltip-content.
+              Transpose does not sell information about user behavior. 
+              Your information is always kept private.
+          li
+            a.js-tooltip(href="#") We don’t sell your info
+            p.tooltip-content.
+              Transpose does not sell information about user behavior. 
+              Your information is always kept private.
+
+
+
+
+      //- // BEGIN feature-more__items 
+      //- .feature-more__items
+        //- .feature-more__item
+        //-   figure.figure
+        //-     .icon.icon-collect
+        //-     figcaption.figure__text
+        //-       | Collect data from <br> many sources
+        //-   p
+        //-     | Aenean lacinia bibendum nulla sed consectetur.
+        //-     | Maecenas sed diam eget risus varius blandit sit
+        //-     | amet non magna. Vivamus sagittis lacus vel augue laoreet rutrum faucibus.
+        //- .feature-more__item
+        //-   figure.figure
+        //-     .icon.icon-collaboration
+        //-     figcaption.figure__text
+        //-       | Collaboration <br> for teams
+        //-   p
+        //-     | Cras justo odio, dapibus ac facilisis in, egestas eget quam.
+        //-     | Sed posuere consectetur est at lobortis.
+        //-     | Maecenas sed diam eget risus varius blandit sit amet non magna. Aenean.
+        //- .feature-more__item
+        //-   figure.figure
+        //-     .icon.icon-mobile
+        //-     figcaption.figure__text
+        //-       | Full-featured <br> mobile applications
+        //-   p
+        //-     | Purus sit amet fermentum. Maecenas sed diam eget risus varius blandit sit amet non magna.
+        //-     | Maecenas faucibus mollis interdum. Fusce dapibus, tellus ac cursus commodo, tortor mauris.
+        //- .feature-more__item
+        //-   figure.figure
+        //-     .icon.icon-data
+        //-     figcaption.figure__text
+        //-       | Data portability <br> forever
+        //-   p
+        //-     | Maecenas sed diam eget risus varius blandit sit amet non magna.
+        //-     | Nullam id dolor id nibh ultricies vehicula ut id elit.
+        //-     | Etiam porta sem malesuada magna mollis euismod.
+      //- // END feature-more__items 
 
       button.btn.btn_more.btn_center(type="button", data-more-btn="features")
         span See more features
 
-      <!-- begin feature-more__links -->
-      .feature-more__other(data-more-content="features")
-        ul
-          li Vestibulum Elit Vehicula
-          li Ipsum Tellus Mollis
-          li Sit Cras Elit
-          li Purus Cursus Vehicula
-          li Dolor Fringilla Elit
-          li Cras Quam Dolor
-        ul
-          li Consectetur Inceptos Parturient
-          li Purus Cursus Vehicula
-          li Dolor Fringilla Elit
-          li Cras Quam Dolor
-          li Condimentum Ridiculus Risus
-          li Tristique Purus Fusce
-        ul
-          li Tellus Ullamcorper Parturient
-          li Etiam Risus Magna
-          li Nibh Elit Commodo
-          li Tellus Bibendum Ornare
-          li Fusce Aenean Commodo
-          li Parturient Nibh Ridiculus
-      <!-- end feature-more__links -->
+      //- // BEGIN feature-more__links 
+      //- .feature-more__other(data-more-content="features")
+      //-   ul
+      //-     li Vestibulum Elit Vehicula
+      //-     li Ipsum Tellus Mollis
+      //-     li Sit Cras Elit
+      //-     li Purus Cursus Vehicula
+      //-     li Dolor Fringilla Elit
+      //-     li Cras Quam Dolor
+      //-   ul
+      //-     li Consectetur Inceptos Parturient
+      //-     li Purus Cursus Vehicula
+      //-     li Dolor Fringilla Elit
+      //-     li Cras Quam Dolor
+      //-     li Condimentum Ridiculus Risus
+      //-     li Tristique Purus Fusce
+      //-   ul
+      //-     li Tellus Ullamcorper Parturient
+      //-     li Etiam Risus Magna
+      //-     li Nibh Elit Commodo
+      //-     li Tellus Bibendum Ornare
+      //-     li Fusce Aenean Commodo
+      //-     li Parturient Nibh Ridiculus
+      //- // END feature-more__links 
 
       button.btn.btn_dark.btn_wide.btn_center(type="button", data-popup="sign-up")
         span Sign up for free
-  <!-- end feature-more -->
+  // END feature-more 
 
-  <!-- begin brands -->
+  // BEGIN brands 
   .l
     section.brands
       .brands__item
@@ -251,6 +415,6 @@ block content
         a.barnd.brand-stanford(href="#")
           | stanford
           //- img(src="img/brands/s.jpg", alt="")
-  <!-- end brands -->
+  // END brands 
 
   include _footer

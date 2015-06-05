@@ -20,34 +20,32 @@ $icons: (
 }
 
 
-.ie8 {
 
-  .icon-arr {
-    width: 10px;
-    height: 5px;
-    background-image: url('../img/icons.png');
-    background-position: -116px -51px;
-  }
-
-  .icon-codedby {
-    width: 47px;
-    height: 5px;
-    background-image: url('../img/icons.png');
-    background-position: -59px -51px;
-  }
-
-  .icon-coderiver {
-    width: 49px;
-    height: 5px;
-    background-image: url('../img/icons.png');
-    background-position: 0px -51px;
-  }
-
-  .icon-logo {
-    width: 270px;
-    height: 41px;
-    background-image: url('../img/icons.png');
-    background-position: 0px 0px;
-  }
-
+.icon-arr {
+  width: ceil(10px);
+  height: ceil(5px);
+  background-image: url('../img/icons.png');
+  background-position: ceil(-116px) ceil(-51px);
 }
+
+.icon-codedby {
+  width: ceil(47px);
+  height: ceil(5px);
+  background-image: url('../img/icons.png');
+  background-position: ceil(-59px) ceil(-51px);
+}
+
+.icon-coderiver {
+  width: ceil(49px);
+  height: ceil(5px);
+  background-image: url('../img/icons.png');
+  background-position: ceil(0px) ceil(-51px);
+}
+
+.icon-logo {
+  width: ceil(270px);
+  height: ceil(41px);
+  background-image: url('../img/icons.png');
+  background-position: ceil(0px) ceil(0px);
+}
+

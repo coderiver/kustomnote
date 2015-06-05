@@ -5,7 +5,7 @@
     <title>Plan pricing | KustomNote</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="format-detection" content="telephone=no">
-    <link rel="icon" href="/favicon.png" type="image/png">
+    <link rel="icon" href="favicon.png" type="image/png">
     <link rel="stylesheet" media="all" href="css/screen.css"><!--[if IE]><script src="js/html5shiv.js"></script><![endif]-->
   </head>
   <body>
@@ -13,23 +13,26 @@
       <div class="header-wrap">
         <header class="header header_solid">
           <div class="header__inner l">
-            <div class="header__left"><a href="/" class="logo logo_color">Kustomnote</a></div>
+            <div class="header__left"><a href="/" class="logo logo_color"><span>Transpose</span></a></div>
             <div class="header__right">
-              <nav class="menu"><a href="/" class="menu__link">Features</a><a href="/pricing.html" class="menu__link">Pricing</a><a href="/about.html" class="menu__link">About Us</a><a href="login" data-popup="login" class="menu__link">Login</a></nav>
+              <nav class="menu"><a href="/" data-text="Features" class="menu__link"><span>Features</span></a><a href="/pricing.html" data-text="Pricing" class="menu__link"><span>Pricing</span></a><a href="/about.html" data-text="About Us" class="menu__link"><span>About Us</span></a><a href="login" data-popup="login" data-text="Login" class="menu__link"><span>Login</span></a></nav>
               <button type="button" data-popup="sign-up" class="btn btn_sign"><span>Sign up for free</span></button>
             </div>
           </div>
         </header>
-      </div><!-- end header --><!-- begin toparea-small -->
+      </div><!-- end header -->
+      <!--BEGIN toparea-small-->
       <div class="toparea-small">
         <h1 class="heading">Plans to fit your needs.</h1>
         <button type="button" data-popup="sign-up" class="btn"><span>Sign up for free</span></button>
-      </div><!-- end toparea-small -->
-      <!-- begin pricing -->
+      </div>
+      <!--END toparea-small-->
+      <!--BEGIN pricing-->
       <div class="l">
         <div class="pricing">
           <div class="pricing__main">
-            <div class="pricing__cell"><!-- begin price -->
+            <div class="pricing__cell">
+              <!--BEGIN price-->
               <div class="price price_free">
                 <div class="price__head"><span class="price__label">Standard</span><strong class="price__value">FREE<small>(always)</small></strong></div>
                 <div class="icon icon_circle icon-cloud"></div>
@@ -41,9 +44,11 @@
                   <li>Access notes on your mobile devices.</li>
                   <li>Automatically sync your KustomNotes to Evernote</li>
                 </ul>
-              </div><!-- end price -->
+              </div>
+              <!--END price-->
             </div>
-            <div class="pricing__cell"><!-- begin price -->
+            <div class="pricing__cell">
+              <!--BEGIN price-->
               <div class="price">
                 <div class="price__head"><span class="price__label">Standard</span><strong class="price__value">9.99<small>/mo</small></strong></div>
                 <div class="icon icon_circle icon-diamond"></div>
@@ -54,7 +59,8 @@
                   <li>Use your own logo on your published forms.</li>
                   <li>Business Integrations</li>
                 </ul>
-              </div><!-- end price -->
+              </div>
+              <!--END price-->
             </div>
           </div>
           <div class="pricing__footer">
@@ -68,7 +74,9 @@
             </p>
           </div>
         </div>
-      </div><!-- end pricing --><!-- begin footer -->
+      </div>
+      <!--END pricing-->
+      <!--BEGIN footer-->
       <footer class="footer">
         <div class="l">
           <div class="footer__row">
@@ -88,14 +96,15 @@
           </div>
           <div class="footer__row">
             <div class="footer__right">
-              <div class="footer__copy"><a href="#">Terms of Service</a><a href="#">Privacy Policy</a><span>©2015 KustomNote, Inc.</span></div>
+              <div class="footer__copy"><a href="#">Terms of Service</a><a href="#">Privacy Policy</a><span>©2015 Transpose, Inc.</span></div>
             </div>
             <div class="footer__left">
-              <div class="footer__logo"><a href="/" class="logo">Kustomnote</a></div>
+              <div class="footer__logo"><a href="/" class="logo"><span>Transpose</span></a></div>
             </div>
           </div>
         </div>
-      </footer><!-- end footer -->
+      </footer>
+      <!--END footer-->
     </div><!-- begin popup -->
     <div id="login" class="popup">
       <form method="POST" novalidate class="popup__inner form">

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 18.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
+	<!ENTITY ns_extend "http://ns.adobe.com/Extensibility/1.0/">
+	<!ENTITY ns_ai "http://ns.adobe.com/AdobeIllustrator/10.0/">
+	<!ENTITY ns_graphs "http://ns.adobe.com/Graphs/1.0/">
+	<!ENTITY ns_vars "http://ns.adobe.com/Variables/1.0/">
+	<!ENTITY ns_imrep "http://ns.adobe.com/ImageReplacement/1.0/">
+	<!ENTITY ns_sfw "http://ns.adobe.com/SaveForWeb/1.0/">
+	<!ENTITY ns_custom "http://ns.adobe.com/GenericCustomNamespace/1.0/">
+	<!ENTITY ns_adobe_xpath "http://ns.adobe.com/XPath/1.0/">
+]>
+<svg version="1.1"
+	 id="Слой_1" xmlns:x="&ns_extend;" xmlns:i="&ns_ai;" xmlns:graph="&ns_graphs;" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1244px" height="700px"
+	 viewBox="286 -140 1244 700" enable-background="new 286 -140 1244 700" xml:space="preserve">
+<metadata>
+	<sfw  xmlns="&ns_sfw;">
+		<slices></slices>
+		<sliceSourceBounds  height="974.6" width="1719.3" x="-92.8" y="-68.6" bottomLeftOrigin="true"></sliceSourceBounds>
+	</sfw>
+</metadata>
+<title>toparea-bg</title>
+<desc>Created with Sketch.</desc>
+<g id="Page-1" sketch:type="MSPage">
+	<g id="toparea-bg" sketch:type="MSLayerGroup">
+		<g id="Mask" sketch:type="MSShapeGroup">
+			
+				<linearGradient id="path-2_2_" gradientUnits="userSpaceOnUse" x1="572.2701" y1="0.8" x2="572.2701" y2="-0.2" gradientTransform="matrix(1244.4445 0 0 700 -711250.25 0)">
+				<stop  offset="0" style="stop-color:#E64749"/>
+				<stop  offset="1" style="stop-color:#FF696A"/>
+			</linearGradient>
+			<rect id="path-2_1_" x="286" y="-140" fill="url(#path-2_2_)" width="1244.4" height="700"/>
+		</g>
+		<defs>
+			<filter id="Adobe_OpacityMaskFilter" filterUnits="userSpaceOnUse" x="50.2" y="-276" width="1719.3" height="974.6">
+				<feColorMatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
+			</filter>
+		</defs>
+		<mask maskUnits="userSpaceOnUse" x="50.2" y="-276" width="1719.3" height="974.6" id="mask-3">
+			<g filter="url(#Adobe_OpacityMaskFilter)">
+				<rect id="path-2" x="286" y="-140" fill="#FFFFFF" width="1244.4" height="700"/>
+			</g>
+		</mask>
+		<g id="Shape-_x2B_-Triangle-1-_x2B_-Triangle-2" sketch:type="MSShapeGroup" mask="url(#mask-3)">
+			<g transform="translate(-236.250000, -136.111111)">
+				
+					<linearGradient id="Shape_1_" gradientUnits="userSpaceOnUse" x1="1045.1239" y1="0.2192" x2="1044.5431" y2="0.4937" gradientTransform="matrix(1719.2555 0 0 974.6815 -1795189.875 4.884950e-02)">
+					<stop  offset="0" style="stop-color:#E64749"/>
+					<stop  offset="1" style="stop-color:#FF696A"/>
+				</linearGradient>
+				<path id="Shape" fill="url(#Shape_1_)" d="M581.2-139.9l1424.5,796L1711,834.7L286.4,38.7L581.2-139.9z"/>
+				<polygon id="Triangle-1" fill="#FFFFFF" fill-opacity="0.1" points="1766.7,457.4 1766.7,700.5 940.3,697.2 				"/>
+				<polygon id="Triangle-2" fill="#FFFFFF" fill-opacity="0.1" points="522.2,455.5 1348.6,695.6 522.2,698.5 				"/>
+			</g>
+		</g>
+	</g>
+</g>
+</svg>

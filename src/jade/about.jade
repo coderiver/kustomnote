@@ -6,17 +6,53 @@ block title
 block content
   include _header-white
 
-  <!-- begin toparea-small -->
+  //BEGIN toparea-small
   .toparea-small
     h1.heading
       | Join us on our journey!
-    button.btn(type="button", data-popup="sign-up")
+    button.btn.btn_white(type="button", data-popup="sign-up")
       span Sign up for free
-  <!-- end toparea-small -->
+  //END toparea-small
 
-  <!-- begin comments -->
+  //BEGIN promo-text
+  .promo-text.l
+    p.
+      Transpose lets people create and organize their world
+      in a way that makes sense to them.
+    p.
+      It’s a solution for any industry, any personal interest,
+      anything our customers are doing with their lives.
+    p
+      strong It’s their solutions. Their way.
+  //END promo-text
+
+  //BEGIN story
+  .story
+    .story__inner.l
+      .story__pic
+        .story__pic-inner(style="background-image:url('img/story-pic.jpg')")
+      .story__text
+        h3.title.title_sm
+          | Our story
+        p.
+          When Hussein Ahmed started tinkering with Evernote in 2012, 
+          he saw potential to do something big. A way to push it beyond
+          a note-taking platform into something more robust. 
+          Something anyone could use to not just take notes, but organize their entire world.
+        p.
+          He entered his idea (then called KustomNote) in Evernote’s 
+          DevCup competition, and was one of 10 finalists. 
+          After moving on to the ETC conference in San Francisco, 
+          the application won again--this time the Silver Cup and $15,000.
+        p.
+          By now, Hussein knew he was on to something. He quit his day 
+          job at Amazon and began Transpose in earnest. 
+
+  //END story
+
+  //BEGIN comments
   .comments.l
-    <!-- begin user -->
+    //BEGIN user
     .user.user_big
       .user__pic
         img(src="img/users/user4.jpg", alt="Hussein Ahmed, CEO")
@@ -28,11 +64,11 @@ block content
           | venenatis dapibus posuere velit aliquet.
         cite.user__name
           | - Hussein Ahmed, CEO
-    <!-- end user -->
+    //END user
 
     hr.separator
 
-    <!-- begin user -->
+    //BEGIN user
     .user.user_big.user_replace
       .user__pic
         img(src="img/users/user5.jpg", alt="Samah Gad, CTO")
@@ -44,11 +80,11 @@ block content
           | venenatis dapibus posuere velit aliquet.
         cite.user__name
           | - Samah Gad, CTO
-    <!-- end user -->
+    //END user
 
     hr.separator
 
-    <!-- begin user -->
+    //BEGIN user
     .user.user_big
       .user__pic
         img(src="img/users/user6.jpg", alt="Skyler Johnson-Wagner, CCO")
@@ -60,11 +96,11 @@ block content
           | venenatis dapibus posuere velit aliquet.
         cite.user__name
           | - Skyler Johnson-Wagner, CCO
-    <!-- end user -->
-  <!-- end comments -->
+    //END user
+  //END comments
 
 
-  <!-- begin brands -->
+  //BEGIN brands
   .l
     section.brands.brands_about
       .brands__item
@@ -91,6 +127,6 @@ block content
         a.brand.brand-the-gramercy-fund(href="#")
           | the-gramercy-fund
           //- img(src="img/brands/the-gramercy-fund.jpg", alt="the-gramercy-fund")
-  <!-- end brands -->
+  //END brands
 
   include _footer

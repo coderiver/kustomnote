@@ -1,8 +1,9 @@
 head.ready(function() {
 
-    var body   = $('body');
-    var header = $('header');
-    var win    = $(window);
+    var body    = $('body');
+    var header  = $('header');
+    var win     = $(window);
+    var tooltip = $('.js-tooltip');
     var openedPopup;
 
     if ( $('.js-slick').length ) {
@@ -314,5 +315,22 @@ head.ready(function() {
             closeBtn.on('click', popupClick);
         }
     });
+
+
+    tooltip.tooltipster({
+        delay: 100,
+        touchDevices: false,
+        trigger: 'hover',
+        maxWidth: 280,
+        position: 'bottom-left',
+        animation: 'fade',
+        functionInit: function() {
+            $(this).on('click', function(e) {
+                e.preventDefault();
+            });
+            var content = $(this).siblings('.tooltip-content').text();
+            return content;
+        }
+     });
 
 });

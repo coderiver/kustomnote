@@ -48,8 +48,8 @@ gulp.task('browser-sync', function() {
         notify: false,
         ghostMode: false,
         online: false,
-        // tunnel: 'my-site',
-        open: true
+        // tunnel: 'kustomnote',
+        open: false
     });
 });
 

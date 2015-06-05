@@ -34,10 +34,10 @@ $icons: (
   background-image: url('{{{escaped_image}}}');
   background-position: {{px.offset_x}} {{px.offset_y}};
   @include tablet {
-    width: ({{px.width}} / 2);
-    height: ({{px.height}} / 2);
-    background-position: ({{px.offset_x}} / 2) ({{px.offset_y}} / 2);
-    background-size: ({{px.total_width}} / 2) ({{px.total_height}} / 2)
+    width: ceil({{px.width}} / 2);
+    height: ceil({{px.height}} / 2);
+    background-position: ceil({{px.offset_x}} / 2) ceil({{px.offset_y}} / 2);
+    background-size: ceil({{px.total_width}} / 2) ceil({{px.total_height}} / 2)
   }
 }
 

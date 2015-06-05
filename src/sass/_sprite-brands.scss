@@ -34,10 +34,10 @@ $icons: (
   background-image: url('../img/brands.png');
   background-position: -447px -132px;
   @include tablet {
-    width: (77px / 2);
-    height: (76px / 2);
-    background-position: (-447px / 2) (-132px / 2);
-    background-size: (749px / 2) (400px / 2)
+    width: ceil(77px / 2);
+    height: ceil(76px / 2);
+    background-position: ceil(-447px / 2) ceil(-132px / 2);
+    background-size: ceil(749px / 2) ceil(400px / 2)
   }
 }
 
@@ -47,10 +47,10 @@ $icons: (
   background-image: url('../img/brands.png');
   background-position: -267px 0px;
   @include tablet {
-    width: (170px / 2);
-    height: (108px / 2);
-    background-position: (-267px / 2) (0px / 2);
-    background-size: (749px / 2) (400px / 2)
+    width: ceil(170px / 2);
+    height: ceil(108px / 2);
+    background-position: ceil(-267px / 2) ceil(0px / 2);
+    background-size: ceil(749px / 2) ceil(400px / 2)
   }
 }
 
@@ -60,10 +60,10 @@ $icons: (
   background-image: url('../img/brands.png');
   background-position: -598px -48px;
   @include tablet {
-    width: (77px / 2);
-    height: (74px / 2);
-    background-position: (-598px / 2) (-48px / 2);
-    background-size: (749px / 2) (400px / 2)
+    width: ceil(77px / 2);
+    height: ceil(74px / 2);
+    background-position: ceil(-598px / 2) ceil(-48px / 2);
+    background-size: ceil(749px / 2) ceil(400px / 2)
   }
 }
 
@@ -73,10 +73,10 @@ $icons: (
   background-image: url('../img/brands.png');
   background-position: -447px 0px;
   @include tablet {
-    width: (302px / 2);
-    height: (38px / 2);
-    background-position: (-447px / 2) (0px / 2);
-    background-size: (749px / 2) (400px / 2)
+    width: ceil(302px / 2);
+    height: ceil(38px / 2);
+    background-position: ceil(-447px / 2) ceil(0px / 2);
+    background-size: ceil(749px / 2) ceil(400px / 2)
   }
 }
 
@@ -86,10 +86,10 @@ $icons: (
   background-image: url('../img/brands.png');
   background-position: 0px -358px;
   @include tablet {
-    width: (311px / 2);
-    height: (42px / 2);
-    background-position: (0px / 2) (-358px / 2);
-    background-size: (749px / 2) (400px / 2)
+    width: ceil(311px / 2);
+    height: ceil(42px / 2);
+    background-position: ceil(0px / 2) ceil(-358px / 2);
+    background-size: ceil(749px / 2) ceil(400px / 2)
   }
 }
 
@@ -99,10 +99,10 @@ $icons: (
   background-image: url('../img/brands.png');
   background-position: 0px 0px;
   @include tablet {
-    width: (257px / 2);
-    height: (76px / 2);
-    background-position: (0px / 2) (0px / 2);
-    background-size: (749px / 2) (400px / 2)
+    width: ceil(257px / 2);
+    height: ceil(76px / 2);
+    background-position: ceil(0px / 2) ceil(0px / 2);
+    background-size: ceil(749px / 2) ceil(400px / 2)
   }
 }
 
@@ -112,10 +112,10 @@ $icons: (
   background-image: url('../img/brands.png');
   background-position: -447px -48px;
   @include tablet {
-    width: (141px / 2);
-    height: (74px / 2);
-    background-position: (-447px / 2) (-48px / 2);
-    background-size: (749px / 2) (400px / 2)
+    width: ceil(141px / 2);
+    height: ceil(74px / 2);
+    background-position: ceil(-447px / 2) ceil(-48px / 2);
+    background-size: ceil(749px / 2) ceil(400px / 2)
   }
 }
 
@@ -125,10 +125,10 @@ $icons: (
   background-image: url('../img/brands.png');
   background-position: 0px -195px;
   @include tablet {
-    width: (283px / 2);
-    height: (62px / 2);
-    background-position: (0px / 2) (-195px / 2);
-    background-size: (749px / 2) (400px / 2)
+    width: ceil(283px / 2);
+    height: ceil(62px / 2);
+    background-position: ceil(0px / 2) ceil(-195px / 2);
+    background-size: ceil(749px / 2) ceil(400px / 2)
   }
 }
 
@@ -138,10 +138,10 @@ $icons: (
   background-image: url('../img/brands.png');
   background-position: -534px -132px;
   @include tablet {
-    width: (55px / 2);
-    height: (76px / 2);
-    background-position: (-534px / 2) (-132px / 2);
-    background-size: (749px / 2) (400px / 2)
+    width: ceil(55px / 2);
+    height: ceil(76px / 2);
+    background-position: ceil(-534px / 2) ceil(-132px / 2);
+    background-size: ceil(749px / 2) ceil(400px / 2)
   }
 }
 
@@ -151,10 +151,10 @@ $icons: (
   background-image: url('../img/brands.png');
   background-position: 0px -86px;
   @include tablet {
-    width: (198px / 2);
-    height: (99px / 2);
-    background-position: (0px / 2) (-86px / 2);
-    background-size: (749px / 2) (400px / 2)
+    width: ceil(198px / 2);
+    height: ceil(99px / 2);
+    background-position: ceil(0px / 2) ceil(-86px / 2);
+    background-size: ceil(749px / 2) ceil(400px / 2)
   }
 }
 
@@ -164,10 +164,10 @@ $icons: (
   background-image: url('../img/brands.png');
   background-position: 0px -267px;
   @include tablet {
-    width: (176px / 2);
-    height: (81px / 2);
-    background-position: (0px / 2) (-267px / 2);
-    background-size: (749px / 2) (400px / 2)
+    width: ceil(176px / 2);
+    height: ceil(81px / 2);
+    background-position: ceil(0px / 2) ceil(-267px / 2);
+    background-size: ceil(749px / 2) ceil(400px / 2)
   }
 }
 

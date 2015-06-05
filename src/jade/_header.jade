@@ -1,19 +1,19 @@
-<!-- begin header -->
+//BEGIN header
 header.header
   .header__inner.l
     .header__left
       a(href="/").logo.logo_double
-        | Kustomnote
+        span Transpose
     .header__right
       nav.menu
-        a(href="/").menu__link
-          | Features
-        a(href="/pricing.html").menu__link
-          | Pricing
-        a(href="/about.html").menu__link
-          | About Us
-        a(href="login", data-popup="login").menu__link
-          | Login
+        a(href="/", data-text="Features").menu__link
+          span Features
+        a(href="/pricing.html", data-text="Pricing").menu__link
+          span Pricing
+        a(href="/about.html", data-text="About Us").menu__link
+          span About Us
+        a(href="login", data-popup="login", data-text="Login").menu__link
+          span Login
       button.btn.btn_sign(type="button", data-popup="sign-up")
         span Sign up for free
-<!-- end header -->
+//END header

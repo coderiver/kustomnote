@@ -5,7 +5,7 @@
     <title>About us | KustomNote</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="format-detection" content="telephone=no">
-    <link rel="icon" href="/favicon.png" type="image/png">
+    <link rel="icon" href="favicon.png" type="image/png">
     <link rel="stylesheet" media="all" href="css/screen.css"><!--[if IE]><script src="js/html5shiv.js"></script><![endif]-->
   </head>
   <body>
@@ -13,20 +13,65 @@
       <div class="header-wrap">
         <header class="header header_solid">
           <div class="header__inner l">
-            <div class="header__left"><a href="/" class="logo logo_color">Kustomnote</a></div>
+            <div class="header__left"><a href="/" class="logo logo_color"><span>Transpose</span></a></div>
             <div class="header__right">
-              <nav class="menu"><a href="/" class="menu__link">Features</a><a href="/pricing.html" class="menu__link">Pricing</a><a href="/about.html" class="menu__link">About Us</a><a href="login" data-popup="login" class="menu__link">Login</a></nav>
+              <nav class="menu"><a href="/" data-text="Features" class="menu__link"><span>Features</span></a><a href="/pricing.html" data-text="Pricing" class="menu__link"><span>Pricing</span></a><a href="/about.html" data-text="About Us" class="menu__link"><span>About Us</span></a><a href="login" data-popup="login" data-text="Login" class="menu__link"><span>Login</span></a></nav>
               <button type="button" data-popup="sign-up" class="btn btn_sign"><span>Sign up for free</span></button>
             </div>
           </div>
         </header>
-      </div><!-- end header --><!-- begin toparea-small -->
+      </div><!-- end header -->
+      <!--BEGIN toparea-small-->
       <div class="toparea-small">
         <h1 class="heading">Join us on our journey!</h1>
-        <button type="button" data-popup="sign-up" class="btn"><span>Sign up for free</span></button>
-      </div><!-- end toparea-small -->
-      <!-- begin comments -->
-      <div class="comments l"><!-- begin user -->
+        <button type="button" data-popup="sign-up" class="btn btn_white"><span>Sign up for free</span></button>
+      </div>
+      <!--END toparea-small-->
+      <!--BEGIN promo-text-->
+      <div class="promo-text l">
+        <p>
+          Transpose lets people create and organize their world
+          in a way that makes sense to them.
+        </p>
+        <p>
+          It’s a solution for any industry, any personal interest,
+          anything our customers are doing with their lives.
+        </p>
+        <p><strong>It’s their solutions. Their way.</strong></p>
+      </div>
+      <!--END promo-text-->
+      <!--BEGIN story-->
+      <div class="story">
+        <div class="story__inner l">
+          <div class="story__pic">
+            <div style="background-image:url('img/story-pic.jpg')" class="story__pic-inner"></div>
+          </div>
+          <div class="story__text">
+            <h3 class="title title_sm">Our story</h3>
+            <p>
+              When Hussein Ahmed started tinkering with Evernote in 2012, 
+              he saw potential to do something big. A way to push it beyond
+              a note-taking platform into something more robust. 
+              Something anyone could use to not just take notes, but organize their entire world.
+            </p>
+            <p>
+              He entered his idea (then called KustomNote) in Evernote’s 
+              DevCup competition, and was one of 10 finalists. 
+              After moving on to the ETC conference in San Francisco, 
+              the application won again--this time the Silver Cup and $15,000.
+            </p>
+            <p>
+              By now, Hussein knew he was on to something. He quit his day 
+              job at Amazon and began Transpose in earnest. 
+              
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--END story-->
+      <!--BEGIN comments-->
+      <div class="comments l">
+        <!--BEGIN user-->
         <div class="user user_big">
           <div class="user__pic"><img src="img/users/user4.jpg" alt="Hussein Ahmed, CEO"></div>
           <blockquote class="user__feedback">
@@ -38,8 +83,10 @@
             </p>
             <cite class="user__name">- Hussein Ahmed, CEO</cite>
           </blockquote>
-        </div><!-- end user -->
-        <hr class="separator"><!-- begin user -->
+        </div>
+        <!--END user-->
+        <hr class="separator">
+        <!--BEGIN user-->
         <div class="user user_big user_replace">
           <div class="user__pic"><img src="img/users/user5.jpg" alt="Samah Gad, CTO"></div>
           <blockquote class="user__feedback">
@@ -51,8 +98,10 @@
             </p>
             <cite class="user__name">- Samah Gad, CTO</cite>
           </blockquote>
-        </div><!-- end user -->
-        <hr class="separator"><!-- begin user -->
+        </div>
+        <!--END user-->
+        <hr class="separator">
+        <!--BEGIN user-->
         <div class="user user_big">
           <div class="user__pic"><img src="img/users/user6.jpg" alt="Skyler Johnson-Wagner, CCO"></div>
           <blockquote class="user__feedback">
@@ -64,9 +113,12 @@
             </p>
             <cite class="user__name">- Skyler Johnson-Wagner, CCO</cite>
           </blockquote>
-        </div><!-- end user -->
-      </div><!-- end comments -->
-      <!-- begin brands -->
+        </div>
+        <!--END user-->
+      </div>
+      <!--END comments-->
+      
+      <!--BEGIN brands-->
       <div class="l">
         <section class="brands brands_about">
           <div class="brands__item"><a href="#" class="brand brand-9-mile-labs">9-mile-labs</a></div>
@@ -76,7 +128,9 @@
           <div class="brands__item"><a href="#" class="brand brand-alliance-of-angels">alliance-of-angels</a></div>
           <div class="brands__item"><a href="#" class="brand brand-the-gramercy-fund">the-gramercy-fund</a></div>
         </section>
-      </div><!-- end brands --><!-- begin footer -->
+      </div>
+      <!--END brands-->
+      <!--BEGIN footer-->
       <footer class="footer">
         <div class="l">
           <div class="footer__row">
@@ -96,14 +150,15 @@
           </div>
           <div class="footer__row">
             <div class="footer__right">
-              <div class="footer__copy"><a href="#">Terms of Service</a><a href="#">Privacy Policy</a><span>©2015 KustomNote, Inc.</span></div>
+              <div class="footer__copy"><a href="#">Terms of Service</a><a href="#">Privacy Policy</a><span>©2015 Transpose, Inc.</span></div>
             </div>
             <div class="footer__left">
-              <div class="footer__logo"><a href="/" class="logo">Kustomnote</a></div>
+              <div class="footer__logo"><a href="/" class="logo"><span>Transpose</span></a></div>
             </div>
           </div>
         </div>
-      </footer><!-- end footer -->
+      </footer>
+      <!--END footer-->
     </div><!-- begin popup -->
     <div id="login" class="popup">
       <form method="POST" novalidate class="popup__inner form">
