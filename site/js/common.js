@@ -1,10 +1,12 @@
 head.ready(function() {
 
-    var body    = $('body');
-    var header  = $('header');
-    var win     = $(window);
-    var tooltip = $('.js-tooltip');
-    var openedPopup;
+    var body    = $('body'),
+        header  = $('header'),
+        win     = $(window),
+        tooltip = $('.js-tooltip'),
+        openedPopup,
+        cardSlider;
+
 
     if ( $('.js-slick').length ) {
         $('.js-slick').slick({
@@ -295,25 +297,29 @@ head.ready(function() {
      });
 
 
-    function CardSlider() {
-        this.active   = false;
-        this.elements = {};
-        this.current = null;
-        this.slick = null;
+
+
+    function CardSlider(selectors) {
+        this.active    = false;
+        this.selectors = selectors; // object
+        this.elements  = {};
+        this.slick     = null;
 
         return this;
     }
 
-    CardSlider.prototype.init = function(selectors) {
+    CardSlider.prototype.showMore = function(e) {
+        var _ = this;
+        e.preventDefault();
+        var currentCard = _.slick.$slides[ _.slick.currentSlide ];
+        $(currentCard).toggleClass('is-flipped');
+    };
+
+    CardSlider.prototype.initSlider = function() {
         var _ = this;
 
-        _.elements.slider  = $(selectors.slider);
-        _.elements.moreBtn = $(selectors.moreBtn);
-        _.elements.prevBtn = $(selectors.prevBtn);
-        _.elements.nextBtn = $(selectors.nextBtn);
-
         _.elements.slider.slick({
-            slide: selectors.slide,
+            slide: _.selectors.slide,
             prevArrow: _.elements.prevBtn,
             nextArrow: _.elements.nextBtn,
             dots: true,
@@ -323,31 +329,58 @@ head.ready(function() {
         _.slick = _.elements.slider.slick('getSlick');
 
         _.elements.slider.on('beforeChange', function(e, slick, currentSlide, nextSlide) {
-            var currentCard = _.slick.$slides[ currentSlide ];
+            var currentCard = slick.$slides[ currentSlide ];
             setTimeout(function() {
                 $(currentCard).removeClass('is-flipped');
             }, 500);
         });
 
-        _.elements.moreBtn.on('click', function(e) {
-            e.preventDefault();
-            var currentCard = _.slick.$slides[ _.slick.currentSlide ];
-            $(currentCard).toggleClass('is-flipped');
-        });
+        _.active = true;
+    };
 
-        console.log(this);
+    CardSlider.prototype.destroySlider = function() {
+        var _ = this;
+
+        _.slick.unslick();
+        _.slick = null;
+        _.active = false;
+        setTimeout(function() {
+            $(_.selectors.slide).removeAttr('style');
+        }, 100);
+    };
+
+    CardSlider.prototype.init = function() {
+        var _ = this,
+            winWidth;
+
+        _.elements.slider  = $(_.selectors.slider);
+        _.elements.moreBtn = $(_.selectors.moreBtn);
+        _.elements.prevBtn = $(_.selectors.prevBtn);
+        _.elements.nextBtn = $(_.selectors.nextBtn);
+
+        _.elements.moreBtn.on('click', _.showMore.bind(_));
+
+        if ( win.width() < 768 ) _.initSlider();
+
+        win.on('resize', function() {
+            winWidth = win.width();
+
+            if ( winWidth < 768 && !_.active ) {
+                _.initSlider();
+            }
+            else if ( winWidth >= 768 && _.active ) {
+                _.destroySlider();
+            }
+        });
     };
 
 
-    if ( $(window).width() < 768 ) {
-        var cards = new CardSlider().init({
-            slider: '.feature-group__cards',
-            slide: '.feature-group__cards .card',
-            moreBtn: '.cards-nav__more',
-            prevBtn: '.cards-nav__prev',
-            nextBtn: '.cards-nav__next',
-        });
-    };
-
+    cardSlider = new CardSlider({
+        slider : '.feature-group__cards',
+        slide  : '.feature-group__cards .card',
+        moreBtn: '.cards-nav__more',
+        prevBtn: '.cards-nav__prev',
+        nextBtn: '.cards-nav__next',
+    }).init();
 
 });

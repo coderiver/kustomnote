@@ -2362,7 +2362,18 @@ a.btn {
         width: auto;
         padding: 0;
         height: 265px;
-        pointer-events: none;
+        margin-top: 10px;
+        &:hover {
+            .card__flipper {
+                transform: translate3d(0,0,0);
+            }
+        }
+
+        &.is-flipped {
+            .card__flipper {
+                transform: translate3d(0,0,0) rotateY(180deg);
+            }
+        }
 
         > .card__title {
             display: none;

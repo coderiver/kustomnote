@@ -760,7 +760,9 @@ a.btn:hover { text-decoration: none; }
 .card { float: left; width: 33.33%; height: 395px; padding: 0 8px; box-sizing: border-box; position: relative; font-family: "PTSerifRegular", Helvetica, Arial, sans-serif; font-weight: normal; -webkit-perspective: 1500px; perspective: 1500px; }
 .card > .card__title { position: absolute; top: 0; left: 0; right: 0; margin-top: -42px; }
 .card:hover .card__flipper, .card.is-flipped .card__flipper { -webkit-transform: translate3d(0, 0, 0) rotateY(180deg); transform: translate3d(0, 0, 0) rotateY(180deg); }
-@media only screen and (max-width: 767px) { .card { width: auto; padding: 0; height: 265px; pointer-events: none; }
+@media only screen and (max-width: 767px) { .card { width: auto; padding: 0; height: 265px; margin-top: 10px; }
+  .card:hover .card__flipper { -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); }
+  .card.is-flipped .card__flipper { -webkit-transform: translate3d(0, 0, 0) rotateY(180deg); transform: translate3d(0, 0, 0) rotateY(180deg); }
   .card > .card__title { display: none; }
   .card .card__front { padding-top: 65px; font-size: 14px; border-bottom-left-radius: 0; border-bottom-right-radius: 0; }
   .card .card__front .card__title { display: block; }
