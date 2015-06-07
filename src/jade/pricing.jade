@@ -10,7 +10,7 @@ block content
   .toparea-small
     h1.heading
       | Plans to fit your needs.
-    button.btn(type="button", data-popup="sign-up")
+    button.btn.btn_white(type="button", data-popup="sign-up")
       span Sign up for free
   //END toparea-small
 
@@ -24,13 +24,13 @@ block content
           .price.price_free
             .price__head
               span.price__label
-                | Standard
+                | Member
               strong.price__value
                 | FREE
                 small
                   | (always)
-            .icon.icon_circle.icon-cloud
-            ul.price__list
+            .icon.icon_circle.icon-logo-simple
+            //- ul.price__list
               li
                 | Unlimited templates
               li
@@ -43,6 +43,16 @@ block content
                 | Access notes on your mobile devices.
               li
                 | Automatically sync your KustomNotes to Evernote
+            .price__main
+              p.
+                This is where small projects and one-person teams thrive.
+                The basic package gives you 10 GB of data, and enough templates 
+                and notes to get started. You may be small, but you have big dreams.
+              
+              button.btn.btn_dark.btn_wide.btn_center(type="button", data-popup="sign-up")
+                span Become a member for free
+
+              small.small-text You can always upgrade to Prime later
           //END price
 
         .pricing__cell
@@ -50,13 +60,13 @@ block content
           .price
             .price__head
               span.price__label
-                | Standard
+                | Prime member
               strong.price__value
                 | 9.99
                 small
                   | /mo
             .icon.icon_circle.icon-diamond
-            ul.price__list
+            //- ul.price__list
               li
                 | Everything from <b>standard</b>.
               li
@@ -67,9 +77,20 @@ block content
                 | Use your own logo on your published forms.
               li
                 | Business Integrations
+            .price__main
+              p.
+                Unlock all that Transpose can do, and join a community of ambitious creators. 
+                Get unlimited templates and storage, and the freedom to collaborate with others. 
+                Perfect for teams and large projects.
+
+              a.link-arrow(href="#")
+                | Explore Prime
+
+              button.btn.btn_red.btn_wide.btn_center(type="button", data-popup="sign-up")
+                span Sign up for Prime now
           //END price
 
-      .pricing__footer
+      //- .pricing__footer
         .pricing__btn
           button.btn.btn_blue(type="button", data-popup="sign-up")
             span Sign up for free
@@ -78,6 +99,31 @@ block content
         p
           | After that, it’s up to you. Our standard plan will always be free,
           | no credit card required.
+
+    .pricing-text
+      h3.title
+        | This is Prime.
+      p.
+        As a Prime Member, you get all that Transpose has to offer. 
+        You can create, collaborate, and organize without limits. 
+        And be part of a community of ambitious creators. 
+        It's the smartest, easiest way to get things done.
+
+    .prime-features
+      h3.title
+        | Features
+      ul.prime-features__list
+        li Unlimited public and private templates
+        li Unlimited storage
+        li Collaborate on templates, even with people who don’t have Transpose
+        li Exclusive meet-ups and membership card
+        li Experience features before they’re released with labs.tranpose.com
+
+      button.btn.btn_red.btn_wide.btn_center(type="button", data-popup="sign-up")
+        span Sign up for Prime now
+
+      small.small-text
+        | You can downgrade to a standard membership at any time.
 
   //END pricing
 

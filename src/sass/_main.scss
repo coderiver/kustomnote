@@ -139,6 +139,7 @@
 
 .header_solid {
     border-bottom: 1px solid $border;
+    background: #FFF;
 }
 
 
@@ -177,10 +178,14 @@
 
 .logo_double {
     background: none;
+    position: relative;
 
     &:before, &:after {
         content: "";
         display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
         width: 100%;
         height: 100%;
         background-repeat: no-repeat;
@@ -310,7 +315,7 @@
 
         &:before {
             @extend %icon;
-            content: "\f178";
+            content: $icon-long-arrow-right;
             position: absolute;
             top: 50%;
             right: 0;
@@ -482,6 +487,44 @@ a.btn {
 
 
 
+.link-arrow {
+    display: inline-block;
+    font-size: 18px;
+    position: relative;
+    padding-right: em(15);
+    text-decoration: none;
+    color: inherit;
+
+    &:before {
+        @extend %icon;
+        content: $icon-long-arrow-right;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        @include fs(10);
+        margin-top: em(-3,10);
+    }
+
+    &:after {
+        content: "";
+        position: absolute;
+        bottom: 1px;
+        left: 0;
+        right: 0;
+        border-top: 1px solid;
+    }
+
+    &:hover {
+        @include sans-b;
+    }
+
+    @include tablet {
+        font-size: 14px;
+    }
+}
+
+
+
 
 .toparea-small {
     position: relative;
@@ -510,8 +553,7 @@ a.btn {
     }
 
     @include mobile {
-        padding-top: 25px;
-        padding-bottom: 25px;
+        padding: 25px 55px;
 
         &:after {
             @include arr(16,9,$dark,b);
@@ -831,11 +873,13 @@ a.btn {
 
         .user__name {
             margin-top: 10px;
+            font-size: 14px;
         }
 
         .user__link {
             display: block;
             margin-top: 7px;
+            font-size: 14px;
         }
 
         // &.user_replase {
@@ -1186,7 +1230,7 @@ a.btn {
         }
     }
 
-    @include mobile {
+    @include tablet {
         padding: 25px 0;
         @include fs(14);
 
@@ -1195,7 +1239,7 @@ a.btn {
         }
 
         .btn {
-            margin-top: 15px;
+            margin-top: 20px;
         }
 
         .feature-more__item {
@@ -1289,9 +1333,30 @@ a.btn {
     padding: 0 20px;
     line-height: 1.55;
 
-    a {
-        color: inherit;
+    @include tablet {
+        float: none;
+        width: auto;
+        padding: 0;
+        text-align: center;
+        > li {
+            margin-top: 15px;
+        }
     }
+}
+
+.feature-more__link {
+    color: inherit;
+    display: inline-block;
+    @include tablet {
+        @include sans-b;
+        font-size: 14px;
+        text-decoration: none;
+    }
+}
+
+.feature-more__content {
+    display: none;
+    font-size: 12px;
 }
 
 
@@ -1299,6 +1364,7 @@ a.btn {
 
 .slider {
     width: 100%;
+    position: relative;
 }
 
 .slide {
@@ -1354,6 +1420,27 @@ a.btn {
     &:hover {
         text-decoration: underline;
     }
+}
+
+.slider__prev,
+.slider__next {
+    position: absolute;
+    width: 40px;
+    height: percentage(140/400);
+    bottom: 0;
+    font-size: 24px;
+    color: #81837F;
+    background: none;
+}
+
+.slider__prev {
+    left: 0;
+    border-right: 1px solid;
+}
+
+.slider__next {
+    right: 0;
+    border-left: 1px solid;
 }
 
 
@@ -1676,8 +1763,8 @@ a.btn {
 
 
 .pricing {
-    max-width: 615px;
-    margin: 30px auto 45px;
+    // max-width: 615px;
+    margin: 30px -15px 20px;
     box-sizing: border-box;
 
     b, strong {
@@ -1695,8 +1782,8 @@ a.btn {
         }
     }
 
-    @include r(449) {
-        margin: 15px 0;
+    @include r(549) {
+        margin: 15px 0 25px;
 
         .pricing__main {
             display: block;
@@ -1758,6 +1845,17 @@ a.btn {
     text-align: center;
 }
 
+.pricing-text {
+    @include serif;
+    p {
+        margin-top: 5px;
+    }
+
+    @include tablet {
+        font-size: 14px;
+    }
+}
+
 
 
 .price {
@@ -1776,15 +1874,19 @@ a.btn {
         border: 7px solid #F0F0F0;
     }
 
+    .btn {
+        margin-top: 25px;
+    }
+
     @include mobile {
         font-size: 14px;
     }
 
-    @include r(449) {
-        background: #252525;
+    @include r(549) {
+        // background: #252525;
 
         .price__head {
-            padding-bottom: 15px;
+            padding-bottom: 32px;
         }
 
         .icon_circle {
@@ -1814,8 +1916,12 @@ a.btn {
             }
         }
 
+        .price__main {
+            padding: 20px;
+        }
+
         &.price_free {
-            background: #424242;
+            // background: #424242;
 
             .price__value {
                 > small {
@@ -1828,10 +1934,27 @@ a.btn {
 }
 
 .price__head {
-    padding: 40px 10px 80px;
+    padding: 35px 10px 75px;
     background: #252525;
     color: #FFF;
     line-height: 1;
+}
+
+.price__main {
+    padding: 60px percentage(60/554) 25px;
+
+    .link-arrow {
+        margin-top: 15px;
+
+        + .btn {
+            margin-top: 20px;
+        }
+    }
+
+    @include r(800) {
+        padding-right: percentage(45/554);
+        padding-left: percentage(45/554);
+    }
 }
 
 .price__label {
@@ -1900,6 +2023,41 @@ a.btn {
             right: 0;
             text-align: center;
         }
+    }
+}
+
+
+.prime-features {
+    max-width: 745px;
+    border: 3px solid #F1F1F1;
+    margin: 22px auto;
+    padding: 25px;
+    box-sizing: border-box;
+    text-align: center;
+    @include serif;
+    color: #252525;
+
+    .title {
+        margin-bottom: 15px;
+    }
+
+    .btn {
+        margin-top: 30px;
+    }
+
+    @include tablet {
+        padding: 15px 10px;
+        font-size: 14px;
+
+        .btn {
+            margin-top: 20px;
+        }
+    }
+}
+
+.prime-features__list {
+    > li:not(:first-child) {
+        margin-top: 7px;
     }
 }
 
@@ -2264,6 +2422,9 @@ a.btn {
             .btn {
                 display: none;
             }
+            .user {
+                width: auto;
+            }
         }
     }
 }
@@ -2329,6 +2490,12 @@ a.btn {
     .btn {
         float: right;
         margin-top: 18px;
+    }
+
+    @include r(910) {
+        .user {
+            width: 55%;
+        }
     }
 }
 
@@ -2418,6 +2585,7 @@ a.btn {
     width: 100%;
     height: 100%;
     position: relative;
+    z-index: 1;
     transform-style: preserve-3d;
     transform: translate3d(0,0,0);
     border-radius: 5px;
@@ -2426,7 +2594,7 @@ a.btn {
 
 .card__front {
     position: relative;
-    z-index: 0;
+    z-index: 1;
     background: #757888;
     width: 100%;
     height: 100%;
@@ -2457,6 +2625,7 @@ a.btn {
 .card__back {
     background: #FFF;
     position: absolute;
+    z-index: 1;
     top: 0;
     left: 0;
     bottom: 0;
@@ -2549,7 +2718,6 @@ a.btn {
     display: none;
     height: 50px;
     position: relative;
-    padding: 0 50px;
     background: #757888;
     border-top: 1px solid $dark;
     border-radius: 0 0 5px 5px;
@@ -2569,12 +2737,14 @@ a.btn {
 
 .cards-nav__prev, .cards-nav__next {
     position: absolute;
+    z-index: 2;
     background: none;
     top: 0;
     height: 50px;
     width: 50px;
     font-size: 24px;
     color: $dark;
+    background: #757888;
 }
 
 .cards-nav__prev {
@@ -2591,6 +2761,8 @@ a.btn {
 
 .cards-nav__more {
     display: block;
+    position: relative;
+    z-index: 1;
     height: 50px;
     width: 100%;
     background: none;
@@ -2723,5 +2895,21 @@ a.btn {
         display: block;
         width: 100%;
         padding-bottom: percentage(315/508);
+    }
+}
+
+
+.small-text {
+    color: rgba($dark, 0.5);
+    font-size: 14px;
+
+    .btn + & {
+        display: block;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    @include tablet {
+        font-size: 10px;
     }
 }

@@ -245,20 +245,23 @@ block content
 
           .feature__slider
             // BEGIN slider 
-            .slider.js-slick
-              .slide(style="background-image:url('img/slides/slide.jpg')")
-                .slide__footer
-                  a.slide__caption(href="#")
-                    | Templates for Business
-              .slide(style="background-image:url('img/slides/slide.jpg')")
-                .slide__footer
-                  a.slide__caption(href="#")
-                    | Templates for Business
-              .slide(style="background-image:url('img/slides/slide.jpg')")
-                .slide__footer
-                  a.slide__caption(href="#")
-                    | Templates for Business
-            // END slider 
+            .slider
+              .slider__slides.js-slick
+                .slide(style="background-image:url('img/slides/slide.jpg')")
+                  .slide__footer
+                    a.slide__caption(href="#")
+                      | Templates for Business
+                .slide(style="background-image:url('img/slides/slide.jpg')")
+                  .slide__footer
+                    a.slide__caption(href="#")
+                      | Templates for Business
+                .slide(style="background-image:url('img/slides/slide.jpg')")
+                  .slide__footer
+                    a.slide__caption(href="#")
+                      | Templates for Business
+              //- button.slider__prev.icon.icon-angle-left(type="button")
+              //- button.slider__next.icon.icon-angle-right(type="button")
+            // END slider
 
           // BEGIN user 
           .user.user_small
@@ -285,49 +288,49 @@ block content
       .feature-more__cols
         ul.feature-more__list
           li
-            a.js-tooltip(href="#") Windows & Mac
-            p.tooltip-content.
+            a.feature-more__link(href="#") Windows & Mac
+            p.feature-more__content.
               Transpose does not sell information about user behavior. 
               Your information is always kept private.
           li
-            a.js-tooltip(href="#") Android & iOS
-            p.tooltip-content.
+            a.feature-more__link(href="#") Android & iOS
+            p.feature-more__content.
               Transpose does not sell information about user behavior. 
               Your information is always kept private.
           li
-            a.js-tooltip(href="#") Intuitive search
-            p.tooltip-content.
+            a.feature-more__link(href="#") Intuitive search
+            p.feature-more__content.
               Tooltip content
         
         ul.feature-more__list
           li
-            a.js-tooltip(href="#") Secure
-            p.tooltip-content.
+            a.feature-more__link(href="#") Secure
+            p.feature-more__content.
               Tooltip content
           li
-            a.js-tooltip(href="#") Export data easily
-            p.tooltip-content.
+            a.feature-more__link(href="#") Export data easily
+            p.feature-more__content.
               Tooltip content
           li
-            a.js-tooltip(href="#") Team collaboration
-            p.tooltip-content.
+            a.feature-more__link(href="#") Team collaboration
+            p.feature-more__content.
               Transpose does not sell information about user behavior. 
               Your information is always kept private.
         
         ul.feature-more__list
           li
-            a.js-tooltip(href="#") Drag & Drop editing
-            p.tooltip-content.
+            a.feature-more__link(href="#") Drag & Drop editing
+            p.feature-more__content.
               Transpose does not sell information about user behavior. 
               Your information is always kept private.
           li
-            a.js-tooltip(href="#") Recognizes all kinds of files
-            p.tooltip-content.
+            a.feature-more__link(href="#") Recognizes all kinds of files
+            p.feature-more__content.
               Transpose does not sell information about user behavior. 
               Your information is always kept private.
           li
-            a.js-tooltip(href="#") We don’t sell your info
-            p.tooltip-content.
+            a.feature-more__link(href="#") We don’t sell your info
+            p.feature-more__content.
               Transpose does not sell information about user behavior. 
               Your information is always kept private.
 
@@ -373,8 +376,8 @@ block content
         //-     | Etiam porta sem malesuada magna mollis euismod.
       //- // END feature-more__items 
 
-      button.btn.btn_more.btn_center(type="button", data-more-btn="features")
-        span See more features
+      //- button.btn.btn_more.btn_center(type="button", data-more-btn="features")
+      //-   span See more features
 
       //- // BEGIN feature-more__links 
       //- .feature-more__other(data-more-content="features")

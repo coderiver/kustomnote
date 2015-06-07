@@ -25,6 +25,7 @@
   @extend %icon;
 }
 
+$icon-logo-simple: "\e60f";
 $icon-angle-left: "\f104";
 $icon-angle-right: "\f105";
 $icon-long-arrow-right: "\f178";
@@ -45,6 +46,9 @@ $icon-data: "\e603";
 $icon-mobile: "\e604";
 
 
+.icon-logo-simple:before {
+  content: "\e60f";
+}
 .icon-angle-left:before {
   content: "\f104";
 }
@@ -140,6 +144,12 @@ $icon-mobile: "\e604";
     background: #4F94DD;
     color: #FFF;
     font-size: 29px;
+  }
+
+  &.icon-logo-simple {
+    font-size: 38px;
+    color: #A7A9AC;
+    background: #D7D7D7;
   }
 
   @include tablet {
