@@ -4,6 +4,7 @@ head.ready(function() {
         header          = $('header'),
         win             = $(window),
         featureMoreLink = $('.feature-more__link'),
+        breakpoint      = 753,
         openedPopup,
         cardSlider;
 
@@ -113,7 +114,7 @@ head.ready(function() {
         var scroll     = win.scrollTop(),
             winWidth   = win.width(),
             fixedClass = 'is-fixed';
-            minWinSize = 768;
+            minWinSize = breakpoint;
 
         if ( scroll > 0 && winWidth >= minWinSize ) {
             header.addClass(fixedClass);
@@ -285,6 +286,7 @@ head.ready(function() {
             maxWidth: 280,
             position: 'bottom-left',
             animation: 'fade',
+            offsetX: 15,
             functionInit: function() {
                 var content = $(this).siblings('.feature-more__content').text();
                 return content;
@@ -294,15 +296,24 @@ head.ready(function() {
 
         featureMoreLink.on('click', function(e) {
             e.preventDefault();
-            if ( win.width() < 768 ) {
+            if ( $(document).width() < breakpoint ) {
                 var content = $(this).siblings('.feature-more__content');
                 content.slideToggle(300);
             }
         });
 
+        if ( win.width() < breakpoint ) {
+            featureMoreLink.tooltipster('disable');
+        }
+
         win.on('resize', function() {
-            if ( win.width() >= 768 ) {
+            var winWidth = $(document).width();
+            if ( winWidth < breakpoint ) {
+                featureMoreLink.tooltipster('disable');
+            }
+            if ( winWidth >= breakpoint ) {
                 $('.feature-more__content').removeAttr('style');
+                featureMoreLink.tooltipster('enable');
             }
         });
 
@@ -337,10 +348,14 @@ head.ready(function() {
             nextArrow: _.elements.nextBtn,
             dots: true,
             fade: true,
-            infinite: false
+            infinite: false,
         });
 
         _.slick = _.elements.slider.slick('getSlick');
+
+        if ( _.slick.currentSlide === 0 ) {
+            _.slick.$prevArrow.css('display', 'none');
+        }
 
         _.elements.slider.on('beforeChange', function(e, slick, currentSlide, nextSlide) {
             var currentCard = slick.$slides[ currentSlide ];
@@ -348,13 +363,13 @@ head.ready(function() {
                 $(currentCard).removeClass('is-flipped');
             }, 500);
 
-            if ( nextSlide === 0) {
+            if ( nextSlide === 0 ) {
                 slick.$prevArrow.css('display', 'none');
             } else {
                 slick.$prevArrow.css('display', '');
             }
 
-            if ( nextSlide === slick.slideCount - 1 ) {
+            if ( nextSlide === slick.slideCount - 1) {
                 slick.$nextArrow.css('display', 'none');
             } else {
                 slick.$nextArrow.css('display', '');
@@ -367,6 +382,7 @@ head.ready(function() {
     CardSlider.prototype.destroySlider = function() {
         var _ = this;
 
+        _.slick.$slides.removeClass('is-flipped');
         _.slick.unslick();
         _.slick = null;
         _.active = false;
@@ -386,15 +402,15 @@ head.ready(function() {
 
         _.elements.moreBtn.on('click', _.showMore.bind(_));
 
-        if ( win.width() < 768 ) _.initSlider();
+        if ( win.width() < breakpoint ) _.initSlider();
 
         win.on('resize', function() {
             winWidth = win.width();
 
-            if ( winWidth < 768 && !_.active ) {
+            if ( winWidth < breakpoint && !_.active ) {
                 _.initSlider();
             }
-            else if ( winWidth >= 768 && _.active ) {
+            else if ( winWidth >= breakpoint && _.active ) {
                 _.destroySlider();
             }
         });
